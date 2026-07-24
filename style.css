@@ -1,0 +1,402 @@
+/* =========================================================
+   Hobbyssey — custom styles
+   Theme: warm mustard-gold + dusty teal on a deep pine base.
+   Signature motif: hobby rows that slide into view as you scroll.
+   ========================================================= */
+
+:root {
+  --bg: #1b2420;
+  --surface: #212b25;
+  --surface-alt: #2a362e;
+  --line: #37453c;
+  --accent: #e8a94c;       /* mustard gold — player one */
+  --accent-teal: #5fa8a0;  /* dusty teal — player two */
+  --text: #f2ede3;
+  --text-muted: #9baa9f;
+  --radius: 10px;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .display-font {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--accent-teal);
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar-cc {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-split {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.brand-split .word-one { color: var(--accent); }
+
+.navbar-cc .nav-link {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.navbar-cc .nav-link.active,
+.navbar-cc .nav-link:hover {
+  color: var(--text);
+}
+
+.navbar-cc .nav-link.active {
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ---------- Hero (split-screen signature) ---------- */
+
+.hero {
+  background-color: var(--bg);
+  padding: 4rem 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+}
+
+.hero .lede {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  max-width: 32rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-cc-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #201505;
+  font-weight: 600;
+}
+
+.btn-cc-primary:hover {
+  background-color: #f0bc70;
+  border-color: #f0bc70;
+  color: #201505;
+}
+
+.btn-cc-outline {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  font-weight: 600;
+}
+
+.btn-cc-outline:hover {
+  background-color: var(--accent-teal);
+  color: var(--bg);
+}
+
+/* ---------- Sections & cards ---------- */
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background-color: var(--surface);
+}
+
+.section-eyebrow {
+  font-family: var(--font-mono);
+  color: var(--accent-teal);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-cc {
+  background-color: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+/* ---------- Tables ---------- */
+
+/* ---------- Forms ---------- */
+
+.form-cc label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-cc .form-text {
+  color: var(--text-muted);
+}
+
+.form-cc .form-control,
+.form-cc .form-select {
+  background-color: var(--surface-alt);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.form-cc .form-control:focus,
+.form-cc .form-select:focus {
+  background-color: var(--surface-alt);
+  color: var(--text);
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 0.2rem rgba(95, 168, 160, 0.25);
+}
+
+.form-cc .form-check-input {
+  background-color: var(--surface-alt);
+  border-color: var(--line);
+}
+
+.form-cc .form-check-input:checked {
+  background-color: var(--accent-teal);
+  border-color: var(--accent-teal);
+}
+
+.day-group.needs-day .form-check-label {
+  color: #e08a6a;
+}
+
+/* ---------- Response page ---------- */
+
+.summary-row {
+  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 0;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-row dt {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.summary-row dd {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+/* ---------- Footer ---------- */
+
+.footer-cc {
+  background-color: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 0;
+  color: var(--text-muted);
+}
+
+.footer-cc a {
+  color: var(--text);
+}
+
+/* ---------- Hero video ---------- */
+
+.video-hero {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.video-hero video {
+  width: 100%;
+  display: block;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+  border: none;
+  padding: 0;
+}
+
+.play-overlay svg {
+  width: 4rem;
+  height: 4rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.play-overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Scroll cue ---------- */
+
+.scroll-cue {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 0;
+  color: var(--text-muted);
+}
+
+.scroll-cue svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: bob 1.6s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ---------- Hobby rows ---------- */
+
+.hobby-row {
+  padding: 2.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hobby-row:last-child {
+  border-bottom: none;
+}
+
+.hobby-text {
+  position: relative;
+  padding-right: 2.75rem;
+}
+
+.corner-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface-alt);
+  color: var(--accent-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.corner-link:hover {
+  background: var(--accent-teal);
+  color: var(--bg);
+  transform: translate(2px, -2px);
+}
+
+.corner-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.hobby-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.hobby-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hobby-media--guitar::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  left: 32%;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* ---------- Scroll reveal (JS toggles .is-visible) ---------- */
+
+.reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left { transform: translateX(-2.5rem); }
+.reveal-right { transform: translateX(2.5rem); }
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .scroll-cue svg { animation: none; }
+}
+
+/* ---------- Nav dropdown ---------- */
+
+.dropdown-menu-cc {
+  background-color: var(--surface-alt);
+  border-color: var(--line);
+}
+
+.dropdown-menu-cc .dropdown-item {
+  color: var(--text);
+}
+
+.dropdown-menu-cc .dropdown-item:hover,
+.dropdown-menu-cc .dropdown-item:focus {
+  background-color: var(--surface);
+  color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 767.98px) {
+  .hero { padding: 2.5rem 0; }
+  .section { padding: 2.5rem 0; }
+  .hobby-text { padding-right: 0; padding-top: 2.75rem; }
+  .corner-link { top: 0; right: 0; }
+}
