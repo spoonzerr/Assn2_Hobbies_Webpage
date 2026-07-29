@@ -7,7 +7,6 @@ nav .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* pushes Hobbyssey left, links right */
     background-color: #13213a7c;
     border-radius: 10px;
     border: goldenrod 3px solid;
@@ -33,7 +32,7 @@ nav ul {
 
 nav li {
     margin: 0 5px;
-    
+
 }
 
 nav a {
@@ -42,6 +41,7 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-family: "Libertinus Serif";
 }
 
 nav a:hover {
@@ -63,7 +63,7 @@ nav a:hover {
     border-radius: 8px;
     min-width: 150px;
     z-index: 1;
-    
+
 }
 
 .ddcontent li a {
@@ -79,7 +79,43 @@ nav a:hover {
 .dropdown:hover .ddcontent {
     display: block;
 }
-.dropdown:last-child .ddcontent{
-  left: auto;
-  right: 0;
+
+.dropdown:last-child .ddcontent {
+    left: auto;
+    right: 0;
+}
+
+.viking {
+    background-image: url("/images/boat.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero_content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hobbyhead {
+    margin-top: 2rem;
+    color: #ffffff;
 }

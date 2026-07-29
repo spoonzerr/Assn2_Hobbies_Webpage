@@ -1,0 +1,9 @@
+.hero_media {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.hero_media.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
