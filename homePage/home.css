@@ -3,7 +3,14 @@ body {
 
 }
 
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 nav .nav-container {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,6 +19,7 @@ nav .nav-container {
     border: goldenrod 3px solid;
     border-bottom: 3px solid #cc9c1a;
     padding: 0 20px;
+
 }
 
 #main {
@@ -111,7 +119,7 @@ nav a:hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1;
-    
+
 }
 
 .hero_content {
@@ -122,20 +130,25 @@ nav a:hover {
     font-family: 'Cinzel';
     margin-bottom: 160px;
 }
+
 .hero_content h1 {
     columns: #f4c430;
     font: bold;
     font-size: 4rem;
 }
+
 .hero_content p {
-    max-width: 650px; 
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.6; 
+    line-height: 1.6;
     font-size: 1.5rem;
     color: #e0e6ed;
 }
+
 .hobbyhead {
     margin-top: 2rem;
     color: #ffffff;
 }
+
+
