@@ -1,5 +1,5 @@
 body {
-    background-color: #496681;
+    background-color: #0a2136;
 
 }
 
@@ -15,6 +15,10 @@ nav .nav-container {
     align-items: center;
     justify-content: space-between;
     background-color: #13213a7c;
+    background: linear-gradient(180deg,
+            rgba(244, 196, 48, 0.12) 0%,
+            rgba(244, 196, 48, 0.04) 50%,
+            rgba(244, 196, 48, 0) 100%);
     border-radius: 10px;
     border: goldenrod 3px solid;
     border-bottom: 3px solid #cc9c1a;
@@ -107,8 +111,10 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     color: white;
-    position: relative;
+    position: sticky;
     overflow: hidden;
+    top: 0;
+    z-index: 1;
 }
 
 .hero_overlay {
@@ -125,30 +131,141 @@ nav a:hover {
 .hero_content {
     position: relative;
     z-index: 2;
-    text-align: center;
+
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     font-family: 'Cinzel';
     margin-bottom: 160px;
 }
 
 .hero_content h1 {
-    columns: #f4c430;
-    font: bold;
+    color: #f4c430;
+    font-weight: bold;
     font-size: 4rem;
 }
 
 .hero_content p {
     max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+
     line-height: 1.6;
     font-size: 1.5rem;
     color: #e0e6ed;
 }
 
 .hobbyhead {
-    margin-top: 2rem;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #f4c430;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    margin: 10rem 0 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-bottom: 125px;
+}
+
+.hobbyhead::before,
+.hobbyhead::after {
+    content: "";
+    height: 2px;
+    width: clamp(40px, 10vw, 140px);
+    background: linear-gradient(90deg, transparent, #cc9c1a);
+}
+
+.hobbyhead::after {
+    background: linear-gradient(90deg, #cc9c1a, transparent);
+}
+
+.box-text h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 70px;
+    font-weight: 70;
     color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.arrow {
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.go-button {
+    background-color: #3377b1;
+    padding: 15px;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+    margin-top: 50px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.box-text p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+}
+
+.box-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-card {
+    width: 100%;
+    max-width: 46rem;
+    padding: 3rem 3rem 3.5rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(244, 196, 48, 0.22);
+    background: linear-gradient(180deg,
+            rgba(244, 196, 48, 0.12) 0%,
+            rgba(244, 196, 48, 0.04) 50%,
+            rgba(244, 196, 48, 0) 100%);
+
+}
+
+.box1,
+.box2 {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0 0 5rem;
+}
+
+.box1 .box-image {
+    border-radius: 0 20px 20px 0;
+}
+
+.box2 .box-image {
+    border-radius: 20px 0 0 20px;
+}
+
+.box2 {
+    flex-direction: row-reverse;
+}
+
+.box-image {
+    flex: 0 0 40%;
+    overflow: hidden;
 }
 
 
+.P2 {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #0a2136;
+    padding-top: 3vh
+}
