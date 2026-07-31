@@ -1,21 +1,4 @@
-// function initialHeroReveal() {
-//     const heroImg = document.querySelector
-//     const heroText = document.querySelector(".hero_content");
-//     if (!heroImg) return;
-// }
 
-// function reveal() {
-//     heroImg.classList.add("is-loaded");
-//     if (heroText) heroText.classList.add("is-visible");
-// }
-
-// if (heroImg.complete) {
-//     reveal();
-// } else {
-//     heroImg.addEventListener("load", reveal);
-// }
-
-// document.addEventListener("DOMContentLoaded", initHeroReveal);
 
 
 const images = document.querySelectorAll('.box-image img');
@@ -47,7 +30,8 @@ function initTextReveal() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-revealed");
-        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove("is-revealed");
       }
     });
   }, { threshold: 0.25 });

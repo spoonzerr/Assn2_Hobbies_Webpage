@@ -1,5 +1,5 @@
 body {
-    background-color: #496681;
+    background-color: #0a2136;
 
 }
 
@@ -15,6 +15,10 @@ nav .nav-container {
     align-items: center;
     justify-content: space-between;
     background-color: #13213a7c;
+    background: linear-gradient(180deg,
+            rgba(244, 196, 48, 0.12) 0%,
+            rgba(244, 196, 48, 0.04) 50%,
+            rgba(244, 196, 48, 0) 100%);
     border-radius: 10px;
     border: goldenrod 3px solid;
     border-bottom: 3px solid #cc9c1a;
