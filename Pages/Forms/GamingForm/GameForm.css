@@ -1,0 +1,9 @@
+body {
+    color: white;
+}
+
+input[type="text"] {
+    color: white;
+    background-color: #0000007c; /* match your theme's dark tone */
+    border: 1px solid goldenrod;
+}
