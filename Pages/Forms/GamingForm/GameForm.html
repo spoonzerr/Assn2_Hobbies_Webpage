@@ -30,17 +30,25 @@
 
         <!-- Get user first & last name -->
         <section class="form-section">
-            <div class="form-div">
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname" value="John" required /><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname" value="Doe" required /><br><br>
+            <!-- name -->
+            <div class="field">
+                <label for="fname">First name <span class="required">*</span></label>
+                <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="field">
+                <label for="lname">Last name <span class="required">*</span></label>
+                <input type="text" id="lname" name="lname" required>
+            </div>
 
             <div class="field-row">
                 <div class="field">
                     <label for="phone">Phone number</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9+\s\-]{8,15}" required>
-                    <span class="error">Enter a valid phone number (8–15 digits).</span>
+                    <div class="phone-group">
+                        <input type="text" id="countryCode" name="countryCode" class="country-code" placeholder="+65"
+                            pattern="\+?[0-9]{" 1,4} required>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9\s\-]{6,12}" required>
+                    </div>
+                    <span class="error">Enter a valid country code and phone number.</span>
                 </div>
                 <div class="field">
                     <label for="email">Email address</label>
@@ -52,25 +60,31 @@
             <!-- Get user gender -->
             <p>Gender:</p>
 
-            <input type="radio" id="Male" name="Gender" value="Male">
-            <label for="Male">Male</label><br>
-            <input type="radio" id="Female" name="Gender" value="Female">
-            <label for="Female">Female</label><br>
-            <input type="radio" id="Unknown" name="Gender" value="Unknown">
-            <label for="Unknown">Prefer not to say</label>
+            <div class="field">
+                <p class="field-label">Gender <span class="required">*</span></p>
+                <div class="radio-row">
+                    <label class="radio"><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label class="radio"><input type="radio" name="gender" value="Female"> Female</label>
+                    <label class="radio"><input type="radio" name="gender" value="Prefer not to say"> Prefer not to
+                        say</label>
+                </div>
+            </div>
 
             <!-- Get user age -->
             <div class="field">
-                <label for="ageGroup">Age group</label>
-                <select id="ageGroup" name="ageGroup" required>
-                    <option value="" selected disabled>Choose one…</option>
-                    <option value="Under 13">Under 13</option>
-                    <option value="13-17">13-17</option>
-                    <option value="18-24">18-24</option>
-                    <option value="25-34">25-34</option>
-                    <option value="35 and above">35 and above</option>
-                </select>
-                <span class="error">Please select your age group.</span>
+                <fieldset class="field">
+                    <legend>Age group</legend>
+                    <div class="radio-row">
+                        <label class="radio"><input type="radio" name="ageGroup" value="Under 13" required> Under
+                            13</label>
+                        <label class="radio"><input type="radio" name="ageGroup" value="13-17"> 13-17</label>
+                        <label class="radio"><input type="radio" name="ageGroup" value="18-24"> 18-24</label>
+                        <label class="radio"><input type="radio" name="ageGroup" value="25-34"> 25-34</label>
+                        <label class="radio"><input type="radio" name="ageGroup" value="35 and above"> 35 and
+                            above</label>
+                    </div>
+                    <span class="error">Please choose an age group.</span>
+                </fieldset>
             </div>
         </section>
 
