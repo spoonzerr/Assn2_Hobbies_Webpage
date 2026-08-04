@@ -1,6 +1,3 @@
-
-
-
 const images = document.querySelectorAll('.box-image img');
 
 const observer = new IntersectionObserver((entries) => {
