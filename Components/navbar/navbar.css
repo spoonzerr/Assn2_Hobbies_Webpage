@@ -2,101 +2,143 @@
 
 body {
     background-color: #0a2136;
-
 }
 
-nav {
-    position: sticky;
+/* fixed, not sticky — takes no space in flow, so no strip to cover */
+#navbar nav {
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    background-color: #0a2136;
+    padding: 12px 16px;
 }
 
-nav .nav-container {
-
+#navbar .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
     background-color: #13213a;
     background-image: linear-gradient(180deg,
-            rgba(244, 196, 48, 0.12) 0%,
-            rgba(244, 196, 48, 0.04) 50%,
+            rgba(244, 196, 48, 0.10) 0%,
+            rgba(244, 196, 48, 0.03) 55%,
             rgba(244, 196, 48, 0) 100%);
-    border-radius: 10px;
-    border: goldenrod 3px solid;
-    border-bottom: 3px solid #cc9c1a;
-    padding: 0 20px;
+    border: 1px solid rgba(244, 196, 48, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.4);
+    padding: 0 28px;
 }
 
 #main {
-    font-family: "Archivo Black", sans-serif;
+    font-family: 'Cinzel', serif;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: goldenrod;
+    letter-spacing: 0.22em;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f4c430;
     text-decoration: none;
-    font-size: 1.5em;
-    border-radius: 10px;
+    padding: 18px 0;
 }
 
-nav ul {
+/* top-level list only */
+#navMenu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-nav li {
-    margin: 0 5px;
+#navMenu > li { margin: 0; position: relative; }
 
-}
-
-nav a {
+/* top-level links only — the > > stops this reaching dropdown items */
+#navMenu > li > a {
     display: block;
-    padding: 14px 20px;
-    color: white;
+    position: relative;
+    padding: 22px 26px;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    font-family: "Libertinus Serif";
-    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.02em;
+    transition: color 0.25s ease;
 }
 
-nav a:hover {
-    background-color: #13213a7c;
+#navMenu > li > a::after {
+    content: "";
+    position: absolute;
+    left: 26px;
+    right: 26px;
+    bottom: 14px;
+    height: 2px;
+    background-color: #cc9c1a;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
-.dropdown {
-    position: relative;
-    margin-left: 15px;
+#navMenu > li > a:hover,
+#navMenu > li > a.active {
+    color: #f4c430;
 }
 
+#navMenu > li > a:hover::after,
+#navMenu > li > a.active::after,
+.dropdown:hover > a::after {
+    transform: scaleX(1);
+}
+
+/* ---------- dropdown ---------- */
 
 .ddcontent {
-    display: none;
+    display: block;
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #13213a7c;
-    border: 2px solid goldenrod;
-    border-radius: 8px;
-    min-width: 150px;
+    min-width: 200px;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background-color: #13213a;
+    border: 1px solid rgba(244, 196, 48, 0.45);
+    border-radius: 10px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
     z-index: 10000;
-    background-color: #0a2136;
 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
 
-.ddcontent li a {
-    padding: 10px 15px;
+/* :has(:focus-visible) opens on keyboard focus but NOT on mouse click,
+   so a clicked menu no longer sticks open while you hover another */
+.dropdown:hover .ddcontent,
+.dropdown:has(:focus-visible) .ddcontent {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.ddcontent li { margin: 0; }
+
+.ddcontent a {
     display: block;
-    color: white;
+    padding: 11px 16px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.ddcontent li a:hover {
-    background-color: #5a9bd3;
-    border: 2px solid goldenrod;
-}
-
-.dropdown:hover .ddcontent {
-    display: block;
+.ddcontent a:hover,
+.ddcontent a.active {
+    color: #f4c430;
+    background-color: rgba(244, 196, 48, 0.09);
 }
 
 .dropdown:last-child .ddcontent {
@@ -104,11 +146,89 @@ nav a:hover {
     right: 0;
 }
 
-/* breadcrumbs */
+/* ---------- hamburger ---------- */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid rgba(244, 196, 48, 0.45);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #f4c430;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+    .nav-toggle { display: flex; }
+
+    #navbar .nav-container { flex-wrap: wrap; padding: 10px 20px; }
+
+    #main { font-size: 1.1rem; letter-spacing: 0.16em; }
+
+    #navMenu {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    #navMenu.open { max-height: 40rem; }
+
+    #navMenu > li > a { padding: 14px 8px; }
+    #navMenu > li > a::after { left: 8px; right: 8px; bottom: 8px; }
+
+    .ddcontent,
+    .dropdown:hover .ddcontent {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        min-width: 0;
+        margin-left: 1rem;
+        padding: 0;
+        border: none;
+        border-left: 1px solid rgba(244, 196, 48, 0.45);
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .dropdown:last-child .ddcontent { right: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-toggle span,
+    #navMenu,
+    .ddcontent,
+    #navMenu > li > a,
+    #navMenu > li > a::after { transition: none; }
+}
+
+/* ---------- breadcrumbs ---------- */
+
 .crumbs {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem 2rem 0;
+    padding: 7rem 2rem 0;   /* clears the fixed navbar */
 }
 
 .crumbs ol {
@@ -123,13 +243,8 @@ nav a:hover {
     font-size: 0.95rem;
 }
 
-.crumbs li {
-    display: flex;
-    align-items: center;
-    margin: 0;
-}
+.crumbs li { display: flex; align-items: center; margin: 0; }
 
-/* override the navbar's nav a rule */
 .crumbs a {
     display: inline;
     padding: 0;
@@ -138,10 +253,7 @@ nav a:hover {
     font-weight: normal;
 }
 
-.crumbs a:hover {
-    text-decoration: underline;
-    background: none;
-}
+.crumbs a:hover { text-decoration: underline; }
 
 .crumbs li + li::before {
     content: "/";
@@ -149,6 +261,4 @@ nav a:hover {
     color: rgba(255, 255, 255, 0.35);
 }
 
-.crumbs [aria-current="page"] {
-    color: rgba(255, 255, 255, 0.6);
-}
+.crumbs [aria-current="page"] { color: rgba(255, 255, 255, 0.6); }

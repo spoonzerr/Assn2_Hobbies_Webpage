@@ -1,86 +1,349 @@
-.intro-media {
-    flex: 0 0 55%;
-    overflow: hidden;
-}
-
-.intro-media video {
-    width: 100%;
-    display: block;
+:root {
+    --navy: #0a2136;
+    --navy-surface: #13213a;
+    --gold: #f4c430;
+    --gold-soft: rgba(244, 196, 48, 0.2);
+    --text-dim: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
 }
 
 body {
-    background-color: #0a2136;
+    background-color: var(--navy);
     color: #ffffff;
     margin: 0;
+    font-family: 'Manrope', sans-serif;
 }
 
-/* ---- welcome ---- */
+/* WELCOME */
 .welcome {
     display: flex;
     justify-content: center;
-    padding: 6rem 2rem 4rem;
+    padding: 6rem 2rem 3rem;
 }
 
 .welcome-card {
     width: 100%;
     max-width: 60rem;
-    padding: 4rem 3rem;
+    padding: 3.5rem 2.5rem;
     text-align: center;
     border-radius: 24px;
-    border: 1px solid rgba(244, 196, 48, 0.25);
-    background: linear-gradient(180deg,
-        rgba(244, 196, 48, 0.12) 0%,
-        rgba(244, 196, 48, 0.04) 50%,
-        rgba(244, 196, 48, 0) 100%);
+    border: 1px solid var(--gold-soft);
+    background: linear-gradient(180deg, rgba(244, 196, 48, 0.12) 0%, rgba(244, 196, 48, 0.04) 50%, rgba(244, 196, 48, 0) 100%);
 }
 
 .welcome-card h1 {
     margin: 0;
     font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    line-height: 1.3;
+    letter-spacing: 0.12em;
     color: #ffffff;
 }
 
-.hobby-name { color: #f4c430; }
+.hobby-name {
+    color: var(--gold);
+}
 
-/* ---- video + description ---- */
-.intro {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+/* SHARED SECTION STYLES */
+.content-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem 6rem;
+    padding: 2rem 2rem 5rem;
 }
 
-.intro-media {
-    flex: 0 0 55%;
-    border-radius: 16px;
+.section-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+}
+.section-kicker::before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: var(--gold-soft);
+}
+
+.section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+/* WHAT PEOPLE ENJOY (SLIDESHOW CARDS) */
+.enjoy-card {
+    background: rgba(19, 33, 58, 0.7);  
+    border: 1px solid var(--gold-soft);
+    border-radius: 1rem;
     overflow: hidden;
-    border: 1px solid rgba(244, 196, 48, 0.2);
-    background: #000;
+    height: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.enjoy-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
 }
 
-.intro-media video {
+.slideshow-box {
+    position: relative;
     width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slideshow-box img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-box img.active {
+    opacity: 1;
+}
+
+.enjoy-card-body {
+    padding: 1.5rem;
+}
+
+.enjoy-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.enjoy-card-body p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* TOP 10 PLACES - CAROUSEL & PHOTO DOTS */
+.places-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) var(--navy-surface);
+}
+
+.places-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.places-carousel::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+.place-card {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    background: rgba(19, 33, 58, 0.7);
+    border: 1px solid var(--gold-soft);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.place-photo-slider {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.place-photo-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.place-photo-slider img.active {
     display: block;
 }
 
-.intro-text {
-    flex: 1;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 33, 54, 0.7);
+    border: 1px solid var(--gold-soft);
+    color: var(--gold);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+.slider-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+.slider-btn.prev { left: 0.5rem; }
+.slider-btn.next { right: 0.5rem; }
+
+.dots-indicator {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    z-index: 2;
 }
 
-@media (max-width: 767px) {
-    .welcome { padding: 3rem 1.5rem 2rem; }
-    .welcome-card { padding: 2.5rem 1.5rem; }
-    .intro { flex-direction: column; gap: 2rem; padding: 1rem 1.5rem 4rem; }
-    .intro-media { flex: 1 1 auto; width: 100%; }
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: background 0.2s, transform 0.2s;
+}
+.dot.active {
+    background: var(--gold);
+    transform: scale(1.2);
+}
+
+.place-card-body {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.place-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.place-card-body p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* TYPES OF TRAVELLERS (PEEL FORMAT) */
+.peel-card {
+    background: rgba(19, 33, 58, 0.7);
+    border: 1px solid var(--gold-soft);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.peel-card-inner {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .peel-card-inner {
+        flex-direction: row;
+    }
+    .peel-media {
+        width: 40%;
+        flex-shrink: 0;
+    }
+    .peel-content {
+        width: 60%;
+    }
+}
+
+.peel-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+}
+
+.peel-content {
+    padding: 2rem;
+}
+
+.peel-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.peel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.peel-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+.peel-list strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* CLOSING CTA */
+.cta-quest {
+    text-align: center;
+    background: rgba(19, 33, 58, 0.8);
+    border: 1px solid rgba(244, 196, 48, 0.4);
+    border-radius: 1.25rem;
+    padding: 3.5rem 1.5rem;
+}
+.cta-quest h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--gold);
+}
+.btn-quest {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 600;
+    border: none;
+    border-radius: 50rem;
+    padding: 0.75rem 2.25rem;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-quest:hover {
+    background: #e0b52c;
+    color: var(--navy);
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    padding: 0;
+    z-index: 1000;
 }

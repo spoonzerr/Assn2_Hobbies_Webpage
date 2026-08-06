@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming — Hobbyssey</title>
+    <meta name="description" content="Why I play, how it fits around the day, and the runs worth remembering.">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Components/navbar/navbar.css">
     <link rel="stylesheet" href="/Components/fade-in/fadeIn.css">
-    <link rel="stylesheet" href="/Pages/homePage/home.css">
     <link rel="stylesheet" href="/Pages/Hobbies/Gaming/gaming.css">
 
     <script src="/Components/navbar/navbar.js" defer></script>
@@ -18,16 +22,399 @@
 </head>
 
 <body>
+
+    <!-- Bootstrap helper: hidden until focused, then visible -->
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
+
     <div id="navbar"></div>
 
-    <div class="crumbs" aria-label="Breadcrumb">
-        <ol>
-            <li><a href="/Pages/homePage/home.html">Home</a></li>
-            <li aria-current="page">Gaming</li>
+    <!-- Bootstrap component: breadcrumb -->
+    <nav class="container pt-5 mt-4" aria-label="Breadcrumb">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/Pages/homePage/home.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Pages/homePage/home.html#hobbies">Hobbies</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Gaming</li>
         </ol>
-    </div>
+    </nav>
 
-    <p>hello</p>
+    <main id="main">
+
+        <!-- ============ WELCOME ============ -->
+        <header class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card gold-card text-center reveal">
+                        <div class="card-body p-4 p-lg-5">
+                            <p class="eyebrow mb-3">Hobby 01 &middot; Since 2018</p>
+                            <h1 class="display-title mb-3">
+                                Welcome to<br><span class="text-gold">Gaming</span>
+                            </h1>
+                            <p class="lead mb-0 mx-auto" style="max-width: 38rem;">
+                                Tactical shooters, platform fighters, and whatever went free
+                                this week &mdash; mostly on PC, almost never alone.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============ INTRO ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="intro-heading">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <!-- Bootstrap helper: ratio -->
+                    <div class="ratio ratio-4x3 rounded-4 overflow-hidden border gold-border reveal reveal-left">
+                        <img src="/Assets/images/gaming-hero.jpg"
+                             alt="A game controller resting on a desk under warm, low lighting">
+                    </div>
+                </div>
+
+                <div class="col-lg-7 reveal reveal-right">
+                    <h2 id="intro-heading" class="chapter">How it started</h2>
+                    <blockquote class="blockquote opener mb-0">
+                        <p class="mb-0">It started with whatever was free and whoever was
+                            online. It stuck because the games kept changing and the people
+                            on the call didn't.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ STATS ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="stats-heading">
+            <h2 id="stats-heading" class="visually-hidden">Gaming at a glance</h2>
+
+            <div class="card gold-card">
+                <div class="row g-0 text-center">
+                    <div class="col-6 col-lg-3 stat-cell reveal">
+                        <p class="stat-value mb-1" data-count="8">08</p>
+                        <p class="stat-label mb-0">Years playing</p>
+                    </div>
+                    <div class="col-6 col-lg-3 stat-cell reveal">
+                        <p class="stat-value mb-1" data-count="4">04</p>
+                        <p class="stat-label mb-0">Games in rotation</p>
+                    </div>
+                    <div class="col-6 col-lg-3 stat-cell reveal">
+                        <p class="stat-value mb-1">PC</p>
+                        <p class="stat-label mb-0">Platform of choice</p>
+                    </div>
+                    <div class="col-6 col-lg-3 stat-cell reveal">
+                        <p class="stat-value mb-1">Top 1&ndash;2%</p>
+                        <p class="stat-label mb-0">Peak Valorant rank</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ WHY I PLAY ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="why-heading">
+            <div class="row g-4 g-lg-5">
+                <div class="col-lg-5 reveal reveal-left">
+                    <h2 id="why-heading" class="chapter">Why I play</h2>
+                    <p>The honest answer is that it's the easiest way I have to spend time
+                        with people who don't live nearby any more. We're spread across
+                        different schedules and different parts of the island, and a lobby is
+                        the one place we all reliably turn up.</p>
+                    <p class="mb-0">The games themselves matter less than they look like they
+                        do. Some nights it's ranked and everyone's locked in; some nights it's
+                        whatever went free that week and nobody's really playing at all.
+                        Both count.</p>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card gold-card mb-4 reveal reveal-right">
+                        <div class="card-body p-4">
+                            <blockquote class="blockquote pull mb-0">
+                                <p class="mb-0">Nobody remembers the rank. Everyone remembers
+                                    the call at 2am when the whole team was crying laughing
+                                    over a lost round.</p>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="ratio ratio-1x1 rounded-4 overflow-hidden border gold-border reveal reveal-right">
+                                <img src="/Assets/images/gaming-desk.jpg"
+                                     alt="Desk setup with a monitor, keyboard and headset"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="ratio ratio-1x1 rounded-4 overflow-hidden border gold-border reveal reveal-right">
+                                <img src="/Assets/images/gaming-coop.jpg"
+                                     alt="Friends gathered around a screen during a co-op night"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BEATS ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="beats-heading">
+            <div class="row mb-4">
+                <div class="col-lg-9 reveal">
+                    <h2 id="beats-heading" class="chapter">It goes where I go</h2>
+                    <p class="lead mb-0">The best thing about gaming isn't any one game
+                        &mdash; it's that it bends around the day. Twenty minutes on a train,
+                        an hour winding down, or a whole evening with the door shut and the
+                        headset on.</p>
+                </div>
+            </div>
+
+            <ol class="beat-list list-unstyled mb-0">
+                <li class="card gold-card mb-3 reveal reveal-up">
+                    <div class="card-body">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-auto beat-num"></div>
+                            <div class="col">
+                                <h3 class="h5 beat-title">On the go</h3>
+                                <p>A phone or a handheld turns dead time into something. The
+                                    commute, the gap between classes, the ten minutes before
+                                    a meeting starts.</p>
+                                <p class="note mb-0">Mostly whatever's free that week. Low
+                                    stakes by design.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ratio ratio-16x9 rounded-3 overflow-hidden border border-secondary-subtle">
+                                    <img src="/Assets/images/gaming-mobile.jpg"
+                                         alt="Playing on a handheld console while travelling"
+                                         loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="card gold-card mb-3 reveal reveal-up">
+                    <div class="card-body">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-auto beat-num"></div>
+                            <div class="col">
+                                <h3 class="h5 beat-title">Winding down</h3>
+                                <p>Low stakes, low volume, lights off. Something slow enough
+                                    to put down mid-sentence, and forgiving enough that
+                                    playing badly costs nothing.</p>
+                                <p class="note mb-0">Roblox filled this slot for years. Now
+                                    it's casual Brawlhalla.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ratio ratio-16x9 rounded-3 overflow-hidden border border-secondary-subtle">
+                                    <img src="/Assets/images/gaming-winddown.jpg"
+                                         alt="A dim room lit only by a screen during a late evening session"
+                                         loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="card gold-card mb-3 reveal reveal-up">
+                    <div class="card-body">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-auto beat-num"></div>
+                            <div class="col">
+                                <h3 class="h5 beat-title">Locked in at the desk</h3>
+                                <p>The other end of it: proper setup, full attention, a
+                                    difficulty that asks something of you. Ranked Valorant or
+                                    Counter-Strike, comms on.</p>
+                                <p class="note mb-0">This is the version that got me to the
+                                    top 1&ndash;2%.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ratio ratio-16x9 rounded-3 overflow-hidden border border-secondary-subtle">
+                                    <img src="/Assets/images/gaming-focused.jpg"
+                                         alt="A focused desk setup mid-match with comms on"
+                                         loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="card gold-card mb-3 reveal reveal-up">
+                    <div class="card-body">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-auto beat-num"></div>
+                            <div class="col">
+                                <h3 class="h5 beat-title">And it's never really solo</h3>
+                                <p>Friends in different places, same Discord call, most weeks.
+                                    The game is half the reason we still talk regularly.</p>
+                                <p class="note mb-0">Same four or five people, most nights,
+                                    for years now.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ratio ratio-16x9 rounded-3 overflow-hidden border border-secondary-subtle">
+                                    <img src="/Assets/images/gaming-group.jpg"
+                                         alt="A group co-op night with several people playing together"
+                                         loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============ VIDEO ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="watch-heading">
+            <div class="row g-4 g-lg-5 align-items-center">
+                <div class="col-lg-7">
+                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden border gold-border bg-black reveal reveal-left">
+                        <video controls preload="metadata" poster="/Assets/images/gaming-hero.jpg">
+                            <source src="/Assets/videos/gaming.mp4" type="video/mp4">
+                            <track kind="captions" src="/Assets/videos/gaming.vtt" srclang="en"
+                                   label="English" default>
+                            <p>Your browser can't play embedded video.
+                               <a href="/Assets/videos/gaming.mp4">Download the clip</a>.</p>
+                        </video>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 reveal reveal-right">
+                    <h2 id="watch-heading" class="chapter">A run worth watching</h2>
+                    <p>A clip from the local tournament run &mdash; the series that took us to
+                        the semi-finals. It isn't the cleanest round we've played, but it's
+                        the one where everything actually came together.</p>
+                    <figure class="mb-0">
+                        <figcaption class="figure-caption caption pt-3 border-top">
+                            Local tournament &middot; semi-final &middot; playing with the
+                            usual five.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ MOMENTS ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="moments-heading">
+            <h2 id="moments-heading" class="chapter">Screenshots &amp; moments</h2>
+
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <figure class="figure d-block mb-0 position-relative rounded-4 overflow-hidden border gold-border reveal reveal-up">
+                        <div class="ratio ratio-4x3">
+                            <img src="/Assets/images/gaming-suntec.jpg" class="figure-img mb-0"
+                                 alt="The tournament floor at Suntec, rows of players at their stations"
+                                 loading="lazy">
+                        </div>
+                        <figcaption class="figure-caption mosaic-caption">
+                            Suntec &mdash; a bracket alongside professional players.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <figure class="figure d-block mb-0 position-relative rounded-4 overflow-hidden border gold-border reveal reveal-up">
+                                <div class="ratio ratio-1x1">
+                                    <img src="/Assets/images/gaming-semis.jpg" class="figure-img mb-0"
+                                         alt="The team regrouping between matches at a local tournament"
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="figure-caption mosaic-caption">Semi-finals.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="figure d-block mb-0 position-relative rounded-4 overflow-hidden border gold-border reveal reveal-up">
+                                <div class="ratio ratio-1x1">
+                                    <img src="/Assets/images/gaming-valorant-rank.jpg" class="figure-img mb-0"
+                                         alt="Valorant rank card showing a top 1 to 2 percent placement"
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="figure-caption mosaic-caption">Top 1&ndash;2%.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="figure d-block mb-0 position-relative rounded-4 overflow-hidden border gold-border reveal reveal-up">
+                                <div class="ratio ratio-1x1">
+                                    <img src="/Assets/images/gaming-brawl-rank.jpg" class="figure-img mb-0"
+                                         alt="Brawlhalla rank card showing a top 5 percent placement"
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="figure-caption mosaic-caption">Top 5%.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="figure d-block mb-0 position-relative rounded-4 overflow-hidden border gold-border reveal reveal-up">
+                                <div class="ratio ratio-1x1">
+                                    <img src="/Assets/images/gaming-clutch.jpg" class="figure-img mb-0"
+                                         alt="Screenshot of the final scoreboard from a match-winning round"
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="figure-caption mosaic-caption">The final round.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CLOSING ============ -->
+        <section class="container pb-5 mb-5" aria-labelledby="closing-heading">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card gold-card text-center reveal">
+                        <div class="card-body p-4">
+                            <h2 id="closing-heading" class="card-title card-heading">
+                                Want to play together?
+                            </h2>
+                            <p class="card-text mb-4">Free to join, any rank, any level. Tell
+                                us what you play and when you're usually online.</p>
+                            <a class="btn btn-gold btn-lg"
+                               href="/Pages/Forms/GamingForm/GameForm.html">
+                                Sign up for gaming
+                                <span class="arrow ms-2" aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer border-top">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <h2 class="footer-mark">Hobbyssey</h2>
+                    <p class="mb-0">Four hobbies, one page. Gaming nights with friends, a trip
+                        still being planned, a guitar we're still learning, and whatever comes
+                        out of the oven on weekends.</p>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h3 class="footer-head">Explore</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="/Pages/homePage/home.html">Home</a></li>
+                        <li><a href="/Pages/Hobbies/Gaming/hobbyGaming.html">Gaming</a></li>
+                        <li><a href="/Pages/Hobbies/Travelling/hobbyTravelling.html">Travelling</a></li>
+                        <li><a href="/Pages/Hobbies/Guitar/hobbyGuitar.html">Guitar</a></li>
+                        <li><a href="/Pages/Hobbies/Baking/hobbyBaking.html">Baking</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-4">
+                    <h3 class="footer-head">Feedback</h3>
+                    <p>Think we've missed a hobby worth trying? We're listening.</p>
+                    <a href="/Pages/Forms/FeedbackForm/FeedbackForm.html" class="text-gold">
+                        Leave feedback <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom border-top text-center py-3">
+            <p class="mb-0">&copy; 2026 Hobbyssey.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

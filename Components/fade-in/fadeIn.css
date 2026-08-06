@@ -1,26 +1,28 @@
+/* =========================================================
+   fadeIn.css
+   Homepage rules first, then the generic hobby-page reveal.
+   ========================================================= */
 
+/* ---------- homepage images ---------- */
 
-.box2 {
-    
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 40px;
-    margin: 10px 0 60px;
+.box-image img {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.box1 {
-    
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin: 10px 0 60px;
+.box1 .box-image img { transform: translateX(-60px); }
+.box2 .box-image img { transform: translateX(60px); }
+
+.box-image img.loaded {
+    opacity: 1;
+    transform: translateX(0);
 }
+
+/* ---------- homepage text ---------- */
 
 .box-text {
-    flex: 1;
     opacity: 0;
-    transition: opacity 0.6s ease; transform: 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
     transition-delay: 0.15s;
 }
 
@@ -32,43 +34,39 @@
     transform: translateX(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .box-text { opacity: 1; transform: none; transition: none; }
-}
+/* ---------- hobby pages ---------- */
 
-.box-image {
-    flex: 0 0 40%;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.box-image img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
+.reveal {
     opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: 0.15s; 
-}
-.box-image img.loaded {
-    opacity: 1;
-    transform: translateX(0);
+    transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.box1 .box-image img.loaded,
-.box2 .box-image img.loaded {
+.reveal-left  { transform: translate3d(-48px, 0, 0); }
+.reveal-right { transform: translate3d(48px, 0, 0); }
+.reveal-up    { transform: translate3d(0, 36px, 0); }
+
+.reveal.is-revealed {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
 }
 
-@media (max-width: 767px) {
-    .box1, .box2 {
-        flex-direction: column;
-        gap: 20px;
+/* tiles cascade rather than appearing together */
+.stat:nth-child(2),
+.mosaic figure:nth-child(2) { transition-delay: 0.08s; }
+.stat:nth-child(3),
+.mosaic figure:nth-child(3) { transition-delay: 0.16s; }
+.stat:nth-child(4),
+.mosaic figure:nth-child(4) { transition-delay: 0.24s; }
+.mosaic figure:nth-child(5) { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .box-image img,
+    .box-text,
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
-    .box-image { flex: 1 1 auto; width: 100%; }
 }
-
-
