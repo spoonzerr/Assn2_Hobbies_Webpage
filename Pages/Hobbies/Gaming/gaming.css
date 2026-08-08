@@ -19,7 +19,7 @@
         rgba(244, 196, 48, 0) 100%);
     --display: 'Cinzel', serif;
 
-    /* Bootstrap globals — retheming its defaults at the source */
+    /* Bootstrap globals - retheming its defaults at the source */
     --bs-body-bg: var(--navy);
     --bs-body-color: var(--ink-soft);
     --bs-body-font-family: Georgia, 'Times New Roman', Times, serif;
@@ -39,8 +39,7 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
 .ratio > img,
 .ratio > video { width: 100%; height: 100%; object-fit: cover; }
 
-/* clears the fixed navbar — one class, used on the first
-   element of the page so nothing sits underneath it */
+/* clears the fixed navbar - used on the first element of the page */
 .below-nav { padding-top: 7.5rem; }
 
 /* ---------- card: themed via Bootstrap's card variables ---------- */
@@ -64,14 +63,6 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
     text-indent: 0.14em;
     text-transform: uppercase;
     line-height: 1.3;
-}
-
-.eyebrow {
-    font-family: var(--display);
-    font-size: 0.78rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--gold-deep);
 }
 
 .chapter {
@@ -101,6 +92,16 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
     color: var(--gold);
 }
 
+/* running text - normal case and a readable measure */
+.body-copy p {
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 34rem;
+}
+
 /* ---------- blockquotes ---------- */
 
 .opener {
@@ -124,51 +125,104 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
 
 .caption { font-style: italic; color: var(--ink-faint); }
 
-/* ---------- stats ---------- */
+/* ---------- table: themed via Bootstrap's table variables ---------- */
 
-.stat-cell {
-    padding: 1.5rem 1rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.09);
+.gold-table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--ink-soft);
+    --bs-table-hover-bg: rgba(244, 196, 48, 0.06);
+    --bs-table-hover-color: var(--ink);
 }
 
-.stat-value {
+.gold-table thead th {
+    padding-bottom: 0.9rem;
+    border-bottom: 2px solid var(--gold-deep);
     font-family: var(--display);
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--gold);
-    line-height: 1.1;
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--ink-faint);
-}
-
-/* ---------- beats ---------- */
-
-.beat-list { counter-reset: beat; }
-.beat-list > li { counter-increment: beat; }
-
-/* the numeral is decoration — the <ol> already conveys order */
-.beat-num::before {
-    content: counter(beat, decimal-leading-zero);
-    font-family: var(--display);
-    font-size: 2rem;
-    font-weight: 700;
     color: var(--gold);
-    line-height: 1;
+    white-space: nowrap;
 }
 
-.beat-title { letter-spacing: 0.04em; color: var(--ink); }
+/* the Casual / Competitive divider rows */
+.gold-table .group-row th {
+    padding: 1.75rem 0.75rem 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    background: transparent;
+}
 
-.note {
-    padding-left: 1rem;
-    border-left: 2px solid var(--gold-deep);
-    font-size: 0.9rem;
+.gold-table .group-row:hover th { background: transparent; }
+
+.gold-table tbody th[scope="row"],
+.gold-table tbody td {
+    padding: 0.9rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.gold-table tbody th[scope="row"] {
+    font-family: var(--display);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
+.gold-table caption {
+    caption-side: bottom;
+    padding-top: 1rem;
     font-style: italic;
+    font-size: 0.9rem;
     color: var(--ink-faint);
+}
+
+/* ---------- accordion: themed via Bootstrap's variables ---------- */
+
+.gold-accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-color: var(--ink-soft);
+    --bs-accordion-border-color: var(--rule);
+    --bs-accordion-border-radius: 14px;
+    --bs-accordion-btn-color: var(--ink);
+    --bs-accordion-btn-bg: transparent;
+    --bs-accordion-active-color: var(--gold);
+    --bs-accordion-active-bg: rgba(244, 196, 48, 0.07);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.25);
+    --bs-accordion-btn-padding-y: 1.15rem;
+}
+
+.gold-accordion .accordion-item {
+    margin-bottom: 0.75rem;
+    background-image: var(--wash);
+}
+
+.gold-accordion .accordion-button {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+/* recolours Bootstrap's chevron, which is an SVG background-image */
+.gold-accordion .accordion-button::after {
+    filter: invert(78%) sepia(60%) saturate(500%) hue-rotate(350deg);
+}
+
+.gold-accordion .accordion-body { line-height: 1.8; }
+
+.gold-accordion .accordion-body {
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 60rem;
 }
 
 /* ---------- mosaic captions ---------- */
@@ -208,8 +262,8 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
     --bs-breadcrumb-item-active-color: rgba(255, 255, 255, 0.6);
 }
 
-/* :visited needs stating explicitly — browsers apply their own
-   purple to visited links regardless of the --bs-link-color above */
+/* :visited needs stating explicitly - browsers apply their own
+   purple to visited links regardless of --bs-link-color above */
 .breadcrumb a,
 .breadcrumb a:visited { color: var(--gold); text-decoration: none; }
 .breadcrumb a:hover { color: var(--gold-deep); text-decoration: underline; }
@@ -240,13 +294,7 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
 
 /* ---------- responsive ---------- */
 
-@media (max-width: 991.98px) {
-    .stat-cell:nth-child(2n) { border-right: none; }
-    .stat-cell:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, 0.09); }
-}
-
 @media (max-width: 575.98px) {
     .below-nav { padding-top: 6rem; }
     .chapter { flex-wrap: wrap; }
-    .beat-num::before { font-size: 1.75rem; }
 }

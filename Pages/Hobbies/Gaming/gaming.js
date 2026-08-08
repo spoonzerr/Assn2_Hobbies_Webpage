@@ -101,3 +101,29 @@ function padded(n) {
 }
 
 document.addEventListener("DOMContentLoaded", initStatCount);
+
+        // aria-pressed carries the state, so screen readers hear which is selected
+        bar.querySelectorAll(".chip").forEach(c => {
+            const on = c === chip;
+            c.classList.toggle("active", on);
+            c.setAttribute("aria-pressed", String(on));
+        });
+
+        const filter = chip.dataset.filter;
+        let shown = 0;
+
+        items.forEach(item => {
+            const match = filter === "all" || item.dataset.category === filter;
+            item.hidden = !match;
+            if (match) shown++;
+
+            // close anything being hidden, so it doesn't reappear open later
+            if (!match) {
+                const panel = item.querySelector(".accordion-collapse");
+                if (panel) bootstrap.Collapse.getInstance(panel)?.hide();
+            }
+        });
+
+        if (empty) empty.hidden = shown !== 0;
+
+document.addEventListener("DOMContentLoaded", initPerkFilter);
