@@ -1,98 +1,208 @@
-:root {
-    --navy: #0a2136;
-    --navy-surface: #13213a;
-    --gold: #f4c430;
-    --gold-soft: rgba(244, 196, 48, 0.2);
-    --text-dim: rgba(255, 255, 255, 0.8);
-    --text-muted: rgba(255, 255, 255, 0.6);
-}
-
+/* Base Setup */
 body {
-    background-color: var(--navy);
-    color: #ffffff;
+    background-color: #0a2136;
+    color: #f8fafc;
     margin: 0;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* WELCOME */
+/* ============================================================
+   HERO / WELCOME HEADER
+============================================================ */
 .welcome {
     display: flex;
     justify-content: center;
-    padding: 6rem 2rem 3rem;
+    padding: 5rem 1.5rem 2.5rem;
 }
 
 .welcome-card {
     width: 100%;
-    max-width: 60rem;
-    padding: 3.5rem 2.5rem;
+    max-width: 58rem;
+    padding: 4rem 2.5rem;
     text-align: center;
-    border-radius: 24px;
-    border: 1px solid var(--gold-soft);
-    background: linear-gradient(180deg, rgba(244, 196, 48, 0.12) 0%, rgba(244, 196, 48, 0.04) 50%, rgba(244, 196, 48, 0) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    background: linear-gradient(180deg,
+        rgba(244, 196, 48, 0.12) 0%,
+        rgba(244, 196, 48, 0.04) 50%,
+        rgba(244, 196, 48, 0) 100%);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-card h1 {
     margin: 0;
     font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #ffffff;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    color: #f8fafc;
 }
 
 .hobby-name {
-    color: var(--gold);
+    color: #e6b831;
+    text-shadow: 0 0 20px rgba(230, 184, 49, 0.25);
 }
 
-/* SHARED SECTION STYLES */
+.hero-subtext {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(248, 250, 252, 0.82);
+    margin: 1.5rem auto 0;
+    max-width: 38rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* ============================================================
+   SHARED SECTION HEADINGS
+============================================================ */
 .content-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem 5rem;
+    padding: 3rem 1.5rem 4rem;
 }
 
 .section-kicker {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.25em;
-    color: var(--gold);
+    color: #e6b831;
 }
+
 .section-kicker::before {
     content: "";
-    width: 2rem;
-    height: 1px;
-    background: var(--gold-soft);
+    width: 1.75rem;
+    height: 1.5px;
+    background: #e6b831;
 }
 
 .section-heading {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.2;
+    color: #f8fafc;
+    letter-spacing: -0.01em;
 }
 
-/* WHAT PEOPLE ENJOY (SLIDESHOW CARDS) */
+.section-subheading {
+    font-size: 1rem;
+    color: rgba(248, 250, 252, 0.82);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 620px;
+}
+
+/* ============================================================
+   INTRO SECTION (VIDEO & STATS)
+============================================================ */
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.intro-media {
+    flex: 0 0 48%;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    background: #000;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    aspect-ratio: 16 / 10;
+}
+
+.intro-media video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.intro-text-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: #f8fafc;
+    line-height: 1.25;
+}
+
+.intro-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(248, 250, 252, 0.82);
+}
+
+.intro-highlights {
+    display: flex;
+    gap: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(230, 184, 49, 0.2);
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e6b831;
+    line-height: 1;
+}
+
+.highlight-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    color: rgba(248, 250, 252, 0.55);
+    margin-top: 0.35rem;
+}
+
+/* ============================================================
+   WHY PEOPLE ENJOY CARDS
+============================================================ */
 .enjoy-card {
-    background: rgba(19, 33, 58, 0.7);  
-    border: 1px solid var(--gold-soft);
-    border-radius: 1rem;
+    background: rgba(19, 36, 60, 0.65);
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    border-radius: 14px;
     overflow: hidden;
     height: 100%;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .enjoy-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--gold);
+    transform: translateY(-5px);
+    border-color: rgba(230, 184, 49, 0.45);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .slideshow-box {
     position: relative;
     width: 100%;
-    height: 200px;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
 }
 
@@ -103,7 +213,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slideshow-box img.active {
@@ -116,19 +226,22 @@ body {
 
 .enjoy-card-body h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    color: var(--gold);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #e6b831;
     margin-bottom: 0.5rem;
 }
 
 .enjoy-card-body p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
+    color: rgba(248, 250, 252, 0.82);
+    font-size: 0.925rem;
     line-height: 1.6;
     margin: 0;
 }
 
-/* TOP 10 PLACES - CAROUSEL & PHOTO DOTS */
+/* ============================================================
+   TOP 10 PLACES CAROUSEL
+============================================================ */
 .places-carousel {
     display: flex;
     gap: 1.5rem;
@@ -136,32 +249,43 @@ body {
     scroll-snap-type: x mandatory;
     padding-bottom: 1.5rem;
     scrollbar-width: thin;
-    scrollbar-color: var(--gold) var(--navy-surface);
+    scrollbar-color: #e6b831 #071524;
 }
 
 .places-carousel::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
 }
+
+.places-carousel::-webkit-scrollbar-track {
+    background: #071524;
+}
+
 .places-carousel::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
+    background: #e6b831;
+    border-radius: 10px;
 }
 
 .place-card {
-    flex: 0 0 340px;
+    flex: 0 0 320px;
     scroll-snap-align: start;
-    background: rgba(19, 33, 58, 0.7);
-    border: 1px solid var(--gold-soft);
-    border-radius: 1rem;
+    background: rgba(19, 36, 60, 0.65);
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    border-radius: 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.place-card:hover {
+    border-color: rgba(230, 184, 49, 0.45);
 }
 
 .place-photo-slider {
     position: relative;
     width: 100%;
-    height: 220px;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
 }
 
@@ -180,46 +304,51 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(10, 33, 54, 0.7);
-    border: 1px solid var(--gold-soft);
-    color: var(--gold);
+    background: rgba(7, 21, 36, 0.75);
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    color: #e6b831;
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 2;
-    transition: background 0.2s;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .slider-btn:hover {
-    background: var(--gold);
-    color: var(--navy);
+    background: #e6b831;
+    color: #071524;
+    border-color: #e6b831;
 }
-.slider-btn.prev { left: 0.5rem; }
-.slider-btn.next { right: 0.5rem; }
+
+.slider-btn.prev { left: 0.6rem; }
+.slider-btn.next { right: 0.6rem; }
 
 .dots-indicator {
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0.6rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 0.4rem;
+    gap: 0.35rem;
     z-index: 2;
 }
 
 .dot {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    transition: background 0.2s, transform 0.2s;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .dot.active {
-    background: var(--gold);
-    transform: scale(1.2);
+    background: #e6b831;
+    transform: scale(1.3);
 }
 
 .place-card-body {
@@ -231,119 +360,187 @@ body {
 
 .place-card-body h3 {
     font-family: 'Cormorant Garamond', serif;
-    color: var(--gold);
-    font-size: 1.4rem;
+    color: #e6b831;
+    font-size: 1.35rem;
+    font-weight: 700;
     margin-bottom: 0.4rem;
 }
 
 .place-card-body p {
     font-size: 0.9rem;
-    color: var(--text-dim);
-    line-height: 1.5;
+    color: rgba(248, 250, 252, 0.82);
+    line-height: 1.55;
     margin: 0;
 }
 
-/* TYPES OF TRAVELLERS (PEEL FORMAT) */
-.peel-card {
-    background: rgba(19, 33, 58, 0.7);
-    border: 1px solid var(--gold-soft);
-    border-radius: 1rem;
-    overflow: hidden;
-    margin-bottom: 2rem;
+/* ============================================================
+   TRAVELLER PROFILES TABLE
+============================================================ */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.peel-card-inner {
-    display: flex;
-    flex-direction: column;
-}
-@media (min-width: 768px) {
-    .peel-card-inner {
-        flex-direction: row;
-    }
-    .peel-media {
-        width: 40%;
-        flex-shrink: 0;
-    }
-    .peel-content {
-        width: 60%;
-    }
-}
-
-.peel-media img {
+.traveller-table {
     width: 100%;
-    height: 100%;
-    min-height: 250px;
-    object-fit: cover;
+    border-collapse: collapse;
+    background: rgba(19, 36, 60, 0.65);
+    color: #f8fafc;
+    backdrop-filter: blur(8px);
 }
 
-.peel-content {
-    padding: 2rem;
-}
-
-.peel-content h3 {
+.traveller-table th {
+    background: rgba(10, 23, 40, 0.95);
+    color: #e6b831;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: left;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid rgba(230, 184, 49, 0.2);
 }
 
-.peel-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+.traveller-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(230, 184, 49, 0.2);
+    vertical-align: middle;
 }
 
-.peel-list li {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-dim);
+.traveller-table tr:last-child td {
+    border-bottom: none;
 }
 
-.peel-list strong {
-    color: var(--gold);
+.traveller-table tr {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.traveller-table tr:hover {
+    background: rgba(230, 184, 49, 0.04);
+}
+
+.col-photo {
+    width: 28%;
+    min-width: 170px;
+}
+
+.cell-photo img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+}
+
+.col-info {
+    width: 72%;
+}
+
+.traveller-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #e6b831;
+    margin: 0 0 0.2rem 0;
+}
+
+.traveller-subtext {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-weight: 600;
+    color: rgba(248, 250, 252, 0.55);
+    display: block;
+    margin-bottom: 0.75rem;
 }
 
-/* CLOSING CTA */
+.traveller-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(248, 250, 252, 0.82);
+    margin: 0;
+}
+
+/* ============================================================
+   CALL TO ACTION & FOOTER BUTTONS
+============================================================ */
 .cta-quest {
     text-align: center;
-    background: rgba(19, 33, 58, 0.8);
-    border: 1px solid rgba(244, 196, 48, 0.4);
-    border-radius: 1.25rem;
-    padding: 3.5rem 1.5rem;
+    background: linear-gradient(180deg, rgba(19, 36, 60, 0.8) 0%, rgba(10, 23, 40, 0.9) 100%);
+    border: 1px solid rgba(230, 184, 49, 0.45);
+    border-radius: 20px;
+    padding: 4rem 1.5rem;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
 }
+
 .cta-quest h2 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
-    font-size: 2.5rem;
-    color: var(--gold);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: #e6b831;
+    margin-top: 0.5rem;
 }
+
 .btn-quest {
-    background: var(--gold);
-    color: var(--navy);
-    font-weight: 600;
+    background: #e6b831;
+    color: #071524;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
     border: none;
     border-radius: 50rem;
-    padding: 0.75rem 2.25rem;
+    padding: 0.85rem 2.5rem;
     text-decoration: none;
     display: inline-block;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(230, 184, 49, 0.25);
 }
+
 .btn-quest:hover {
-    background: #e0b52c;
-    color: var(--navy);
+    background: #fcd34d;
+    color: #071524;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 211, 77, 0.35);
 }
 
 .back-to-top {
     display: none;
     position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 3rem;
-    height: 3rem;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.25rem;
+    height: 3.25rem;
     border-radius: 50%;
     padding: 0;
     z-index: 1000;
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT ADJUSTMENTS
+============================================================ */
+@media (max-width: 991px) {
+    .intro {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 1.5rem 1rem 3rem;
+    }
+    
+    .intro-media {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .intro-highlights {
+        gap: 2rem;
+    }
+
+    .welcome {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .welcome-card {
+        padding: 3rem 1.5rem;
+    }
 }

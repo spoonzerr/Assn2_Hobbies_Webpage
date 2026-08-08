@@ -10,16 +10,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 
     <link rel="stylesheet" href="/Components/navbar/navbar.css">
     <link rel="stylesheet" href="/Components/fade-in/fadeIn.css">
     <link rel="stylesheet" href="/Pages/homePage/home.css">
     <link rel="stylesheet" href="/Pages/Hobbies/Travelling/travel.css">
+    <link rel="stylesheet" href="/Components/footer/footer.css">
 
     <script src="/Components/navbar/navbar.js" defer></script>
     <script src="/Components/fade-in/fadeIn.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/Pages/Hobbies/Travelling/travel.js" defer></script>
+    <script src="/Components/footer/footer.js" defer></script>
 </head>
 
 <body>
@@ -35,19 +38,49 @@
     <section class="welcome">
         <div class="welcome-card">
             <h1>Welcome to<br><span class="hobby-name">Travelling</span></h1>
+            <p class="hero-subtext">
+                Exploring the world one destination at a time — from street food markets to ancient mountain trails.
+            </p>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="intro-media">
+            <video id="vid1" controls preload="metadata" poster="/Assets/images/travel.jpg">
+                <source src="/Assets/videos/travel.mp4" type="video/mp4">
+                Your browser doesn't support video.
+            </video>
+        </div>
+        <div class="intro-text-box">
+            <span class="eyebrow mb-2">About The Hobby</span>
+            <h2 class="intro-heading mb-3">Discover the World Beyond Your Daily Routine</h2>
+            <p class="intro-text mb-4">
+                Travelling is the pursuit of stepping into new surroundings to experience different cultures, flavors, and landscapes. Whether it’s a weekend getaway or a long journey across continents, every trip offers a chance to see the world from a fresh perspective.
+            </p>
+            <div class="intro-highlights">
+                <div class="highlight-item">
+                    <span class="highlight-number">100+</span>
+                    <span class="highlight-label">Destinations</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">&infin;</span>
+                    <span class="highlight-label">Memories</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="content-section">
         <div class="section-kicker mb-2">The Experience</div>
-        <h2 class="section-heading mb-4">Why People Enjoy Travelling</h2>
+        <h2 class="section-heading mb-2">Why People Enjoy Travelling</h2>
+        <p class="section-subheading mb-4">Discover what drives people to step out of their routine and explore the world.</p>
+
         <div class="row g-4">
-            
             <div class="col-md-6 col-lg-3">
                 <div class="enjoy-card">
                     <div class="slideshow-box">
-                        <img src="/Assets/images/travel.jpg" class="active" alt="Food 1">
-                        <img src="/Assets/images/boat.jpg" alt="Food 2">
+                        <img src="/Assets/images/travel.jpg" class="active" alt="Food preview 1">
+                        <img src="/Assets/images/boat.jpg" alt="Food preview 2">
                     </div>
                     <div class="enjoy-card-body">
                         <h3>Culinary Discovery</h3>
@@ -59,8 +92,8 @@
             <div class="col-md-6 col-lg-3">
                 <div class="enjoy-card">
                     <div class="slideshow-box">
-                        <img src="/Assets/images/boat.jpg" class="active" alt="Scenery 1">
-                        <img src="/Assets/images/travel.jpg" alt="Scenery 2">
+                        <img src="/Assets/images/boat.jpg" class="active" alt="Scenery preview 1">
+                        <img src="/Assets/images/travel.jpg" alt="Scenery preview 2">
                     </div>
                     <div class="enjoy-card-body">
                         <h3>Breathtaking Landscapes</h3>
@@ -72,8 +105,8 @@
             <div class="col-md-6 col-lg-3">
                 <div class="enjoy-card">
                     <div class="slideshow-box">
-                        <img src="/Assets/images/travel.jpg" class="active" alt="Culture 1">
-                        <img src="/Assets/images/boat.jpg" alt="Culture 2">
+                        <img src="/Assets/images/travel.jpg" class="active" alt="Culture preview 1">
+                        <img src="/Assets/images/boat.jpg" alt="Culture preview 2">
                     </div>
                     <div class="enjoy-card-body">
                         <h3>Cultural Immersion</h3>
@@ -85,8 +118,8 @@
             <div class="col-md-6 col-lg-3">
                 <div class="enjoy-card">
                     <div class="slideshow-box">
-                        <img src="/Assets/images/boat.jpg" class="active" alt="People 1">
-                        <img src="/Assets/images/travel.jpg" alt="People 2">
+                        <img src="/Assets/images/boat.jpg" class="active" alt="People preview 1">
+                        <img src="/Assets/images/travel.jpg" alt="People preview 2">
                     </div>
                     <div class="enjoy-card-body">
                         <h3>Meaningful Connections</h3>
@@ -94,31 +127,67 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section class="content-section">
-        <div class="section-kicker mb-2">Top Destinations</div>
-        <h2 class="section-heading mb-2">10 Places Travellers Love</h2>
-        <p class="text-dim mb-4">Scroll through destinations and use the photo arrows to explore views, food, and culture.</p>
+        <div class="section-kicker mb-2">Personal Growth</div>
+        <h2 class="section-heading mb-2">Benefits of Travelling</h2>
+        <p class="section-subheading mb-4">How stepping away from daily life positively impacts your mind, health, and skill set.</p>
 
-        <div class="places-carousel">
-            
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="enjoy-card">
+                    <div class="enjoy-card-body text-center py-4">
+                        <i class="bi bi-brain fs-1 text-warning mb-2 d-block"></i>
+                        <h3>Mental Relief & Reset</h3>
+                        <p>Taking breaks from daily stress lowers cortisol levels, reduces burnout, and clears your mind for creative thinking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="enjoy-card">
+                    <div class="enjoy-card-body text-center py-4">
+                        <i class="bi bi-globe-americas fs-1 text-warning mb-2 d-block"></i>
+                        <h3>Broader Perspective</h3>
+                        <p>Interacting with different cultures builds empathy and broadens your understanding of human life around the globe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="enjoy-card">
+                    <div class="enjoy-card-body text-center py-4">
+                        <i class="bi bi-compass fs-1 text-warning mb-2 d-block"></i>
+                        <h3>Confidence & Adaptability</h3>
+                        <p>Navigating new transit systems, languages, and unplanned travel moments strengthens your problem-solving skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-kicker mb-2">Global Destinations</div>
+        <h2 class="section-heading mb-2">Top 10 Most Visited Places</h2>
+        <p class="section-subheading mb-4">Scroll through the world's top international travel destinations ranked by annual tourist visitors.</p>
+
+        <div id="top-places" class="places-carousel">
             <div class="place-card">
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/travel.jpg" class="active" alt="Kyoto View">
-                    <img src="/Assets/images/boat.jpg" alt="Kyoto Food">
+                    <img src="/Assets/images/travel.jpg" class="active" alt="France Paris">
+                    <img src="/Assets/images/boat.jpg" alt="French Riviera">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>1. Kyoto, Japan</h3>
-                    <p>A tranquil blend of ancient wooden temples, serene bamboo groves, and traditional tea houses.</p>
+                    <h3>1. France</h3>
+                    <p>Home to romantic Paris streets, world-famous art galleries, historic châteaux, and the sunny Mediterranean coast.</p>
                 </div>
             </div>
 
@@ -126,16 +195,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/boat.jpg" class="active" alt="Santorini Coast">
-                    <img src="/Assets/images/travel.jpg" alt="Santorini Town">
+                    <img src="/Assets/images/boat.jpg" class="active" alt="Spain Coast">
+                    <img src="/Assets/images/travel.jpg" alt="Spain Architecture">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>2. Santorini, Greece</h3>
-                    <p>Famous for iconic whitewashed cliffs overlooking Aegean waters and dramatic sunset views.</p>
+                    <h3>2. Spain</h3>
+                    <p>Renowned for unique Gaudí architecture, lively tapas culture, golden beaches, and rich regional festivals.</p>
                 </div>
             </div>
 
@@ -143,16 +212,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/travel.jpg" class="active" alt="Machu Picchu">
-                    <img src="/Assets/images/boat.jpg" alt="Peru Hike">
+                    <img src="/Assets/images/travel.jpg" class="active" alt="US City Skyline">
+                    <img src="/Assets/images/boat.jpg" alt="US National Park">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>3. Machu Picchu, Peru</h3>
-                    <p>An ancient Incan citadel set high in the Andes mountains, offering breathtaking hikes and history.</p>
+                    <h3>3. United States</h3>
+                    <p>Offers endless travel diversity from iconic city skylines to vast national parks and scenic coastal road trips.</p>
                 </div>
             </div>
 
@@ -160,16 +229,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/boat.jpg" class="active" alt="Rome Street">
-                    <img src="/Assets/images/travel.jpg" alt="Rome Food">
+                    <img src="/Assets/images/boat.jpg" class="active" alt="Istanbul Turkey">
+                    <img src="/Assets/images/travel.jpg" alt="Cappadocia Balloons">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>4. Rome, Italy</h3>
-                    <p>An open-air museum where ancient architecture meets vibrant pasta dishes and espresso bars.</p>
+                    <h3>4. Turkey</h3>
+                    <p>A historic bridge between Europe and Asia, famous for hot air balloons over Cappadocia and ancient bazaars.</p>
                 </div>
             </div>
 
@@ -177,16 +246,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/travel.jpg" class="active" alt="Banff Lake">
-                    <img src="/Assets/images/boat.jpg" alt="Banff Trail">
+                    <img src="/Assets/images/travel.jpg" class="active" alt="Rome Colosseum">
+                    <img src="/Assets/images/boat.jpg" alt="Amalfi Coast">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>5. Banff, Canada</h3>
-                    <p>Turquoise glacial lakes encircled by rugged mountain peaks, ideal for nature explorers.</p>
+                    <h3>5. Italy</h3>
+                    <p>An open-air museum filled with ancient Roman ruins, world-class pasta, historic canals, and coastal cliffside towns.</p>
                 </div>
             </div>
 
@@ -194,16 +263,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/boat.jpg" class="active" alt="Reykjavik Lights">
-                    <img src="/Assets/images/travel.jpg" alt="Iceland Waterfall">
+                    <img src="/Assets/images/boat.jpg" class="active" alt="Mexico Caribbean Beach">
+                    <img src="/Assets/images/travel.jpg" alt="Mayan Ruins">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>6. Reykjavik, Iceland</h3>
-                    <p>Land of waterfalls, volcanic landscapes, geothermal springs, and dancing Northern Lights.</p>
+                    <h3>6. Mexico</h3>
+                    <p>Famous for ancient Mayan pyramids, turquoise Caribbean waters, vibrant markets, and unmatched street food.</p>
                 </div>
             </div>
 
@@ -211,16 +280,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/travel.jpg" class="active" alt="Cairo Pyramids">
-                    <img src="/Assets/images/boat.jpg" alt="Nile Cruise">
+                    <img src="/Assets/images/travel.jpg" class="active" alt="London Big Ben">
+                    <img src="/Assets/images/boat.jpg" alt="Scottish Highlands">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>7. Cairo, Egypt</h3>
-                    <p>Home to the Pyramids of Giza and ancient treasures set along the historic Nile River.</p>
+                    <h3>7. United Kingdom</h3>
+                    <p>Rich in royal history, historic pubs, world-renowned museums, and breathtaking countryside landscapes.</p>
                 </div>
             </div>
 
@@ -228,16 +297,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/boat.jpg" class="active" alt="Queenstown Mountain">
-                    <img src="/Assets/images/travel.jpg" alt="Queenstown Lake">
+                    <img src="/Assets/images/boat.jpg" class="active" alt="Germany Castle">
+                    <img src="/Assets/images/travel.jpg" alt="Berlin Wall">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>8. Queenstown, New Zealand</h3>
-                    <p>The adventure capital of the world, featuring alpine scenery, fjords, and outdoor sports.</p>
+                    <h3>8. Germany</h3>
+                    <p>Blends fairytale forest castles and medieval towns with cutting-edge modern architecture and rich history.</p>
                 </div>
             </div>
 
@@ -245,16 +314,16 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/travel.jpg" class="active" alt="Cape Town Coast">
-                    <img src="/Assets/images/boat.jpg" alt="Cape Town Mountain">
+                    <img src="/Assets/images/travel.jpg" class="active" alt="Santorini White Houses">
+                    <img src="/Assets/images/boat.jpg" alt="Athens Ruins">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>9. Cape Town, South Africa</h3>
-                    <p>Where dramatic mountain silhouettes meet two oceans, coastal drives, and rich history.</p>
+                    <h3>9. Greece</h3>
+                    <p>Iconic whitewashed island villages, crystal-clear Aegean seas, and ancient mythology brought to life.</p>
                 </div>
             </div>
 
@@ -262,77 +331,76 @@
                 <div class="place-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/boat.jpg" class="active" alt="Bangkok Market">
-                    <img src="/Assets/images/travel.jpg" alt="Bangkok Temple">
+                    <img src="/Assets/images/boat.jpg" class="active" alt="Tokyo Neon Lights">
+                    <img src="/Assets/images/travel.jpg" alt="Kyoto Bamboo Forest">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
                 <div class="place-card-body">
-                    <h3>10. Bangkok, Thailand</h3>
-                    <p>A high-energy hub filled with golden shrines, bustling canal markets, and street food choices.</p>
+                    <h3>10. Japan</h3>
+                    <p>A harmonious mix of high-tech neon cities, tranquil shinto shrines, mountain scenery, and exceptional cuisine.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section class="content-section">
         <div class="section-kicker mb-2">Traveller Profiles</div>
-        <h2 class="section-heading mb-4">Different Ways People Travel</h2>
+        <h2 class="section-heading mb-2">Different Ways People Travel</h2>
+        <p class="section-subheading mb-4">Find out which travel style matches your personality and travel goals.</p>
 
-        <div class="peel-card">
-            <div class="peel-card-inner">
-                <div class="peel-media">
-                    <img src="/Assets/images/travel.jpg" alt="Adventure Traveller">
-                </div>
-                <div class="peel-content">
-                    <h3>The Adventure Traveller</h3>
-                    <ul class="peel-list">
-                        <li><strong>Point:</strong> Adventure travellers seek active, thrill-focused experiences that test physical limits.</li>
-                        <li><strong>Explanation:</strong> Their main purpose is to step outside comfort zones and experience adrenaline-pumping environments in nature.</li>
-                        <li><strong>Example:</strong> They prioritize trekking mountain paths, scuba diving, or backcountry camping over luxury accommodations.</li>
-                        <li><strong>Link:</strong> This travel style appeals to those who want to build personal resilience and outdoor skills.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="table-responsive">
+            <table class="traveller-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="col-photo">Preview</th>
+                        <th scope="col" class="col-info">Type & Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cell-photo">
+                            <img src="/Assets/images/travel.jpg" alt="Adventure Traveller">
+                        </td>
+                        <td class="cell-info">
+                            <h3 class="traveller-title">The Adventure Traveller</h3>
+                            <span class="traveller-subtext">Thrill-seeking &amp; Outdoor Exploration</span>
+                            <p class="traveller-text">
+                                Adventure travellers actively seek adrenaline-pumping, physical experiences that push them out of their comfort zones. They prioritize remote mountain treks, deep-sea diving, and rugged camping over luxury resorts, viewing every trip as a test of personal resilience and outdoor mastery.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="cell-photo">
+                            <img src="/Assets/images/boat.jpg" alt="Leisure Traveller">
+                        </td>
+                        <td class="cell-info">
+                            <h3 class="traveller-title">The Leisure &amp; Wellness Traveller</h3>
+                            <span class="traveller-subtext">Rest, Recovery &amp; Slow Living</span>
+                            <p class="traveller-text">
+                                Leisure travellers prioritize mental recovery, peace, and escaping daily stress. Instead of following packed sight-seeing schedules, they choose coastal resorts, quiet spa retreats, and unhurried beach days to recharge completely before returning to normal routine.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="cell-photo">
+                            <img src="/Assets/images/travel.jpg" alt="Cultural Explorer">
+                        </td>
+                        <td class="cell-info">
+                            <h3 class="traveller-title">The Cultural Explorer</h3>
+                            <span class="traveller-subtext">History, Arts &amp; Local Heritage</span>
+                            <p class="traveller-text">
+                                Cultural explorers focus on understanding human history, local arts, and authentic community life. You'll find them spending days exploring historical monuments, attending neighborhood festivals, and eating at family-run eateries to gain true global perspectives.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <div class="peel-card">
-            <div class="peel-card-inner">
-                <div class="peel-media">
-                    <img src="/Assets/images/boat.jpg" alt="Leisure Traveller">
-                </div>
-                <div class="peel-content">
-                    <h3>The Leisure & Wellness Traveller</h3>
-                    <ul class="peel-list">
-                        <li><strong>Point:</strong> Leisure travellers prioritize rest, mental recovery, and peaceful environments.</li>
-                        <li><strong>Explanation:</strong> Their primary goal is escaping work stress and burnout to return home refreshed.</li>
-                        <li><strong>Example:</strong> They favor coastal resorts, spa retreats, and unhurried schedules with no rigid itineraries.</li>
-                        <li><strong>Link:</strong> This approach transforms travelling into an essential practice for self-care and relaxation.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="peel-card">
-            <div class="peel-card-inner">
-                <div class="peel-media">
-                    <img src="/Assets/images/travel.jpg" alt="Cultural Traveller">
-                </div>
-                <div class="peel-content">
-                    <h3>The Cultural Explorer</h3>
-                    <ul class="peel-list">
-                        <li><strong>Point:</strong> Cultural explorers aim to understand human history, arts, and local customs.</li>
-                        <li><strong>Explanation:</strong> They travel to gain global literacy, learn languages, and observe how different societies thrive.</li>
-                        <li><strong>Example:</strong> Spending days touring historical museums, attending regional festivals, and eating at family-run eateries.</li>
-                        <li><strong>Link:</strong> This style turns every trip into a educational journey.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
     </section>
 
     <section class="content-section">
@@ -351,6 +419,8 @@
     <button id="backToTopBtn" class="btn btn-quest back-to-top" title="Back to top">
         <i class="bi bi-arrow-up"></i>
     </button>
+
+    <div id="footer"></div>
 
 </body>
 </html>

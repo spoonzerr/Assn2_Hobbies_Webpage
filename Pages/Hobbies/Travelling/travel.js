@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ============================================================
-       FEATURE 1: "What People Enjoy" - Auto Cross-Fade Slideshow
-       Purpose: Automatically cycles through preview images inside
-       each card like a continuous video preview.
+       Auto image switcher for "Why People Enjoy Travelling" cards
     ============================================================ */
     const enjoyCards = document.querySelectorAll(".enjoy-card");
 
@@ -11,21 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const images = card.querySelectorAll(".slideshow-box img");
 
         if (images.length > 1) {
-            let currentIndex = 0;
+            let photoIndex = 0;
 
+            // Swap images every 3.5 seconds
             setInterval(() => {
-                images[currentIndex].classList.remove("active");
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add("active");
-            }, 3500); // Swaps image every 3.5 seconds
+                images[photoIndex].classList.remove("active");
+                photoIndex = (photoIndex + 1) % images.length;
+                images[photoIndex].classList.add("active");
+            }, 3500);
         }
     });
 
 
     /* ============================================================
-       FEATURE 2: "Top 10 Places" - Interactive Photo Switcher
-       Purpose: Lets users click next/prev arrows to cycle through
-       photos (food, scenery, culture) and updates the dot indicators (...).
+       Photo arrows and dots switcher for "10 Places Travellers Love"
     ============================================================ */
     const placeSliders = document.querySelectorAll(".place-photo-slider");
 
@@ -34,53 +31,55 @@ document.addEventListener("DOMContentLoaded", () => {
         const dots = slider.querySelectorAll(".dot");
         const prevBtn = slider.querySelector(".prev");
         const nextBtn = slider.querySelector(".next");
-        let currentIdx = 0;
+        let currentPhoto = 0;
 
-        function updateSlider(index) {
-            // Remove active state from all photos and dots
+        function showPhoto(photoIndex) {
+            // Hide all photos and turn off dots
             images.forEach((img) => img.classList.remove("active"));
             dots.forEach((dot) => dot.classList.remove("active"));
 
-            // Activate current photo and corresponding dot
-            images[index].classList.add("active");
-            if (dots[index]) {
-                dots[index].classList.add("active");
+            // Show selected photo and activate dot
+            images[photoIndex].classList.add("active");
+            if (dots[photoIndex]) {
+                dots[photoIndex].classList.add("active");
             }
         }
 
         if (nextBtn && prevBtn) {
+            // Click right arrow
             nextBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
-                currentIdx = (currentIdx + 1) % images.length;
-                updateSlider(currentIdx);
+                currentPhoto = (currentPhoto + 1) % images.length;
+                showPhoto(currentPhoto);
             });
 
+            // Click left arrow
             prevBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
-                currentIdx = (currentIdx - 1 + images.length) % images.length;
-                updateSlider(currentIdx);
+                currentPhoto = (currentPhoto - 1 + images.length) % images.length;
+                showPhoto(currentPhoto);
             });
         }
     });
 
 
     /* ============================================================
-       FEATURE 3: Back-To-Top Button
-       Purpose: Appears when scrolling down and smoothly scrolls back
-       to the top when clicked.
+       Back to top scroll button logic
     ============================================================ */
-    const backToTopBtn = document.getElementById("backToTopBtn");
+    const topBtn = document.getElementById("backToTopBtn");
 
-    if (backToTopBtn) {
+    if (topBtn) {
+        // Show button when scrolling down 300px
         window.addEventListener("scroll", () => {
             if (window.scrollY > 300) {
-                backToTopBtn.style.display = "block";
+                topBtn.style.display = "block";
             } else {
-                backToTopBtn.style.display = "none";
+                topBtn.style.display = "none";
             }
         });
 
-        backToTopBtn.addEventListener("click", () => {
+        // Smooth scroll to top on click
+        topBtn.addEventListener("click", () => {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
