@@ -7,14 +7,22 @@
     <title>Baking — Hobbyssey</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/Components/navbar/navbar.css">
     <link rel="stylesheet" href="/Components/fade-in/fadeIn.css">
     <link rel="stylesheet" href="/Pages/homePage/home.css">
     <link rel="stylesheet" href="/Pages/Hobbies/Baking/baking.css">
+    <link rel="stylesheet" href="/Components/footer/footer.css">
 
     <script src="/Components/navbar/navbar.js" defer></script>
     <script src="/Components/fade-in/fadeIn.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/Pages/Hobbies/Baking/baking.js" defer></script>
+    <script src="/Components/footer/footer.js" defer></script>
 </head>
 
 <body>
@@ -27,7 +35,233 @@
         </ol>
     </div>
 
-    <p>hello</p>
+    <section class="welcome">
+        <div class="welcome-card text-center">
+            <h1>Welcome to<br><span class="hobby-name">Baking</span></h1>
+            <p class="hero-subtext">
+                Transforming simple ingredients into delicious creations — from golden sourdough loaves to delicate pastries.
+            </p>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="intro-media">
+            <video id="vid1" controls preload="metadata" poster="/Assets/images/baking-hero.jpg">
+                <source src="/Assets/videos/baking.mp4" type="video/mp4">
+                Your browser doesn't support video.
+            </video>
+        </div>
+        <div class="intro-text-box">
+            <span class="eyebrow mb-2">About The Craft</span>
+            <h2 class="intro-heading mb-3">Where Science Meets Flavor</h2>
+            <p class="intro-text mb-4">
+                Baking is both a therapeutic art and a precise science. Whether you are kneading your first loaf of bread or decoratively frosting a birthday cake, baking brings comfort, creativity, and incredible aromas to your kitchen.
+            </p>
+            <div class="intro-highlights">
+                <div class="highlight-item">
+                    <span class="highlight-number">50+</span>
+                    <span class="highlight-label">Recipes</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">&infin;</span>
+                    <span class="highlight-label">Delights</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-kicker mb-2">The Joy</div>
+        <h2 class="section-heading mb-2">Why People Enjoy Baking</h2>
+        <p class="section-subheading mb-4">Discover what keeps bakers coming back to the oven time and time again.</p>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="enjoy-card">
+                    <div class="slideshow-box">
+                        <img src="/Assets/images/baking-1.jpg" class="active" alt="Pastry baking">
+                        <img src="/Assets/images/baking-2.jpg" alt="Pastry detail">
+                    </div>
+                    <div class="enjoy-card-body">
+                        <h3>Creative Expression</h3>
+                        <p>Decorating, piping, and experimenting with unique flavors offers an amazing artistic outlet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="enjoy-card">
+                    <div class="slideshow-box">
+                        <img src="/Assets/images/baking-2.jpg" class="active" alt="Bread kneading">
+                        <img src="/Assets/images/baking-3.jpg" alt="Dough shaping">
+                    </div>
+                    <div class="enjoy-card-body">
+                        <h3>Stress Relief</h3>
+                        <p>The rhythmic process of kneading dough and measuring ingredients encourages mindfulness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="enjoy-card">
+                    <div class="slideshow-box">
+                        <img src="/Assets/images/baking-3.jpg" class="active" alt="Sharing food">
+                        <img src="/Assets/images/baking-4.jpg" alt="Party treats">
+                    </div>
+                    <div class="enjoy-card-body">
+                        <h3>Sharing Happiness</h3>
+                        <p>Few things bring people together faster than freshly baked treats warm from the oven.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="enjoy-card">
+                    <div class="slideshow-box">
+                        <img src="/Assets/images/baking-4.jpg" class="active" alt="Oven baking">
+                        <img src="/Assets/images/baking-1.jpg" alt="Golden crust">
+                    </div>
+                    <div class="enjoy-card-body">
+                        <h3>Sensory Rewards</h3>
+                        <p>The golden colors, rich aromas, and satisfying textures make the whole experience rewarding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-kicker mb-2">Personal Growth</div>
+        <h2 class="section-heading mb-2">Benefits of Baking</h2>
+        <p class="section-subheading mb-4">How stepping into the kitchen builds skills and clears your mind.</p>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="enjoy-card">
+                    <div class="enjoy-card-body text-center py-4">
+                        <i class="bi bi-clock-history fs-1 text-warning mb-2 d-block"></i>
+                        <h3>Patience & Precision</h3>
+                        <p>Baking teaches exact measuring, careful timing, and appreciation for the process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="enjoy-card">
+                    <div class="enjoy-card-body text-center py-4">
+                        <i class="bi bi-heart-pulse fs-1 text-warning mb-2 d-block"></i>
+                        <h3>Mindful Focus</h3>
+                        <p>Following a step-by-step recipe provides a mental break from daily screens and stress.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="enjoy-card">
+                    <div class="enjoy-card-body text-center py-4">
+                        <i class="bi bi-gift fs-1 text-warning mb-2 d-block"></i>
+                        <h3>Gift of Giving</h3>
+                        <p>Baking homemade goods is one of the most personal and appreciated ways to show love to friends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-kicker mb-2">Favorite Recipes</div>
+        <h2 class="section-heading mb-2">Top 10 Most Popular Bakes</h2>
+        <p class="section-subheading mb-4">Scroll through classic bakes loved by home bakers worldwide.</p>
+
+        <div id="top-places" class="places-carousel">
+            <div class="place-card">
+                <div class="place-photo-slider">
+                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
+                    <img src="/Assets/images/baking-1.jpg" class="active" alt="Chocolate Chip Cookies">
+                    <img src="/Assets/images/baking-2.jpg" alt="Cookie Tray">
+                    <div class="dots-indicator">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="place-card-body">
+                    <h3>1. Chocolate Chip Cookies</h3>
+                    <p>Crispy edges, gooey chocolate centers, and classic comfort in every single bite.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="place-photo-slider">
+                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
+                    <img src="/Assets/images/baking-2.jpg" class="active" alt="Sourdough Bread">
+                    <img src="/Assets/images/baking-3.jpg" alt="Sliced Sourdough">
+                    <div class="dots-indicator">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="place-card-body">
+                    <h3>2. Artisanal Sourdough</h3>
+                    <p>Crusty golden exterior with an airy crumb, naturally fermented for rich depth of flavor.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="place-photo-slider">
+                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
+                    <img src="/Assets/images/baking-3.jpg" class="active" alt="French Macarons">
+                    <img src="/Assets/images/baking-4.jpg" alt="Colorful Macarons">
+                    <div class="dots-indicator">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="place-card-body">
+                    <h3>3. French Macarons</h3>
+                    <p>Delicate almond meringue shells filled with smooth ganache, fruit curd, or buttercream.</p>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="place-photo-slider">
+                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
+                    <img src="/Assets/images/baking-4.jpg" class="active" alt="Cinnamon Rolls">
+                    <img src="/Assets/images/baking-1.jpg" alt="Frosted Cinnamon Rolls">
+                    <div class="dots-indicator">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="place-card-body">
+                    <h3>4. Classic Cinnamon Rolls</h3>
+                    <p>Soft fluffy dough swirled with warm brown sugar, cinnamon, and rich cream cheese icing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="cta-quest">
+            <div class="eyebrow mb-2">Join the Club</div>
+            <h2>Ready to Start Your Baking Journey?</h2>
+            <p class="text-dim mx-auto mt-2 mb-4" style="max-width: 500px;">
+                Connect with fellow home bakers, share recipe tweaks, and join our weekly community baking challenges.
+            </p>
+            <a href="/Pages/Forms/BakingForm/BakingForm.html" class="btn-quest">
+                Join Baking Group <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </section>
+
+    <button id="backToTopBtn" class="btn btn-quest back-to-top" title="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <div id="footer"></div>
 </body>
 
 </html>

@@ -1,0 +1,65 @@
+/* ============================================================
+   TRAVELLING FORM STYLES
+   ============================================================ */
+
+/* Form Wrapper Box */
+.form-wrapper {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+/* Form Headings and Labels */
+.content-section form label {
+    color: rgba(248, 250, 252, 0.9);
+    font-size: 0.925rem;
+    font-weight: 500;
+}
+
+/* Input, Select, and Textarea Dark Theme Styling */
+.form-control, 
+.form-select {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f8fafc;
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+}
+
+/* Placeholder Styling */
+.form-control::placeholder {
+    color: rgba(248, 250, 252, 0.4);
+}
+
+/* Focus States */
+.form-control:focus, 
+.form-select:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: #e6b831;
+    color: #f8fafc;
+    box-shadow: 0 0 0 0.25rem rgba(230, 184, 49, 0.25);
+}
+
+/* Dropdown Menu Options (for OS contrast) */
+.form-select option {
+    background-color: #0a2136;
+    color: #f8fafc;
+}
+
+/* Bootstrap Validation Overrides for Dark Theme */
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.08);
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+    border-color: #198754;
+    background-color: rgba(25, 135, 84, 0.08);
+}
+
+.invalid-feedback {
+    font-size: 0.825rem;
+    color: #ff6b6b;
+}
