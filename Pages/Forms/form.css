@@ -1,0 +1,350 @@
+/* =========================================================
+   form.css — shared by every form + the response page
+   Matches the Gaming page: Georgia body, Cinzel uppercase
+   gold headings, #f4c430. Bootstrap builds the controls;
+   this file re-themes them through Bootstrap's variables.
+   ========================================================= */
+
+:root {
+    --navy: #0a2136;
+    --navy-field: #071829;
+    --gold: #f4c430;
+    --gold-deep: #cc9c1a;
+    --ink: #ffffff;
+    --ink-soft: rgba(255, 255, 255, 0.78);
+    --ink-faint: rgba(255, 255, 255, 0.52);
+    --warn: #e08a6a;
+    --rule: rgba(244, 196, 48, 0.22);
+    --wash: linear-gradient(180deg,
+        rgba(244, 196, 48, 0.12) 0%,
+        rgba(244, 196, 48, 0.04) 50%,
+        rgba(244, 196, 48, 0) 100%);
+    --display: 'Cinzel', serif;
+
+    /* Bootstrap globals — same values as gaming.css */
+    --bs-body-bg: var(--navy);
+    --bs-body-color: var(--ink);
+    --bs-body-font-family: Georgia, 'Times New Roman', Times, serif;
+    --bs-body-line-height: 1.7;
+    --bs-link-color: var(--gold);
+    --bs-link-hover-color: var(--gold-deep);
+    --bs-border-color: var(--rule);
+
+    /* Bootstrap validation colours */
+    --bs-form-invalid-color: var(--warn);
+    --bs-form-invalid-border-color: var(--warn);
+    --bs-form-valid-color: var(--gold);
+    --bs-form-valid-border-color: var(--gold-deep);
+}
+
+h1, h2 { font-family: var(--display); color: var(--ink); }
+
+.below-nav { padding-top: 7.5rem; }
+
+/* ---------- page heading (matches the Gaming welcome card) ---------- */
+
+.gold-card {
+    --bs-card-bg: transparent;
+    --bs-card-border-color: var(--rule);
+    --bs-card-border-radius: 20px;
+    --bs-card-color: var(--ink-soft);
+    background-image: var(--wash);
+}
+
+.display-title {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-indent: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+.text-gold { color: var(--gold) !important; }
+
+.form-lede {
+    max-width: 34rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--ink-soft);
+}
+
+/* ---------- fieldset legends (matches .chapter on Gaming) ---------- */
+
+.form-legend {
+    float: none;              /* Bootstrap floats legends; we don't want that */
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    margin-bottom: 1.75rem;
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-indent: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+/* the fading gold rule, same as the Gaming section headings */
+.form-legend::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold-deep), transparent);
+}
+
+/* ---------- labels and controls ---------- */
+
+.form-label {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--ink);
+}
+
+.form-control,
+.form-select {
+    padding: 0.75rem 1rem;
+    background-color: var(--navy-field);
+    border-color: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--navy-field);
+    border-color: var(--gold-deep);
+    box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.22);
+    color: var(--ink);
+}
+
+/* Bootstrap's select arrow is an SVG background — recolour it gold */
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23f4c430' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.form-select option { background-color: var(--navy); color: var(--ink); }
+
+/* ---------- input group (country code + phone) ---------- */
+
+.input-group-text {
+    background-color: rgba(244, 196, 48, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.input-group .country-code { max-width: 6rem; text-align: center; }
+
+/* ---------- radios and checkboxes ---------- */
+
+.choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.75rem;
+}
+
+.form-check { margin-bottom: 0; padding-left: 1.9rem; }
+
+.form-check-input {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-left: -1.9rem;
+    margin-top: 0.3rem;
+    background-color: var(--navy-field);
+    border-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--gold);
+    border-color: var(--gold);
+}
+
+.form-check-input:focus {
+    border-color: var(--gold-deep);
+    box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.22);
+}
+
+.form-check-label {
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+/* ---------- helper + error text ---------- */
+
+.form-text {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--ink-faint);
+}
+
+.invalid-feedback {
+    font-size: 0.9rem;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* radio groups need their message shown by JS, since Bootstrap only
+   reveals .invalid-feedback beside a control it can mark invalid */
+.group-feedback { display: none !important; }
+.was-validated .group-invalid .group-feedback { display: block !important; }
+
+/* ---------- buttons ---------- */
+
+.btn-gold,
+.btn-gold-solid {
+    --bs-btn-focus-shadow-rgb: 244, 196, 48;
+    --bs-btn-border-radius: 999px;
+    --bs-btn-padding-x: 2.25rem;
+    --bs-btn-padding-y: 0.85rem;
+    font-family: var(--display);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.btn-gold {
+    --bs-btn-color: var(--gold);
+    --bs-btn-bg: rgba(244, 196, 48, 0.08);
+    --bs-btn-border-color: var(--gold-deep);
+    --bs-btn-border-width: 2px;
+    --bs-btn-hover-color: var(--navy);
+    --bs-btn-hover-bg: var(--gold);
+    --bs-btn-hover-border-color: var(--gold);
+}
+
+.btn-gold-solid {
+    --bs-btn-color: var(--navy);
+    --bs-btn-bg: var(--gold);
+    --bs-btn-border-color: var(--gold);
+    --bs-btn-hover-color: var(--navy);
+    --bs-btn-hover-bg: #ffd85c;
+    --bs-btn-hover-border-color: #ffd85c;
+    box-shadow: 0 0 30px rgba(244, 196, 48, 0.35);
+}
+
+.btn-gold-solid:hover { box-shadow: 0 0 42px rgba(244, 196, 48, 0.5); }
+
+.arrow { display: inline-block; transition: transform 0.3s ease; }
+.btn-gold-solid:hover .arrow { transform: translateX(6px); }
+
+/* ---------- response page ---------- */
+
+.summary-title {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-indent: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-row:last-child { border-bottom: none; padding-bottom: 0; }
+.summary-row dt { font-size: 0.95rem; color: var(--ink-faint); }
+.summary-row dd { margin: 0; text-align: right; color: var(--ink); }
+
+.next-steps { padding-left: 0; list-style: none; counter-reset: step; }
+
+.next-steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.75rem;
+    margin-bottom: 1rem;
+    color: var(--ink-soft);
+}
+
+.next-steps li:last-child { margin-bottom: 0; }
+
+.next-steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border: 1px solid var(--gold-deep);
+    border-radius: 50%;
+    font-family: var(--display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+/* ---------- breadcrumb + skip link ---------- */
+
+.breadcrumb {
+    --bs-breadcrumb-divider-color: rgba(255, 255, 255, 0.35);
+    --bs-breadcrumb-item-active-color: rgba(255, 255, 255, 0.6);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.95rem;
+}
+
+.breadcrumb a,
+.breadcrumb a:visited { color: var(--gold); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-deep); text-decoration: underline; }
+
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    z-index: 1000;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--gold);
+    color: var(--navy);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: none;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+}
+
+:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+[id] { scroll-margin-top: 110px; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 575.98px) {
+    .below-nav { padding-top: 6rem; }
+    .choice-row { flex-direction: column; gap: 0.75rem; }
+    .summary-row { flex-direction: column; gap: 0.25rem; }
+    .summary-row dd { text-align: left; }
+    .form-legend { flex-wrap: wrap; }
+}
+
+/* country code */
+.input-group > .form-select.country-code {
+    flex: 0 0 auto;
+    width: 13rem;
+}

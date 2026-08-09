@@ -28,7 +28,7 @@ function markCurrentPage(mount) {
     const here = window.location.pathname;
 
     // :not(#main) skips the wordmark, which also points at home.html
-    const link = mount.querySelector(`a[href="${here}"]:not(#main)`);
+    const link = mount.querySelector(`a[href="${here}"]:not(#wordmark)`);
     if (!link) return;
 
     link.classList.add("active");

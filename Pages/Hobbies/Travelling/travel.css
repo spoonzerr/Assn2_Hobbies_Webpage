@@ -139,10 +139,11 @@ body {
 
 .intro-heading {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-size: 3rem;
     font-weight: 700;
-    color: #f8fafc;
+    color: rgb(215, 184, 4);
     line-height: 1.25;
+    margin-bottom: 1rem;;
 }
 
 .intro-text {
@@ -151,34 +152,9 @@ body {
     color: rgba(248, 250, 252, 0.82);
 }
 
-.intro-highlights {
-    display: flex;
-    gap: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(230, 184, 49, 0.2);
-}
 
-.highlight-item {
-    display: flex;
-    flex-direction: column;
-}
 
-.highlight-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #e6b831;
-    line-height: 1;
-}
 
-.highlight-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 600;
-    color: rgba(248, 250, 252, 0.55);
-    margin-top: 0.35rem;
-}
 
 /* ============================================================
    WHY PEOPLE ENJOY CARDS
@@ -214,7 +190,9 @@ body {
     object-fit: cover;
     opacity: 0;
     transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    object-position: center;
 }
+
 
 .slideshow-box img.active {
     opacity: 1;
@@ -532,9 +510,6 @@ body {
         flex: 0 0 100%;
     }
 
-    .intro-highlights {
-        gap: 2rem;
-    }
 
     .welcome {
         padding: 4rem 1rem 2rem;
