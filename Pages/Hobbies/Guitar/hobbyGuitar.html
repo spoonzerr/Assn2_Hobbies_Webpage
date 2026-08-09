@@ -4,30 +4,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitar — Hobbyssey</title>
+    <title>Guitar - Hobbyssey</title>
+    <meta name="description" content="Five months of teaching myself guitar, written down as it happens.">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Components/navbar/navbar.css">
+    <link rel="stylesheet" href="/Components/footer/footer.css">
     <link rel="stylesheet" href="/Components/fade-in/fadeIn.css">
-    <link rel="stylesheet" href="/Pages/homePage/home.css">
     <link rel="stylesheet" href="/Pages/Hobbies/Guitar/guitar.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/Components/navbar/navbar.js" defer></script>
+    <script src="/Components/footer/footer.js" defer></script>
     <script src="/Components/fade-in/fadeIn.js" defer></script>
     <script src="/Pages/Hobbies/Guitar/guitar.js" defer></script>
 </head>
 
 <body>
+
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
+
     <div id="navbar"></div>
 
-    <div class="crumbs" aria-label="Breadcrumb">
-        <ol>
-            <li><a href="/Pages/homePage/home.html">Home</a></li>
-            <li aria-current="page">Guitar</li>
+    <nav class="container below-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/Pages/homePage/home.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Guitar</li>
         </ol>
-    </div>
+    </nav>
 
-    <p>hello</p>
+    <main id="main" tabindex="-1">
+
+        <!-- ============ WELCOME ============ -->
+        <header class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card gold-card text-center reveal">
+                        <div class="card-body p-4 p-lg-5">
+                            <h1 class="display-title mb-3">
+                                Welcome to<br><span class="text-gold">Guitar</span>
+                            </h1>
+                            <p class="lede mx-auto mb-4">
+                                Teaching myself step-by-step and logging the journey as I go. Pick up a guitar and follow along.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============ HERO IMAGE ============ -->
+        <section class="container pb-5 mb-4">
+            <div class="ratio ratio-21x9 rounded-4 overflow-hidden border gold-border reveal">
+                <img src="/Assets/images/guitarpics/guitar-cinema.jpg"
+                     alt="Hand holding a guitar which is reflecting a warm shade of sunlight off it">
+            </div>
+        </section>
+
+        <!-- ============ SKILL LEVEL ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="skill-heading">
+            <div class="row mb-4">
+                <div class="col-lg-9 body-copy reveal">
+                    <h2 id="skill-heading" class="chapter">Skill level, honestly</h2>
+                    <p class="mb-0">Work in progress. Pull up a chair and let's figure it out together.</p>
+                </div>
+            </div>
+
+            <div class="card gold-card mb-4 reveal">
+                <div class="card-body p-4 p-lg-5">
+                    <div class="row g-4 g-lg-5">
+
+                        <div class="col-lg-6">
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Open chords</span>
+                                    <span class="skill-tag">Comfortable</span>
+                                </div>
+                                <!-- Bootstrap component: progress -->
+                                <div class="progress" role="progressbar" aria-label="Open chords"
+                                     aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="90"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Chord transitions</span>
+                                    <span class="skill-tag">Getting clean</span>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Chord transitions"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="75"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Fingerpicking</span>
+                                    <span class="skill-tag">Early days</span>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Fingerpicking"
+                                     aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="30"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Barre chords</span>
+                                    <span class="skill-tag">Still shaky</span>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Barre chords"
+                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="40"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Strumming patterns</span>
+                                    <span class="skill-tag">Getting there</span>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Strumming patterns"
+                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="60"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Reading chord charts</span>
+                                    <span class="skill-tag">Comfortable</span>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Reading chord charts"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="75"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Playing to a metronome</span>
+                                    <span class="skill-tag">Early days</span>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Playing to a metronome"
+                                     aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="35"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head">
+                                    <span class="skill-name">Singing while playing</span>
+                                    <span class="skill-tag">Starting</span>
+                                </div>
+                                <div class="progress" role="progressbar" aria-label="Singing while playing"
+                                     aria-valuenow="8" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" data-fill="8"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- stats ---------- -->
+            <div class="card gold-card reveal">
+                <div class="row g-0 text-center">
+                    <div class="col-6 col-lg-3 stat-cell">
+                        <p class="stat-value mb-1" data-count="5">5</p>
+                        <p class="stat-label mb-0">Months playing</p>
+                    </div>
+                    <div class="col-6 col-lg-3 stat-cell">
+                        <p class="stat-value mb-1" data-count="61">61</p>
+                        <p class="stat-label mb-0">Hours logged</p>
+                    </div>
+                    <div class="col-6 col-lg-3 stat-cell">
+                        <p class="stat-value mb-1" data-count="14">14</p>
+                        <p class="stat-label mb-0">Chords known</p>
+                    </div>
+                    <div class="col-6 col-lg-3 stat-cell">
+                        <p class="stat-value mb-1" data-count="2">2</p>
+                        <p class="stat-label mb-0">Guitars owned</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ AUDIO ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="hear-heading">
+            <div class="row mb-4">
+                <div class="col-lg-9 body-copy reveal">
+                    <h2 id="hear-heading" class="chapter">Hear where I'm at</h2>
+                    <p class="mb-0">Listen in, share your feedback, or feel free to follow along!</p>
+                </div>
+            </div>
+
+            <div class="card gold-card reveal">
+                <div class="card-body p-4 p-lg-5">
+                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
+                        <div>
+                            <h3 class="take-title mb-1">Horse With No Name &mdash; first clean run</h3>
+                            <p class="take-meta mb-0">Recorded on a phone &middot; take 4 &middot; 1:12</p>
+                        </div>
+                    </div>
+
+                    <audio controls preload="metadata" class="w-100">
+                        <source src="/Assets/audio/take-04.mp3" type="audio/mpeg">
+                        <p>Your browser can't play embedded audio.
+                            <a href="/Assets/audio/take-04.mp3">Download the recording</a>.</p>
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ THE RECORDS ============ -->
+        <section class="container pb-5 mb-4" aria-labelledby="records-heading">
+            <div class="row mb-4">
+                <div class="col-lg-9 body-copy reveal">
+                    <h2 id="records-heading" class="chapter">Everything I'm tracking</h2>
+                    <p class="mb-0">Teaching yourself means being your own record keeper.</p>
+                </div>
+            </div>
+
+            <div class="card gold-card reveal">
+                <div class="card-body p-3 p-lg-4">
+
+                    <!-- Bootstrap component: nav tabs -->
+                    <ul class="nav nav-tabs gold-tabs justify-content-center mb-4" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="tab-songs" data-bs-toggle="tab"
+                                    data-bs-target="#pane-songs" type="button" role="tab"
+                                    aria-controls="pane-songs" aria-selected="true">Songs</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-practice" data-bs-toggle="tab"
+                                    data-bs-target="#pane-practice" type="button" role="tab"
+                                    aria-controls="pane-practice" aria-selected="false">Practice log</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-tech" data-bs-toggle="tab"
+                                    data-bs-target="#pane-tech" type="button" role="tab"
+                                    aria-controls="pane-tech" aria-selected="false">Techniques</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-gear" data-bs-toggle="tab"
+                                    data-bs-target="#pane-gear" type="button" role="tab"
+                                    aria-controls="pane-gear" aria-selected="false">Gear</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <!-- ---- songs ---- -->
+                        <div class="tab-pane fade show active" id="pane-songs" role="tabpanel"
+                             aria-labelledby="tab-songs" tabindex="0">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-hover gold-table align-middle">
+                                    <caption>Anything marked "start to finish" means no stopping to
+                                        find the next shape.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Song</th>
+                                            <th scope="col">Why this one</th>
+                                            <th scope="col">Hardest part</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Horse With No Name</th>
+                                            <td>Two chords, forgiving tempo</td>
+                                            <td>Keeping the strum even</td>
+                                            <td><span class="badge b-solid">Start to finish</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Knockin' on Heaven's Door</th>
+                                            <td>Four open chords, familiar</td>
+                                            <td>The G to D change</td>
+                                            <td><span class="badge b-solid">Start to finish</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Wonderwall</th>
+                                            <td>Everyone learns it eventually</td>
+                                            <td>Holding the capo shapes</td>
+                                            <td><span class="badge b-progress">In progress</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Riptide</th>
+                                            <td>Good strumming practice</td>
+                                            <td>Speed of the changes</td>
+                                            <td><span class="badge b-progress">In progress</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Nothing Else Matters</th>
+                                            <td>The one I actually want</td>
+                                            <td>All of it, fingerpicked</td>
+                                            <td><span class="badge b-wall">Someday</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ---- practice log ---- -->
+                        <div class="tab-pane fade" id="pane-practice" role="tabpanel"
+                             aria-labelledby="tab-practice" tabindex="0">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-hover gold-table align-middle">
+                                    <caption>Sessions are short on purpose &mdash; twenty focused
+                                        minutes beats an unfocused hour.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Month</th>
+                                            <th scope="col">Sessions</th>
+                                            <th scope="col">Rough hours</th>
+                                            <th scope="col">What changed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">March</th>
+                                            <td>9</td>
+                                            <td>7</td>
+                                            <td>First chord shapes, mostly buzzing</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">April</th>
+                                            <td>14</td>
+                                            <td>11</td>
+                                            <td>G, C and D started ringing clean</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">May</th>
+                                            <td>12</td>
+                                            <td>10</td>
+                                            <td>New guitar, then a month of frustration</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">June</th>
+                                            <td>18</td>
+                                            <td>16</td>
+                                            <td>Lowered the action &mdash; everything got easier</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">July</th>
+                                            <td>19</td>
+                                            <td>17</td>
+                                            <td>First full song, start to finish</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ---- techniques ---- -->
+                        <div class="tab-pane fade" id="pane-tech" role="tabpanel"
+                             aria-labelledby="tab-tech" tabindex="0">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-hover gold-table align-middle">
+                                    <caption>"In progress" means I can do it slowly, not reliably.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Technique</th>
+                                            <th scope="col">First tried</th>
+                                            <th scope="col">Where it stands</th>
+                                            <th scope="col">Next step</th>
+                                            <th scope="col">Level</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Open chords (G C D Em Am)</th>
+                                            <td>Mar</td>
+                                            <td>Automatic now</td>
+                                            <td>Speed up changes</td>
+                                            <td><span class="badge b-solid">Solid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Basic down-up strumming</th>
+                                            <td>Mar</td>
+                                            <td>Steady at 80bpm</td>
+                                            <td>Add syncopation</td>
+                                            <td><span class="badge b-solid">Solid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Chord transitions</th>
+                                            <td>Apr</td>
+                                            <td>One beat late</td>
+                                            <td>Drill in pairs</td>
+                                            <td><span class="badge b-progress">In progress</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fingerpicking patterns</th>
+                                            <td>May</td>
+                                            <td>Thumb independent</td>
+                                            <td>Travis picking</td>
+                                            <td><span class="badge b-progress">In progress</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Barre chords (F, Bm)</th>
+                                            <td>Jun</td>
+                                            <td>Two strings buzz</td>
+                                            <td>Wrist position</td>
+                                            <td><span class="badge b-wall">Struggling</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Singing while playing</th>
+                                            <td>Jul</td>
+                                            <td>Falls apart instantly</td>
+                                            <td>Simplify strumming</td>
+                                            <td><span class="badge b-wall">Struggling</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ---- gear ---- -->
+                        <div class="tab-pane fade" id="pane-gear" role="tabpanel"
+                             aria-labelledby="tab-gear" tabindex="0">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-hover gold-table align-middle">
+                                    <caption>Deliberately minimal. Nothing here was bought to solve
+                                        a problem practice would have solved.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Item</th>
+                                            <th scope="col">What it is</th>
+                                            <th scope="col">Why</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">The borrowed classical</th>
+                                            <td>Family nylon-string</td>
+                                            <td>Where it started. Still in the cupboard.</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">My acoustic</th>
+                                            <td>Steel-string dreadnought</td>
+                                            <td>Mine, and now set up properly</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Clip-on tuner</th>
+                                            <td>Headstock tuner</td>
+                                            <td>The first thing worth buying</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Capo</th>
+                                            <td>Spring clamp</td>
+                                            <td>Unlocks songs I can't barre yet</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Phone</th>
+                                            <td>Metronome, tabs, recorder</td>
+                                            <td>Does three jobs, costs nothing</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TEACHERS + GOALS ============ -->
+        <section class="container pb-5 mb-4">
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+                    <div class="card gold-card h-100 reveal reveal-left">
+                        <div class="card-body p-4 p-lg-5">
+                            <h2 class="card-heading mb-2">Where I learn from</h2>
+                            <p class="body-note mb-4">Nobody is charging me by the hour, so the
+                                internet gets the credit.</p>
+                            <ul class="source-list list-unstyled mb-0">
+                                <li>
+                                    <span>YouTube lesson channels</span>
+                                    <span class="source-tag">Daily</span>
+                                </li>
+                                <li>
+                                    <span>Chord &amp; tab sites</span>
+                                    <span class="source-tag">Every song</span>
+                                </li>
+                                <li>
+                                    <span>Setup &amp; repair forums</span>
+                                    <span class="source-tag">The saddle fix</span>
+                                </li>
+                                <li>
+                                    <span>Slowed-down song playalongs</span>
+                                    <span class="source-tag">Weekly</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card gold-card h-100 reveal reveal-right">
+                        <div class="card-body p-4 p-lg-5">
+                            <h2 class="card-heading mb-2">What I'm chasing</h2>
+                            <p class="body-note mb-4">Small, checkable, and slightly out of reach
+                                on purpose.</p>
+                            <ol class="goal-list list-unstyled mb-0">
+                                <li>A clean F barre chord, every time</li>
+                                <li>Five songs start to finish, from memory</li>
+                                <li>Sing and strum at the same time without derailing</li>
+                                <li>Restring and set up the guitar entirely by myself</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============ CLOSING ============ -->
+        <section class="container pb-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card gold-card cta-card text-center reveal">
+                        <div class="card-body p-4 p-lg-5">
+                            <h2 class="cta-heading mb-3">
+                                Still figuring it out, one chord at a time
+                            </h2>
+                            <p class="cta-text mx-auto mb-4">
+                                If you're just starting your journey - or have a tip for a fellow beginner - come say hello!
+                            </p>
+                            <a class="btn btn-gold-solid btn-lg" href="/Pages/Forms/GuitarForm/GuitarForm.html">
+                                Sign up for guitar
+                                <span class="arrow ms-2" aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+
 </body>
 
 </html>
