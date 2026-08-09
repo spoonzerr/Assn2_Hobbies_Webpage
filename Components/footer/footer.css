@@ -1,10 +1,18 @@
+/* =========================================================
+   footer.css
+   Case and letter-spacing are stated explicitly on every
+   text rule, so nothing inherited can turn them into caps.
+   ========================================================= */
+
+#footer { display: contents; }
+
 .site-footer {
     position: relative;
     z-index: 2;
-    background-color: #13213a;
+    background-color: #0c1b2e;
     border-top: 2px solid #cc9c1a;
-    color: rgba(255, 255, 255, 0.75);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgba(248, 250, 252, 0.82);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .footer-inner {
@@ -18,59 +26,75 @@
 
 .footer-col { flex: 1 1 260px; }
 
-.site-footer h3 {
-    font-family: "Archivo Black", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #f4c430;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.site-footer h4 {
+/* the wordmark — the one place caps are intended */
+.site-footer h3,
+.site-footer .footer-mark {
     font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #f4c430;
-    font-size: 1rem;
+    color: #e6b831;
     margin-bottom: 1rem;
 }
 
-.site-footer p { line-height: 1.7; }
-
-.footer-col ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* column headings */
+.site-footer h4,
+.site-footer .footer-head {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #e6b831;
+    margin-bottom: 1rem;
 }
 
-.footer-col li { margin-bottom: 0.6rem; }
+/* everything else stays sentence case */
+.site-footer p,
+.site-footer a,
+.site-footer li {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.footer-col ul { list-style: none; margin: 0; padding: 0; }
+.footer-col li { margin-bottom: 0.4rem; }
 
 .site-footer a {
-    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 0.25rem 0;
+    color: rgba(248, 250, 252, 0.82);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.site-footer a:hover { color: #f4c430; }
+.site-footer a:hover,
+.site-footer a:focus-visible { color: #e6b831; }
 
 .footer-feedback {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: #f4c430 !important;
-    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: #e6b831 !important;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(248, 250, 252, 0.1);
     padding: 1.5rem 2rem;
     text-align: center;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    letter-spacing: normal;
+    text-transform: none;
+    color: rgba(248, 250, 252, 0.5);
 }
 
-
 @media (max-width: 767px) {
-    .footer-inner { flex-direction: column; gap: 2.5rem; padding: 3rem 1.5rem 2rem; }
-    .cta { padding: 4rem 1.5rem; }
+    .footer-inner {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem 2rem;
+    }
 }

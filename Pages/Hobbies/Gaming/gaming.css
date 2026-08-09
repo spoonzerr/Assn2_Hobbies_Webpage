@@ -292,6 +292,55 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
 
 [id] { scroll-margin-top: 110px; }
 
+/* ---------- closing call to action ---------- */
+
+.cta-card { padding-block: 2rem; }
+
+.cta-eyebrow {
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+}
+
+.cta-heading {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1.2;
+}
+
+.cta-text {
+    max-width: 34rem;
+    font-size: 1.1rem;
+    color: var(--ink);
+}
+
+/* solid pill button with a soft glow */
+.btn-gold-solid {
+    --bs-btn-color: var(--navy);
+    --bs-btn-bg: var(--gold);
+    --bs-btn-border-color: var(--gold);
+    --bs-btn-hover-color: var(--navy);
+    --bs-btn-hover-bg: #ffd85c;
+    --bs-btn-hover-border-color: #ffd85c;
+    --bs-btn-focus-shadow-rgb: 244, 196, 48;
+    --bs-btn-border-radius: 999px;
+    --bs-btn-padding-x: 2.5rem;
+    --bs-btn-padding-y: 0.9rem;
+    font-family: var(--body);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 30px rgba(244, 196, 48, 0.35);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-gold-solid:hover {
+    box-shadow: 0 0 42px rgba(244, 196, 48, 0.5);
+}
+
+.btn-gold-solid:hover .arrow { transform: translateX(6px); }
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 575.98px) {
