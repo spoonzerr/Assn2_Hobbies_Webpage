@@ -1,158 +1,611 @@
-/* ============================================================
-   BAKING PAGE STYLES
-   ============================================================ */
+/* Base Setup */
+body {
+    background-color: #0a2136;
+    color: #f8fafc;
+    margin: 0;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
 
-/* Section Spacing & Layout */
+/* Baking-specific accent, used sparingly against the site's gold */
+:root {
+    --crust: #c97b4c;
+    --crust-soft: rgba(201, 123, 76, 0.18);
+}
+
+/* ============================================================
+   HERO / WELCOME HEADER
+============================================================ */
+.welcome {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 1.5rem 2.5rem;
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 58rem;
+    padding: 4rem 2.5rem;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    background: linear-gradient(180deg,
+        rgba(244, 196, 48, 0.12) 0%,
+        rgba(244, 196, 48, 0.04) 50%,
+        rgba(244, 196, 48, 0) 100%);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-card h1 {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    color: #f8fafc;
+}
+
+.hobby-name {
+    color: #e6b831;
+    text-shadow: 0 0 20px rgba(230, 184, 49, 0.25);
+}
+
+.hero-subtext {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(248, 250, 252, 0.82);
+    margin: 1.5rem auto 0;
+    max-width: 38rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* ============================================================
+   SHARED SECTION HEADINGS
+============================================================ */
 .content-section {
-    padding: 3.5rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
 }
 
-/* Card Styling for 'Why People Enjoy' & 'Benefits' */
-.enjoy-card {
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #e6b831;
+}
+
+.section-kicker::before {
+    content: "";
+    width: 1.75rem;
+    height: 1.5px;
+    background: #e6b831;
+}
+
+.section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.2;
+    color: #f8fafc;
+    letter-spacing: -0.01em;
+}
+
+.section-subheading {
+    font-size: 1rem;
+    color: rgba(248, 250, 252, 0.82);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 620px;
+}
+
+/* ============================================================
+   INTRO SECTION (VIDEO & TEXT)
+============================================================ */
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.intro-media {
+    flex: 0 0 48%;
+    border-radius: 20px;
     overflow: hidden;
-    height: 100%;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    background: #000;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    aspect-ratio: 16 / 10;
 }
 
-.enjoy-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 193, 7, 0.4);
-}
-
-.slideshow-box {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-}
-
-.slideshow-box img {
-    position: absolute;
-    top: 0;
-    left: 0;
+.intro-media video {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
+}
+
+.intro-text-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(215, 184, 4);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.intro-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(248, 250, 252, 0.82);
+}
+
+/* ============================================================
+   BAKE TIMELINE (signature section)
+============================================================ */
+.bake-timeline {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.bake-timeline::before {
+    content: "";
+    position: absolute;
+    top: 1.75rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        rgba(201, 123, 76, 0) 0%,
+        var(--crust) 12%,
+        var(--crust) 88%,
+        rgba(201, 123, 76, 0) 100%);
+    opacity: 0.55;
+    z-index: 0;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    text-align: center;
     opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.slideshow-box img.active {
+.timeline-step.in-view {
     opacity: 1;
+    transform: translateY(0);
 }
 
-.enjoy-card-body {
-    padding: 1.25rem;
+.step-marker {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: rgba(19, 36, 60, 0.85);
+    border: 1px solid rgba(201, 123, 76, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    color: var(--crust);
 }
 
-.enjoy-card-body h3 {
-    font-size: 1.15rem;
+.timeline-step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 0.4rem;
+}
+
+.timeline-step p {
+    font-size: 0.85rem;
+    color: rgba(248, 250, 252, 0.75);
+    line-height: 1.55;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .bake-timeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .bake-timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 1.75rem;
+        right: auto;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(180deg,
+            rgba(201, 123, 76, 0) 0%,
+            var(--crust) 10%,
+            var(--crust) 90%,
+            rgba(201, 123, 76, 0) 100%);
+    }
+
+    .timeline-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .step-marker {
+        margin: 0;
+        flex-shrink: 0;
+    }
+}
+
+/* ============================================================
+   BENEFIT CARDS
+============================================================ */
+.benefit-card {
+    background: rgba(19, 36, 60, 0.65);
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    border-radius: 14px;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 123, 76, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.benefit-card-body i {
+    color: var(--crust);
+}
+
+.benefit-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
     color: #f8fafc;
     margin-bottom: 0.5rem;
 }
 
-.enjoy-card-body p {
-    font-size: 0.9rem;
-    color: rgba(248, 250, 252, 0.7);
+.benefit-card-body p {
+    color: rgba(248, 250, 252, 0.82);
+    font-size: 0.925rem;
+    line-height: 1.6;
     margin: 0;
-    line-height: 1.5;
+    padding: 0 1.25rem;
 }
 
-/* Carousel Section */
-.places-carousel {
+/* ============================================================
+   TOP BAKES CAROUSEL
+============================================================ */
+.bakes-carousel {
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
-    padding-bottom: 1.5rem;
     scroll-snap-type: x mandatory;
+    padding-bottom: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--crust) #071524;
 }
 
-.place-card {
-    min-width: 280px;
-    max-width: 320px;
-    flex: 0 0 auto;
+.bakes-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.bakes-carousel::-webkit-scrollbar-track {
+    background: #071524;
+}
+
+.bakes-carousel::-webkit-scrollbar-thumb {
+    background: var(--crust);
+    border-radius: 10px;
+}
+
+.bake-card {
+    flex: 0 0 320px;
     scroll-snap-align: start;
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    background: rgba(19, 36, 60, 0.65);
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bake-card:hover {
+    border-color: rgba(201, 123, 76, 0.5);
+}
+
+.bake-photo-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
 }
 
-.place-photo-slider {
-    position: relative;
-    width: 100%;
-    height: 200px;
-}
-
-.place-photo-slider img {
-    position: absolute;
+.bake-photo-slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    display: none;
 }
 
-.place-photo-slider img.active {
-    opacity: 1;
+.bake-photo-slider img.active {
+    display: block;
 }
 
-/* Slider Controls */
 .slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
+    background: rgba(7, 21, 36, 0.75);
+    border: 1px solid rgba(201, 123, 76, 0.35);
+    color: var(--crust);
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    z-index: 2;
-    cursor: pointer;
+    width: 34px;
+    height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.slider-btn.prev { left: 8px; }
-.slider-btn.next { right: 8px; }
+.slider-btn:hover {
+    background: var(--crust);
+    color: #071524;
+    border-color: var(--crust);
+}
+
+.slider-btn.prev { left: 0.6rem; }
+.slider-btn.next { right: 0.6rem; }
 
 .dots-indicator {
     position: absolute;
-    bottom: 8px;
+    bottom: 0.6rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 6px;
+    gap: 0.35rem;
     z-index: 2;
 }
 
 .dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.4);
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dot.active {
-    background: #ffc107;
+    background: var(--crust);
+    transform: scale(1.3);
 }
 
-.place-card-body {
+.bake-card-body {
     padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Back to Top Button */
+.bake-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #e6b831;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.bake-card-body p {
+    font-size: 0.9rem;
+    color: rgba(248, 250, 252, 0.82);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ============================================================
+   BAKER PROFILES TABLE
+============================================================ */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.baker-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(19, 36, 60, 0.65);
+    color: #f8fafc;
+    backdrop-filter: blur(8px);
+}
+
+.baker-table th {
+    background: rgba(10, 23, 40, 0.95);
+    color: #e6b831;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: left;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid rgba(230, 184, 49, 0.2);
+}
+
+.baker-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(230, 184, 49, 0.2);
+    vertical-align: middle;
+}
+
+.baker-table tr:last-child td {
+    border-bottom: none;
+}
+
+.baker-table tr {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.baker-table tr:hover {
+    background: rgba(201, 123, 76, 0.06);
+}
+
+.col-photo {
+    width: 28%;
+    min-width: 170px;
+}
+
+.cell-photo img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(230, 184, 49, 0.2);
+}
+
+.col-info {
+    width: 72%;
+}
+
+.baker-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #e6b831;
+    margin: 0 0 0.2rem 0;
+}
+
+.baker-subtext {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: rgba(248, 250, 252, 0.55);
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.baker-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(248, 250, 252, 0.82);
+    margin: 0;
+}
+
+/* ============================================================
+   CALL TO ACTION & FOOTER BUTTONS
+============================================================ */
+.cta-quest {
+    text-align: center;
+    background: linear-gradient(180deg, rgba(19, 36, 60, 0.8) 0%, rgba(10, 23, 40, 0.9) 100%);
+    border: 1px solid rgba(230, 184, 49, 0.45);
+    border-radius: 20px;
+    padding: 4rem 1.5rem;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.cta-quest h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: #e6b831;
+    margin-top: 0.5rem;
+}
+
+.btn-quest {
+    background: #e6b831;
+    color: #071524;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    border: none;
+    border-radius: 50rem;
+    padding: 0.85rem 2.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(230, 184, 49, 0.25);
+}
+
+.btn-quest:hover {
+    background: #fcd34d;
+    color: #071524;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 211, 77, 0.35);
+}
+
 .back-to-top {
+    display: none;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    display: none;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    padding: 0;
     z-index: 1000;
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT ADJUSTMENTS
+============================================================ */
+@media (max-width: 991px) {
+    .intro {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .intro-media {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .welcome {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .welcome-card {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* Respect reduced-motion preferences for the timeline reveal */
+@media (prefers-reduced-motion: reduce) {
+    .timeline-step {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
 }

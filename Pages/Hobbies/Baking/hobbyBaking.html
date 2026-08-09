@@ -8,7 +8,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -36,96 +35,63 @@
     </div>
 
     <section class="welcome">
-        <div class="welcome-card text-center">
+        <div class="welcome-card">
             <h1>Welcome to<br><span class="hobby-name">Baking</span></h1>
             <p class="hero-subtext">
-                Transforming simple ingredients into delicious creations — from golden sourdough loaves to delicate pastries.
+                Four basic ingredients, one oven, and a hundred ways it can go right — or wonderfully wrong.
             </p>
         </div>
     </section>
 
     <section class="intro">
         <div class="intro-media">
-            <video id="vid1" controls preload="metadata" poster="/Assets/images/baking-hero.jpg">
+            <video id="bakingVid" controls preload="metadata" poster="/Assets/images/baking.jpg">
                 <source src="/Assets/videos/baking.mp4" type="video/mp4">
                 Your browser doesn't support video.
             </video>
         </div>
         <div class="intro-text-box">
-            <span class="eyebrow mb-2">About The Craft</span>
-            <h2 class="intro-heading mb-3">Where Science Meets Flavor</h2>
-            <p class="intro-text mb-4">
-                Baking is both a therapeutic art and a precise science. Whether you are kneading your first loaf of bread or decoratively frosting a birthday cake, baking brings comfort, creativity, and incredible aromas to your kitchen.
+            <h2 class="intro-heading">About The Hobby</h2>
+            <p class="intro-text">
+                Baking rewards patience in a way few hobbies do — you can't rush a proof or open the oven early
+                without paying for it later. What starts as flour, butter, and sugar on a counter turns into
+                something you can actually share, which is half the reason it's worth doing at all.
             </p>
-            <div class="intro-highlights">
-                <div class="highlight-item">
-                    <span class="highlight-number">50+</span>
-                    <span class="highlight-label">Recipes</span>
-                </div>
-                <div class="highlight-item">
-                    <span class="highlight-number">&infin;</span>
-                    <span class="highlight-label">Delights</span>
-                </div>
-            </div>
         </div>
     </section>
 
     <section class="content-section">
-        <div class="section-kicker mb-2">The Joy</div>
-        <h2 class="section-heading mb-2">Why People Enjoy Baking</h2>
-        <p class="section-subheading mb-4">Discover what keeps bakers coming back to the oven time and time again.</p>
+        <div class="section-kicker mb-2">The Craft</div>
+        <h2 class="section-heading mb-2">From Flour to Finished Bake</h2>
+        <p class="section-subheading mb-4">
+            Every bake follows roughly the same rhythm. Here's how a batch comes together, start to finish.
+        </p>
 
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="enjoy-card">
-                    <div class="slideshow-box">
-                        <img src="/Assets/images/baking-1.jpg" class="active" alt="Pastry baking">
-                        <img src="/Assets/images/baking-2.jpg" alt="Pastry detail">
-                    </div>
-                    <div class="enjoy-card-body">
-                        <h3>Creative Expression</h3>
-                        <p>Decorating, piping, and experimenting with unique flavors offers an amazing artistic outlet.</p>
-                    </div>
-                </div>
+        <div class="bake-timeline" id="bakeTimeline">
+            <div class="timeline-step">
+                <div class="step-marker"><i class="bi bi-basket2"></i></div>
+                <h3>Mise en Place</h3>
+                <p>Weigh every ingredient before anything touches a bowl. Baking is chemistry, not guesswork.</p>
             </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="enjoy-card">
-                    <div class="slideshow-box">
-                        <img src="/Assets/images/baking-2.jpg" class="active" alt="Bread kneading">
-                        <img src="/Assets/images/baking-3.jpg" alt="Dough shaping">
-                    </div>
-                    <div class="enjoy-card-body">
-                        <h3>Stress Relief</h3>
-                        <p>The rhythmic process of kneading dough and measuring ingredients encourages mindfulness.</p>
-                    </div>
-                </div>
+            <div class="timeline-step">
+                <div class="step-marker"><i class="bi bi-egg"></i></div>
+                <h3>Mix & Knead</h3>
+                <p>Bring the dough or batter together until the structure is exactly where it needs to be.</p>
             </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="enjoy-card">
-                    <div class="slideshow-box">
-                        <img src="/Assets/images/baking-3.jpg" class="active" alt="Sharing food">
-                        <img src="/Assets/images/baking-4.jpg" alt="Party treats">
-                    </div>
-                    <div class="enjoy-card-body">
-                        <h3>Sharing Happiness</h3>
-                        <p>Few things bring people together faster than freshly baked treats warm from the oven.</p>
-                    </div>
-                </div>
+            <div class="timeline-step">
+                <div class="step-marker"><i class="bi bi-clock-history"></i></div>
+                <h3>Proof & Rest</h3>
+                <p>Time does half the work here — flavour and texture develop while you wait it out.</p>
             </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="enjoy-card">
-                    <div class="slideshow-box">
-                        <img src="/Assets/images/baking-4.jpg" class="active" alt="Oven baking">
-                        <img src="/Assets/images/baking-1.jpg" alt="Golden crust">
-                    </div>
-                    <div class="enjoy-card-body">
-                        <h3>Sensory Rewards</h3>
-                        <p>The golden colors, rich aromas, and satisfying textures make the whole experience rewarding.</p>
-                    </div>
-                </div>
+            <div class="timeline-step">
+                <div class="step-marker"><i class="bi bi-fire"></i></div>
+                <h3>Bake</h3>
+                <p>Heat transforms everything. This is where the smell takes over the whole kitchen.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="step-marker"><i class="bi bi-cake2"></i></div>
+                <h3>Cool & Finish</h3>
+                <p>Glazing, frosting, or just resisting the urge to cut in before it's set.</p>
             </div>
         </div>
     </section>
@@ -133,35 +99,40 @@
     <section class="content-section">
         <div class="section-kicker mb-2">Personal Growth</div>
         <h2 class="section-heading mb-2">Benefits of Baking</h2>
-        <p class="section-subheading mb-4">How stepping into the kitchen builds skills and clears your mind.</p>
+        <p class="section-subheading mb-4">
+            What kneading dough at 9pm is actually doing for you, beyond the smell.
+        </p>
 
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
-                <div class="enjoy-card">
-                    <div class="enjoy-card-body text-center py-4">
-                        <i class="bi bi-clock-history fs-1 text-warning mb-2 d-block"></i>
-                        <h3>Patience & Precision</h3>
-                        <p>Baking teaches exact measuring, careful timing, and appreciation for the process.</p>
+                <div class="benefit-card">
+                    <div class="benefit-card-body text-center py-4">
+                        <i class="bi bi-cup-hot fs-1 mb-2 d-block"></i>
+                        <h3>A Reason to Slow Down</h3>
+                        <p>Kneading, proofing, and waiting for a timer force a pace that's hard to find anywhere
+                            else in the day.</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4">
-                <div class="enjoy-card">
-                    <div class="enjoy-card-body text-center py-4">
-                        <i class="bi bi-heart-pulse fs-1 text-warning mb-2 d-block"></i>
-                        <h3>Mindful Focus</h3>
-                        <p>Following a step-by-step recipe provides a mental break from daily screens and stress.</p>
+                <div class="benefit-card">
+                    <div class="benefit-card-body text-center py-4">
+                        <i class="bi bi-rulers fs-1 mb-2 d-block"></i>
+                        <h3>Precision Under Pressure</h3>
+                        <p>Off ratios and mistimed bakes teach measurement discipline fast — there's no
+                            eyeballing your way out of a collapsed cake.</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4">
-                <div class="enjoy-card">
-                    <div class="enjoy-card-body text-center py-4">
-                        <i class="bi bi-gift fs-1 text-warning mb-2 d-block"></i>
-                        <h3>Gift of Giving</h3>
-                        <p>Baking homemade goods is one of the most personal and appreciated ways to show love to friends.</p>
+                <div class="benefit-card">
+                    <div class="benefit-card-body text-center py-4">
+                        <i class="bi bi-palette fs-1 mb-2 d-block"></i>
+                        <h3>Edible Creativity</h3>
+                        <p>Flavour pairings, piping, and plating give you a genuine creative outlet — one you
+                            get to eat afterwards.</p>
                     </div>
                 </div>
             </div>
@@ -169,90 +140,170 @@
     </section>
 
     <section class="content-section">
-        <div class="section-kicker mb-2">Favorite Recipes</div>
-        <h2 class="section-heading mb-2">Top 10 Most Popular Bakes</h2>
-        <p class="section-subheading mb-4">Scroll through classic bakes loved by home bakers worldwide.</p>
+        <div class="section-kicker mb-2">Baker's Bucket List</div>
+        <h2 class="section-heading mb-2">5 Bakes Every Baker Should Master</h2>
+        <p class="section-subheading mb-4">The recipes that teach you the most, in roughly the order to attempt them.</p>
 
-        <div id="top-places" class="places-carousel">
-            <div class="place-card">
-                <div class="place-photo-slider">
+        <div id="top-bakes" class="bakes-carousel">
+            <div class="bake-card">
+                <div class="bake-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/baking-1.jpg" class="active" alt="Chocolate Chip Cookies">
-                    <img src="/Assets/images/baking-2.jpg" alt="Cookie Tray">
+                    <img src="/Assets/images/bakingpics/cookies/cookies1.jpg" class="active" alt="Chocolate chip cookies">
+                    <img src="/Assets/images/bakingpics/cookies/cookies2.jpg" alt="Cookie dough">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
-                <div class="place-card-body">
+                <div class="bake-card-body">
                     <h3>1. Chocolate Chip Cookies</h3>
-                    <p>Crispy edges, gooey chocolate centers, and classic comfort in every single bite.</p>
+                    <p>The forgiving starting point — teaches you how butter temperature changes spread and
+                        chew.</p>
                 </div>
             </div>
 
-            <div class="place-card">
-                <div class="place-photo-slider">
+            <div class="bake-card">
+                <div class="bake-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/baking-2.jpg" class="active" alt="Sourdough Bread">
-                    <img src="/Assets/images/baking-3.jpg" alt="Sliced Sourdough">
+                    <img src="/Assets/images/bakingpics/cake/cake1.jpg" class="active" alt="Vanilla layer cake">
+                    <img src="/Assets/images/bakingpics/cake/cake2.jpg" alt="Cake slice">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
-                <div class="place-card-body">
-                    <h3>2. Artisanal Sourdough</h3>
-                    <p>Crusty golden exterior with an airy crumb, naturally fermented for rich depth of flavor.</p>
+                <div class="bake-card-body">
+                    <h3>2. Vanilla Layer Cake</h3>
+                    <p>Where levelling, stacking, and crumb coats stop being optional and start being technique.</p>
                 </div>
             </div>
 
-            <div class="place-card">
-                <div class="place-photo-slider">
+            <div class="bake-card">
+                <div class="bake-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/baking-3.jpg" class="active" alt="French Macarons">
-                    <img src="/Assets/images/baking-4.jpg" alt="Colorful Macarons">
+                    <img src="/Assets/images/bakingpics/sourdough/sourdough1.jpg" class="active" alt="Sourdough loaf">
+                    <img src="/Assets/images/bakingpics/sourdough/sourdough2.jpg" alt="Sourdough crumb">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
-                <div class="place-card-body">
-                    <h3>3. French Macarons</h3>
-                    <p>Delicate almond meringue shells filled with smooth ganache, fruit curd, or buttercream.</p>
+                <div class="bake-card-body">
+                    <h3>3. Sourdough Loaf</h3>
+                    <p>No shortcuts here — you're managing a living culture over days, not hours.</p>
                 </div>
             </div>
 
-            <div class="place-card">
-                <div class="place-photo-slider">
+            <div class="bake-card">
+                <div class="bake-photo-slider">
                     <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/baking-4.jpg" class="active" alt="Cinnamon Rolls">
-                    <img src="/Assets/images/baking-1.jpg" alt="Frosted Cinnamon Rolls">
+                    <img src="/Assets/images/bakingpics/croissant/croissant1.jpg" class="active" alt="Butter croissants">
+                    <img src="/Assets/images/bakingpics/croissant/croissant2.jpg" alt="Croissant layers">
                     <div class="dots-indicator">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                     </div>
                 </div>
-                <div class="place-card-body">
-                    <h3>4. Classic Cinnamon Rolls</h3>
-                    <p>Soft fluffy dough swirled with warm brown sugar, cinnamon, and rich cream cheese icing.</p>
+                <div class="bake-card-body">
+                    <h3>4. Butter Croissants</h3>
+                    <p>Lamination is unforgiving — this is the one that separates hobbyists from the patient.</p>
                 </div>
             </div>
+
+            <div class="bake-card">
+                <div class="bake-photo-slider">
+                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
+                    <img src="/Assets/images/bakingpics/macarons/macarons1.jpg" class="active" alt="French macarons">
+                    <img src="/Assets/images/bakingpics/macarons/macarons2.jpg" alt="Macaron shells">
+                    <div class="dots-indicator">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="bake-card-body">
+                    <h3>5. French Macarons</h3>
+                    <p>The final boss. Humidity, folding, and oven temperature all have to agree at once.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-kicker mb-2">Baker Profiles</div>
+        <h2 class="section-heading mb-2">Different Ways People Bake</h2>
+        <p class="section-subheading mb-4">Find out which corner of the kitchen matches your patience level.</p>
+
+        <div class="table-responsive">
+            <table class="baker-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="col-photo">Preview</th>
+                        <th scope="col" class="col-info">Type & Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cell-photo">
+                            <img src="/Assets/images/bakingpics/sourdough/sourdough1.jpg" alt="Bread Baker">
+                        </td>
+                        <td class="cell-info">
+                            <h3 class="baker-title">The Bread Baker</h3>
+                            <span class="baker-subtext">Rustic & Traditional</span>
+                            <p class="baker-text">
+                                Bread bakers work on a slower clock than everyone else — measuring hydration
+                                percentages, tracking fermentation time, and treating a loaf's crumb structure
+                                as the real scorecard.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="cell-photo">
+                            <img src="/Assets/images/bakingpics/croissant/croissant1.jpg" alt="Pastry Artist">
+                        </td>
+                        <td class="cell-info">
+                            <h3 class="baker-title">The Pastry Artist</h3>
+                            <span class="baker-subtext">Lamination & Precision</span>
+                            <p class="baker-text">
+                                Pastry artists chase flaky, buttery layers — croissants, puff pastry, danishes.
+                                Kitchen temperature isn't a detail to them, it's the whole game.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="cell-photo">
+                            <img src="/Assets/images/bakingpics/cake/cake1.jpg" alt="Cake Decorator">
+                        </td>
+                        <td class="cell-info">
+                            <h3 class="baker-title">The Cake Decorator</h3>
+                            <span class="baker-subtext">Design & Detail</span>
+                            <p class="baker-text">
+                                For cake decorators the bake is step one — piping, fondant work, and colour
+                                theory are where the real hours go.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
     <section class="content-section">
         <div class="cta-quest">
-            <div class="eyebrow mb-2">Join the Club</div>
-            <h2>Ready to Start Your Baking Journey?</h2>
+            <div class="eyebrow mb-2">The Next Batch</div>
+            <h2>Bake Something With Us</h2>
             <p class="text-dim mx-auto mt-2 mb-4" style="max-width: 500px;">
-                Connect with fellow home bakers, share recipe tweaks, and join our weekly community baking challenges.
+                Swap recipes, troubleshoot a stubborn sourdough starter, and get added to our weekend baking
+                meet-ups.
             </p>
             <a href="/Pages/Forms/BakingForm/BakingForm.html" class="btn-quest">
-                Join Baking Group <i class="bi bi-arrow-right ms-1"></i>
+                Join Our Baking Circle <i class="bi bi-arrow-right ms-1"></i>
             </a>
         </div>
     </section>
@@ -262,6 +313,7 @@
     </button>
 
     <div id="footer"></div>
+
 </body>
 
 </html>

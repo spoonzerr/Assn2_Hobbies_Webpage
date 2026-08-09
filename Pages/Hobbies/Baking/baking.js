@@ -1,30 +1,34 @@
-/* ============================================================
-   BAKING PAGE SCRIPT
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* Auto Image Switcher for Cards */
-    const enjoyCards = document.querySelectorAll(".enjoy-card");
+    /* ============================================================
+       Bake timeline — steps fade/slide in as they scroll into view
+    ============================================================ */
+    const timelineSteps = document.querySelectorAll(".timeline-step");
 
-    enjoyCards.forEach((card) => {
-        const images = card.querySelectorAll(".slideshow-box img");
+    if (timelineSteps.length) {
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
 
-        if (images.length > 1) {
-            let photoIndex = 0;
+        timelineSteps.forEach((step, i) => {
+            // Staggers the reveal left-to-right without needing separate CSS rules per step
+            step.style.transitionDelay = `${i * 0.12}s`;
+            timelineObserver.observe(step);
+        });
+    }
 
-            setInterval(() => {
-                images[photoIndex].classList.remove("active");
-                photoIndex = (photoIndex + 1) % images.length;
-                images[photoIndex].classList.add("active");
-            }, 3500);
-        }
-    });
 
-    /* Manual Photo Slider for Popular Bakes */
-    const placeSliders = document.querySelectorAll(".place-photo-slider");
+    /* ============================================================
+       Photo arrows and dots switcher for "5 Bakes to Master"
+    ============================================================ */
+    const bakeSliders = document.querySelectorAll(".bake-photo-slider");
 
-    placeSliders.forEach((slider) => {
+    bakeSliders.forEach((slider) => {
         const images = slider.querySelectorAll("img");
         const dots = slider.querySelectorAll(".dot");
         const prevBtn = slider.querySelector(".prev");
@@ -56,23 +60,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* Back To Top Scroll Logic */
+
+    /* ============================================================
+       Back to top scroll button logic
+    ============================================================ */
     const topBtn = document.getElementById("backToTopBtn");
 
     if (topBtn) {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                topBtn.style.display = "block";
-            } else {
-                topBtn.style.display = "none";
-            }
+            topBtn.style.display = window.scrollY > 300 ? "block" : "none";
         });
 
         topBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
+
 });
