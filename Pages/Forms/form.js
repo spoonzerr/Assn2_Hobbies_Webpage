@@ -33,15 +33,7 @@ function initFormValidation() {
         // once errors are showing, update them live as the user fixes things
         form.addEventListener("change", function () {
             if (form.classList.contains("was-validated")) markGroups(form);
-        });
-
-        // reset clears the error styling too, not just the values
-        form.addEventListener("reset", function () {
-            form.classList.remove("was-validated");
-            form.querySelectorAll(".group-invalid").forEach(function (el) {
-                el.classList.remove("group-invalid");
-            });
-        });
+        });  
     });
 }
 

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/Components/navbar/navbar.css">
     <link rel="stylesheet" href="/Components/footer/footer.css">
     <link rel="stylesheet" href="/Pages/Forms/form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/Components/navbar/navbar.js" defer></script>
@@ -24,9 +25,6 @@
 </head>
 
 <body>
-
-    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
-
     <div id="navbar"></div>
 
     <nav class="container below-nav" aria-label="Breadcrumb">
@@ -98,8 +96,8 @@
                                                 <!-- countries grouped by by name -->
                                                 <!-- Calling Code and Name -->
                                                 <select class="form-select" autocomplete="country" id="country"
-                                                    name="country">
-                                                    <option>select country</option>
+                                                    name="countryCode" required>
+                                                    <option value="" selected disabled>Choose one&hellip;</option>
                                                     <optgroup label="A">
                                                         <option value="93">Afghanistan (+93)</option>
                                                         <option value="355">Albania (+355)</option>
@@ -131,12 +129,14 @@
                                                         <option value="229">Benin (+229)</option>
                                                         <option value="1">Bermuda (+1)</option>
                                                         <option value="975">Bhutan (+975)</option>
-                                                        <option value="591">Bolivia (Plurinational State of) (+591)</option>
+                                                        <option value="591">Bolivia (Plurinational State of) (+591)
+                                                        </option>
                                                         <option value="387">Bosnia and Herzegovina (+387)</option>
                                                         <option value="267">Botswana (+267)</option>
                                                         <option value="55">Bouvet Island (+55)</option>
                                                         <option value="55">Brazil (+55)</option>
-                                                        <option value="246">British Indian Ocean Territory (+246)</option>
+                                                        <option value="246">British Indian Ocean Territory (+246)
+                                                        </option>
                                                         <option value="673">Brunei Darussalam (+673)</option>
                                                         <option value="359">Bulgaria (+359)</option>
                                                         <option value="226">Burkina Faso (+226)</option>
@@ -158,7 +158,8 @@
                                                         <option value="57">Colombia (+57)</option>
                                                         <option value="269">Comoros (+269)</option>
                                                         <option value="242">Congo (+242)</option>
-                                                        <option value="243">Congo, Democratic Republic of the (+243)</option>
+                                                        <option value="243">Congo, Democratic Republic of the (+243)
+                                                        </option>
                                                         <option value="682">Cook Islands (+682)</option>
                                                         <option value="506">Costa Rica (+506)</option>
                                                         <option value="385">Croatia (+385)</option>
@@ -214,7 +215,8 @@
                                                     </optgroup>
                                                     <optgroup label="H">
                                                         <option value="509">Haiti (+509)</option>
-                                                        <option value="61">Heard Island and Mcdonald Islands (+61)</option>
+                                                        <option value="61">Heard Island and Mcdonald Islands (+61)
+                                                        </option>
                                                         <option value="504">Honduras (+504)</option>
                                                         <option value="852">Hong Kong (+852)</option>
                                                         <option value="36">Hungary (+36)</option>
@@ -247,7 +249,8 @@
                                                         <option value="996">Kyrgyzstan (+996)</option>
                                                     </optgroup>
                                                     <optgroup label="L">
-                                                        <option value="856">Lao People's Democratic Republic (+856)</option>
+                                                        <option value="856">Lao People's Democratic Republic (+856)
+                                                        </option>
                                                         <option value="371">Latvia (+371)</option>
                                                         <option value="961">Lebanon (+961)</option>
                                                         <option value="266">Lesotho (+266)</option>
@@ -348,7 +351,8 @@
                                                         <option value="677">Solomon Islands (+677)</option>
                                                         <option value="252">Somalia (+252)</option>
                                                         <option value="27">South Africa (+27)</option>
-                                                        <option value="500">South Georgia and the South Sandwich Islands (+500)</option>
+                                                        <option value="500">South Georgia and the South Sandwich Islands
+                                                            (+500)</option>
                                                         <option value="211">South Sudan (+211)</option>
                                                         <option value="34">Spain (+34)</option>
                                                         <option value="94">Sri Lanka (+94)</option>
@@ -405,8 +409,6 @@
                                                         <option value="263">Zimbabwe (+263)</option>
                                                     </optgroup>
                                                 </select>
-                                                <!-- total group - 26 -->
-                                                </select>
 
                                                 <input type="tel" class="form-control" id="phone" name="phone"
                                                     pattern="[0-9\s\-]{6,12}" autocomplete="tel" required>
@@ -425,6 +427,7 @@
                                                 autocomplete="email" required>
                                             <div class="invalid-feedback">Enter a valid email address.</div>
                                         </div>
+                                    </div>
                                 </fieldset>
 
                                 <!-- ===== about you ===== -->
@@ -560,7 +563,6 @@
                                         Sign me up
                                         <span class="arrow ms-2" aria-hidden="true">&rarr;</span>
                                     </button>
-                                    <button type="reset" class="btn btn-gold btn-lg">Clear form</button>
                                 </div>
 
                             </form>

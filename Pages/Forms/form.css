@@ -309,22 +309,6 @@ h1, h2 { font-family: var(--display); color: var(--ink); }
 .breadcrumb a:visited { color: var(--gold); text-decoration: none; }
 .breadcrumb a:hover { color: var(--gold-deep); text-decoration: underline; }
 
-.skip-link {
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    z-index: 1000;
-    padding: 0.6rem 1.2rem;
-    background-color: var(--gold);
-    color: var(--navy);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: normal;
-    text-transform: none;
-    text-decoration: none;
-    border-radius: 0 0 8px 8px;
-}
-
 :focus-visible {
     outline: 3px solid var(--gold);
     outline-offset: 3px;
