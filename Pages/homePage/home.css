@@ -5,7 +5,7 @@ body {
 }
 /*background image*/
 .viking {
-    background-image: url("/Assets/images/boat.jpg");
+    background-image: url("/Assets/images/homepics/boat.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

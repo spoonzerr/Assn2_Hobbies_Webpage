@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "/Assets/images/bakingpics/cookies/cookies1.jpg",
             bakeInfo: {
                 temp: "175°C / 350°F",
-                time: "10-12 min",
+                time: "1 hour",
                 cue: "Edges set, centre soft"
             },
             ingredients: [
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "/Assets/images/bakingpics/bakedrice/bakedrice1.jpg",
             bakeInfo: {
                 temp: "190°C / 375°F",
-                time: "20 min",
+                time: "45 min",
                 cue: "Cheese bubbling & golden"
             },
             ingredients: [
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "/Assets/images/bakingpics/maccheese/maccheese1.jpg",
             bakeInfo: {
                 temp: "190°C / 375°F",
-                time: "20-25 min",
+                time: "45 min",
                 cue: "Top golden, sauce bubbling"
             },
             ingredients: [
@@ -119,17 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "/Assets/images/bakingpics/pizza/pizza1.jpg",
             bakeInfo: {
                 temp: "250°C / 480°F",
-                time: "8-10 min",
+                time: "24+hours",
                 cue: "Crust charred, cheese melted"
             },
             ingredients: [
-                "2½ cups (600 milliliters) warm water",
+                "2 1/2 cups (600 milliliters) warm water",
                 "1 teaspoon sugar",
                 "2 teaspoons active dried yeast",
                 "7 cups all-purpose flour, plus more for dusting",
                 "6 tablespoons extra virgin olive oil, plus more for greasing",
-                "1½ tablespoons kosher salt",
-                "¼ cup semolina flour"
+                "1 1/2 tablespoons kosher salt",
+                "1/4 cup semolina flour"
             ],
             steps: [
                 " Sprinkle sugar and yeast into warm water and let sit for 10 minutes until bubbly to bloom the yeast.",
@@ -157,20 +157,20 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "/Assets/images/bakingpics/bread/bread1.jpg",
             bakeInfo: {
                 temp: "220°C / 425°F",
-                time: "30-35 min",
+                time: "1hour 30min",
                 cue: "Hollow sound when tapped"
             },
             ingredients: [
                 "3 ripe bananas (plus 1 sliced banana for topping)",
-                "½ cup (100g) white sugar",
-                "¼ cup (50g) brown sugar",
+                "1/2 cup (100g) white sugar",
+                "1/4 cup (50g) brown sugar",
                 "2 eggs",
                 "1 tsp vanilla extract",
-                "½ cup (115g) melted butter",
+                "1/2 cup (115g) melted butter",
                 "2 cups (250g) flour",
-                "½ tsp baking soda & ½ tsp baking powder",
-                "¼ tsp salt & 1 tsp cinnamon (optional)",
-                "½ cup (80g) chocolate chips or nuts (optional)"
+                "1/2 tsp baking soda & 1/2 tsp baking powder",
+                "1/4 tsp salt & 1 tsp cinnamon (optional)",
+                "1/2 cup (80g) chocolate chips or nuts (optional)"
             ],
             steps: [
                 "Preheat your oven to 175°C (350°F) and grease and line a 4x8-inch loaf pan with parchment paper.",

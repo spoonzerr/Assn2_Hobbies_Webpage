@@ -54,6 +54,16 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
 
 .gold-border { border-color: var(--rule) !important; }
 
+/* glow on the welcome card, to match the Travelling page */
+.welcome-card {
+    box-shadow: 0 0 40px rgba(244, 196, 48, 0.18), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* same glow on the closing CTA card */
+.cta-card {
+    box-shadow: 0 0 40px rgba(244, 196, 48, 0.18), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
 /* ---------- typography ---------- */
 
 .display-title {
@@ -63,6 +73,11 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
     text-indent: 0.14em;
     text-transform: uppercase;
     line-height: 1.3;
+}
+
+/* glow on the gold word inside the welcome heading */
+.display-title .text-gold {
+    text-shadow: 0 0 24px rgba(244, 196, 48, 0.55);
 }
 
 .chapter {
@@ -293,8 +308,6 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
 [id] { scroll-margin-top: 110px; }
 
 /* ---------- closing call to action ---------- */
-
-.cta-card { padding-block: 2rem; }
 
 .cta-eyebrow {
     font-size: 1rem;

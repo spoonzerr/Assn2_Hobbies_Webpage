@@ -15,7 +15,7 @@
     font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.footer-inner {
+.footer-container {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
@@ -24,9 +24,8 @@
     padding: 4rem 2rem 3rem;
 }
 
-.footer-col { flex: 1 1 260px; }
+.footer-col { flex: 1 1 320px; }
 
-/* the wordmark — the one place caps are intended */
 .site-footer h3,
 .site-footer .footer-mark {
     font-family: 'Cinzel', serif;
@@ -38,7 +37,6 @@
     margin-bottom: 1rem;
 }
 
-/* column headings */
 .site-footer h4,
 .site-footer .footer-head {
     font-family: 'Manrope', sans-serif;
@@ -50,7 +48,6 @@
     margin-bottom: 1rem;
 }
 
-/* everything else stays sentence case */
 .site-footer p,
 .site-footer a,
 .site-footer li {
@@ -60,6 +57,8 @@
     letter-spacing: normal;
     text-transform: none;
 }
+
+.footer-col p { max-width: 32rem; }
 
 .footer-col ul { list-style: none; margin: 0; padding: 0; }
 .footer-col li { margin-bottom: 0.4rem; }
@@ -75,12 +74,6 @@
 .site-footer a:hover,
 .site-footer a:focus-visible { color: #e6b831; }
 
-.footer-feedback {
-    margin-top: 0.5rem;
-    font-weight: 600;
-    color: #e6b831 !important;
-}
-
 .footer-bottom {
     border-top: 1px solid rgba(248, 250, 252, 0.1);
     padding: 1.5rem 2rem;
@@ -92,7 +85,7 @@
 }
 
 @media (max-width: 767px) {
-    .footer-inner {
+    .footer-container {
         flex-direction: column;
         gap: 2.5rem;
         padding: 3rem 1.5rem 2rem;

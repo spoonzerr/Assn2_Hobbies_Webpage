@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Baking Circle — Hobbyssey</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/Components/navbar/navbar.css">
+    <link rel="stylesheet" href="/Pages/homePage/home.css">
+    <link rel="stylesheet" href="/Pages/Hobbies/Baking/baking.css">
+    <link rel="stylesheet" href="/Pages/Forms/BakingForm/BakingForm.css">
+    <link rel="stylesheet" href="/Components/footer/footer.css">
+
+    <script src="/Components/navbar/navbar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/Pages/Forms/BakingForm/BakingForm.js" defer></script>
+    <script src="/Components/footer/footer.js" defer></script>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <nav class="crumbs-wrapper py-3" aria-label="Breadcrumb">
+        <div class="container" style="max-width: 800px;">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/Pages/homePage/home.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Pages/Hobbies/Baking/baking.html">Baking</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Join Baking Circle</li>
+            </ol>
+        </div>
+    </nav>
+
+    <main class="content-section py-4 py-md-5">
+        <div class="container" style="max-width: 800px;">
+
+            <div class="welcome-card text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3">Join Our <span class="hobby-name">Baking Circle</span></h1>
+                <p class="hero-subtext mx-auto" style="max-width: 600px;">
+                    Swap recipes, troubleshoot a stubborn starter, and get added to our weekend baking meet-ups.
+                </p>
+            </div>
+
+            <div class="form-wrapper p-4 p-md-5 rounded-4 shadow-lg">
+                <form id="signupForm" class="needs-validation" novalidate method="GET" action="/Pages/Response/response.html">
+                    <input type="hidden" name="formType" value="Baking sign-up">
+                    <div class="row g-4">
+
+                        <div class="col-12">
+                            <div class="section-header">
+                                <div class="section-number">1</div>
+                                <div>
+                                    <h2 class="h5 text-warning mb-1">Contact Details</h2>
+                                    <p class="text small mb-0">How the group can reach you.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label fw-semibold">Full Name <span class="required-mark">*</span></label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="e.g. Alex Smith" required>
+                            <div class="invalid-feedback">
+                                Please enter your full name.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="form-label fw-semibold">Email Address <span class="required-mark">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="countryInput" class="form-label fw-semibold">Phone Number <span class="required-mark">*</span></label>
+                            <div class="phone-group" id="phoneGroup">
+                                <div class="country-combo" id="countryCombo">
+                                    <input type="text" id="countryInput" class="country-input"
+                                        placeholder="Country" autocomplete="off" role="combobox"
+                                        aria-expanded="false" aria-controls="countryList" aria-autocomplete="list">
+                                    <i class="bi bi-chevron-down country-caret"></i>
+                                    <ul class="country-list d-none" id="countryList" role="listbox"></ul>
+                                </div>
+                                <input type="tel" class="phone-input" id="phone" name="phone"
+                                    placeholder="Phone number" pattern="[0-9\s\-]{6,12}" autocomplete="tel" required>
+                            </div>
+                            <input type="hidden" id="countryCode" name="countryCode">
+                            <div class="form-text">Type to search your country — the code fills in automatically.</div>
+                            <div class="invalid-feedback d-block d-none" id="phoneFeedback">
+                                Choose a country and enter a 6&ndash;12 digit number.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="discord" class="form-label fw-semibold">Discord or Instagram Handle</label>
+                            <input type="text" class="form-control" id="discord" name="discord" placeholder="Optional — for swapping recipe pics">
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <div class="section-header">
+                                <div class="section-number">2</div>
+                                <div>
+                                    <h2 class="h5 text-warning mb-1">Baking Preferences</h2>
+                                    <p class="text small mb-0">So we can match you to people baking similar things.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-semibold d-block">What do you love baking? <span class="required-mark">*</span></label>
+                            <div class="chip-group" id="categoryChips">
+                                <input type="checkbox" class="btn-check" id="catSweet" name="categories" value="Sweet bakes">
+                                <label class="chip-btn" for="catSweet"><i class="bi bi-cake2 me-1"></i>Sweet</label>
+
+                                <input type="checkbox" class="btn-check" id="catSavoury" name="categories" value="Savoury bakes">
+                                <label class="chip-btn" for="catSavoury"><i class="bi bi-egg-fried me-1"></i>Savoury</label>
+
+                                <input type="checkbox" class="btn-check" id="catBread" name="categories" value="Bread & dough">
+                                <label class="chip-btn" for="catBread"><i class="bi bi-basket2 me-1"></i>Bread &amp; Dough</label>
+
+                                <input type="checkbox" class="btn-check" id="catOpen" name="categories" value="Not sure yet, open to anything">
+                                <label class="chip-btn" for="catOpen"><i class="bi bi-question-circle me-1"></i>Not Sure Yet</label>
+                            </div>
+                            <div class="invalid-feedback d-block d-none" id="categoryFeedback">
+                                Pick at least one - mix and match as many as fit.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-semibold d-block">Where are you at? <span class="required-mark">*</span></label>
+                            <div class="chip-group" id="skillChips">
+                                <input type="radio" class="btn-check" id="skillBeginner" name="skillLevel" value="Beginner" required>
+                                <label class="chip-btn" for="skillBeginner">Beginner</label>
+
+                                <input type="radio" class="btn-check" id="skillIntermediate" name="skillLevel" value="Intermediate" required>
+                                <label class="chip-btn" for="skillIntermediate">Intermediate</label>
+
+                                <input type="radio" class="btn-check" id="skillAdvanced" name="skillLevel" value="Advanced" required>
+                                <label class="chip-btn" for="skillAdvanced">Advanced</label>
+                            </div>
+                            <div class="invalid-feedback d-block d-none" id="skillFeedback">
+                                Please pick a skill level.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="availability" class="form-label fw-semibold">How often could you bake with the group? <span class="required-mark">*</span></label>
+                            <select class="form-select" id="availability" name="availability" required>
+                                <option value="" selected disabled>Pick what's realistic for you...</option>
+                                <option value="Every week">Every week</option>
+                                <option value="Every other week">Every other week</option>
+                                <option value="Once a month">Once a month</option>
+                                <option value="Flexible / no fixed schedule">Flexible / no fixed schedule</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select how often you're free.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="notes" class="form-label fw-semibold">Tell Us a Bit More</label>
+                            <textarea class="form-control" id="notes" name="notes" rows="4" placeholder="Your baking experience so far, what you're hoping to learn, or a disaster story worth sharing..."></textarea>
+                        </div>
+
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-warning btn-lg px-5 py-3 fw-bold rounded-pill text-dark text-uppercase tracking-wider shadow-sm">
+                                Request to Join Circle <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
