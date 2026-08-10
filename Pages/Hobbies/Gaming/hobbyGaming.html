@@ -23,12 +23,13 @@
     <script src="/Components/navbar/navbar.js" defer></script>
     <script src="/Components/fade-in/fadeIn.js" defer></script>
     <script src="/Components/footer/footer.js" defer></script>
+    <script src="/Pages/Hobbies/Gaming/gaming.js" defer></script>
 </head>
 
 <body>
     <div id="navbar"></div>
 
-    <!-- Bootstrap component: breadcrumb -->
+    <!-- breadcrumb -->
     <nav class="container below-nav" aria-label="Breadcrumb">
         <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="/Pages/homePage/home.html">Home</a></li>
@@ -44,7 +45,7 @@
                 <div class="col-lg-10">
                     <div class="card gold-card text-center reveal">
                         <div class="card-body p-4 p-lg-5">
-                            <h1 class="display-title mb-3" >
+                            <h1 class="display-title mb-3">
                                 Welcome to<br><span class="text-gold"><i class="bi bi-controller"></i> Gaming</span>
                             </h1>
                             <p class="lead mb-0 mx-auto" style="max-width: 38rem;">
@@ -128,7 +129,8 @@
         <section class="container pb-5 mb-4" aria-labelledby="perks-heading">
             <div class="row mb-4">
                 <div class="col-lg-9 body-copy reveal">
-                    <h2 id="perks-heading" class="chapter"><i class="bi bi-star-fill"></i> Advantages that come with games</h2>
+                    <h2 id="perks-heading" class="chapter"><i class="bi bi-star-fill"></i> Advantages that come with
+                        games</h2>
                     <p class="mb-0">Gaming gets defended badly &mdash; usually with studies
                         nobody's read. These are the things I'd actually stand behind, from
                         my experiences.</p>
@@ -256,7 +258,6 @@
             </div>
 
             <!-- ============ VIDEO ============ -->
-            <!-- ============ VIDEO ============ -->
             <section class="container pb-5 mb-4" aria-labelledby="watch-heading">
                 <div class="row g-4 g-lg-5 align-items-center">
                     <div class="col-lg-7">
@@ -271,7 +272,8 @@
                     </div>
 
                     <div class="col-lg-5 reveal reveal-right">
-                        <h2 id="watch-heading" class="chapter"><i class="bi bi-award-fill"></i> A run worth watching</h2>
+                        <h2 id="watch-heading" class="chapter"><i class="bi bi-award-fill"></i> A run worth watching
+                        </h2>
                         <p>Local tournament semi-final round. This is the version of the game people take seriously.</p>
                         <figure class="mb-0">
                             <figcaption class="figure-caption caption pt-3 border-top">
@@ -285,14 +287,21 @@
             <section class="container pb-5 mb-4" aria-labelledby="start-heading">
                 <div class="row mb-4">
                     <div class="col-lg-9 body-copy reveal">
-                        <h2 id="start-heading" class="chapter"><i class="bi bi-patch-question-fill"></i> Where to start</h2>
+                        <h2 id="start-heading" class="chapter"><i class="bi bi-patch-question-fill"></i> Where to start
+                        </h2>
                         <p class="mb-0">Two lists, because "gaming" covers both. The top half is for
                             turning up with friends and not thinking too hard. The bottom half is for
                             when you want something that pushes back.</p>
                     </div>
                 </div>
 
-                <div class="table-responsive reveal">
+                <div class="btn-group mb-3" role="group" aria-label="Filter games">
+                    <button type="button" class="btn btn-gold active" data-filter="all">All</button>
+                    <button type="button" class="btn btn-gold" data-filter="casual">Casual</button>
+                    <button type="button" class="btn btn-gold" data-filter="competitive">Competitive</button>
+                </div>
+
+                <div class="table-responsive reveal" id="startTable">
                     <table class="table table-borderless table-hover gold-table align-middle">
                         <caption>Group sizes are what the game is built around &mdash; most scale further
                             with a full lobby. Costs are entry price only.</caption>
@@ -307,7 +316,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody data-category="casual">
                             <tr class="group-row">
                                 <th scope="colgroup" colspan="5">Casual &mdash; easy to pick up</th>
                             </tr>
@@ -362,7 +371,7 @@
                             </tr>
                         </tbody>
 
-                        <tbody>
+                        <tbody data-category="competitive">
                             <tr class="group-row">
                                 <th scope="colgroup" colspan="5">Competitive &mdash; there's a ladder to climb</th>
                             </tr>

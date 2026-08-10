@@ -1,13 +1,11 @@
 /* =========================================================
    response.js
-   Forms submit with method="GET", so every answer arrives in
-   the URL. This reads them back and displays them, which is
-   why the whole thing works without a server.
-   Written generically, so all three forms share this page.
+   form submit with method="GET", so answer arrives in URL.
+   This reads it back and displays them,
+   all forms share this page.
    ========================================================= */
 
-/* Readable labels. Anything not listed still shows — it just
-   falls back to a tidied version of its own field name. */
+/* Readable labels. to make things more tidy */
 const LABELS = {
     firstName: "First name",
     lastName: "Last name",
@@ -24,9 +22,9 @@ const LABELS = {
     notes: "Notes"
 };
 
-/* post-form steps, keyed by the hidden formType field each
+/* post-form steps, by the hidden formType field each
    form submits. Anything not listed here just means no
-   "next steps" card is shown — see the check further down. */
+   "next steps" card is shown. */
 const NEXT_STEPS = {
     "Gaming sign-up": [
         "We'll add you to the group so you can see when sessions are on.",
@@ -43,10 +41,9 @@ const NEXT_STEPS = {
 function prettify(name) {
     if (LABELS[name]) return LABELS[name];
 
-    // String.prototype.replace() with a regex — a built-in JS method,
-    // not Bootstrap. Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-    // This turns "someFieldName" into "some Field Name" by inserting
-    // a space before every capital letter.
+    // String.prototype.replace() with a regex 
+    // Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+    // This turns "someFieldName" into "some Field Name" by inserting space before every leter
     const spaced = name.replace(/([A-Z])/g, " $1").toLowerCase().trim();
     return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
@@ -56,8 +53,7 @@ function renderResponse() {
     if (!summary) return;
 
     // URLSearchParams — a built-in browser API for reading/parsing the
-    // query string (the ?key=value&key2=value2 part of a URL). This is
-    // what makes it possible to read form answers back with no server.
+    // query string to read form answers back with no server.
     // Docs: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
     const params = new URLSearchParams(window.location.search);
 
@@ -67,14 +63,14 @@ function renderResponse() {
 
     /* ---------- nothing submitted ---------- */
     // params.keys() returns an iterator; spreading it into an array
-    // with [...] lets us check .length. Iterators/spread syntax are
+    // [...] let us check .length. Iterators/spread syntax are
     // both plain JavaScript language features, not a library.
     if ([...params.keys()].length === 0) {
         heading.textContent = "Nothing to show";
         kicker.textContent = "Confirmation";
         lede.hidden = true;
         document.getElementById("backToForm").href = "/Pages/homePage/home.html";
-        return;   // stop here — nothing below applies if there's no data
+        return;
     }
 
     const formType = params.get("formType") || "";
@@ -83,19 +79,19 @@ function renderResponse() {
     /* ---------- build the summary rows ---------- */
     const seen = new Set();   // built-in JS Set — tracks field names already shown
 
-    // URLSearchParams.forEach() — iterates every key/value pair in the
+    // URLSearchParams.forEach() iterates every key/value pair in the
     // query string. Docs: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/forEach
     params.forEach(function (value, key) {
         if (key === "formType" || seen.has(key)) return;
         seen.add(key);
 
-        // getAll() groups repeated names — that's how checkboxes arrive
+        // getAll() groups repeated names that's how checkboxes arrive
         // (e.g. availability=Weekday&availability=Weekend)
         const all = params.getAll(key).filter(v => v.trim() !== "");
         if (!all.length) return;
 
-        // document.createElement() — builds new HTML elements directly
-        // in JS, rather than writing raw HTML strings.
+        // document.createElement() --- builds new HTML elements direct
+        // in JS, rather than writing HTML strings
         // Docs: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
         const row = document.createElement("div");
         row.className = "summary-row";
@@ -104,12 +100,12 @@ function renderResponse() {
         dt.textContent = prettify(key);
 
         const dd = document.createElement("dd");
-        // textContent, not innerHTML — anything typed in is treated as
-        // plain text, never as HTML. This is what stops someone typing
-        // a <script> tag into a form field and having it actually run.
+        // textContent, not innerHTML --- anything typed in is treated as
+        // plain text, not as HTML; stops someone typing
+        // a <script> tag into a form field and having it run.
         dd.textContent = all.join(", ");
 
-        row.append(dt, dd);   // Element.append() — adds child nodes
+        row.append(dt, dd);   // Element.append() adds child nodes
         summary.append(row);
     });
 
@@ -142,7 +138,7 @@ function renderResponse() {
     }
 }
 
-// DOMContentLoaded — fires once the HTML is fully parsed, so this
+// DOMContentLoaded fires once the HTML is fully parsed, so this
 // script doesn't try to grab elements before they exist.
 // Docs: https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
 document.addEventListener("DOMContentLoaded", renderResponse);

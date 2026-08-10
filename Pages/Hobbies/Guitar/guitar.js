@@ -1,9 +1,10 @@
 /* =========================================================
-   guitar.js — page-specific behaviour
+   guitar.js
+   page-specific behaviour
    1. Skill bars fill when they scroll into view
    2. Stat numbers count up when they scroll into view
    Both respect prefers-reduced-motion and both fall back to
-   the final value if IntersectionObserver isn't available.
+   the final value if IntersectionObserver is not available.
    ========================================================= */
 
 const STILL = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -25,7 +26,7 @@ function initSkillBars() {
             if (!entry.isIntersecting) return;
             const bar = entry.target;
             bar.style.width = bar.dataset.fill + "%";
-            observer.unobserve(bar);      // fill once, then stop watching
+            observer.unobserve(bar); 
         });
     }, { threshold: 0.4 });
 

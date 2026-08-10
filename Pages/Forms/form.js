@@ -37,8 +37,8 @@ function initFormValidation() {
     });
 }
 
-/* Bootstrap can style an invalid <input>, but a radio group's message sits
-   outside the input it belongs to. This flags the wrapper instead, so the
+/* Bootstrap styles an invalid <input>, but radio group's message sits
+   outside the input. This flags the wrapper instead, so the
    shared .group-feedback line can be shown by CSS. */
 function markGroups(form) {
     form.querySelectorAll(".choice-row").forEach(function (row) {
@@ -54,3 +54,4 @@ function markGroups(form) {
 }
 
 document.addEventListener("DOMContentLoaded", initFormValidation);
+

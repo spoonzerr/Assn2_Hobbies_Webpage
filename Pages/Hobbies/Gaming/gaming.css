@@ -1,7 +1,6 @@
 /* =========================================================
-   gaming.css
-   Bootstrap does the layout. This file only sets the theme,
-   mostly by overriding Bootstrap's own CSS variables rather
+   Bootstrap does the layout. This file sets the theme,
+   mostly thru overriding Bootstrap's own CSS variables rather
    than fighting its rules with heavier selectors.
    ========================================================= */
 
@@ -19,7 +18,7 @@
         rgba(244, 196, 48, 0) 100%);
     --display: 'Cinzel', serif;
 
-    /* Bootstrap globals - retheming its defaults at the source */
+    /* Bootstrap globals - re-theming the defaults*/
     --bs-body-bg: var(--navy);
     --bs-body-color: var(--ink-soft);
     --bs-body-font-family: Georgia, 'Times New Roman', Times, serif;
@@ -54,12 +53,12 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
 
 .gold-border { border-color: var(--rule) !important; }
 
-/* glow on the welcome card, to match the Travelling page */
+/* glow on the welcome card */
 .welcome-card {
     box-shadow: 0 0 40px rgba(244, 196, 48, 0.18), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-/* same glow on the closing CTA card */
+/* same glow on the closing card */
 .cta-card {
     box-shadow: 0 0 40px rgba(244, 196, 48, 0.18), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
@@ -161,7 +160,7 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
     white-space: nowrap;
 }
 
-/* the Casual / Competitive divider rows */
+/* the casual and competitive divider rows */
 .gold-table .group-row th {
     padding: 1.75rem 0.75rem 0.6rem;
     border-bottom: 1px solid var(--rule);
@@ -225,11 +224,6 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
     letter-spacing: 0.04em;
 }
 
-/* recolours Bootstrap's chevron, which is an SVG background-image */
-.gold-accordion .accordion-button::after {
-    filter: invert(78%) sepia(60%) saturate(500%) hue-rotate(350deg);
-}
-
 .gold-accordion .accordion-body { line-height: 1.8; }
 
 .gold-accordion .accordion-body {
@@ -277,8 +271,7 @@ h1, h2, h3 { font-family: var(--display); color: var(--ink); }
     --bs-breadcrumb-item-active-color: rgba(255, 255, 255, 0.6);
 }
 
-/* :visited needs stating explicitly - browsers apply their own
-   purple to visited links regardless of --bs-link-color above */
+/* visited breadcrumb to gold */
 .breadcrumb a,
 .breadcrumb a:visited { color: var(--gold); text-decoration: none; }
 .breadcrumb a:hover { color: var(--gold-deep); text-decoration: underline; }

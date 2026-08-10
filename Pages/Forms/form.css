@@ -1,8 +1,5 @@
 /* =========================================================
-   form.css — shared by every form + the response page
-   Matches the Gaming page: Georgia body, Cinzel uppercase
-   gold headings, #f4c430. Bootstrap builds the controls;
-   this file re-themes them through Bootstrap's variables.
+   form.css - shared by every form + the response page
    ========================================================= */
 
 :root {
@@ -21,7 +18,7 @@
         rgba(244, 196, 48, 0) 100%);
     --display: 'Cinzel', serif;
 
-    /* Bootstrap globals — same values as gaming.css */
+    /* Bootstrap globals */
     --bs-body-bg: var(--navy);
     --bs-body-color: var(--ink);
     --bs-body-font-family: Georgia, 'Times New Roman', Times, serif;
@@ -41,7 +38,7 @@ h1, h2 { font-family: var(--display); color: var(--ink); }
 
 .below-nav { padding-top: 7.5rem; }
 
-/* ---------- page heading (matches the Gaming welcome card) ---------- */
+/* ---------- page heading ---------- */
 
 .gold-card {
     --bs-card-bg: transparent;
@@ -73,10 +70,10 @@ h1, h2 { font-family: var(--display); color: var(--ink); }
     color: var(--ink-soft);
 }
 
-/* ---------- fieldset legends (matches .chapter on Gaming) ---------- */
+/* ---------- fieldset legends ---------- */
 
 .form-legend {
-    float: none;              /* Bootstrap floats legends; we don't want that */
+    float: none;
     display: flex;
     align-items: center;
     gap: 1.25rem;
@@ -91,7 +88,7 @@ h1, h2 { font-family: var(--display); color: var(--ink); }
     color: var(--gold);
 }
 
-/* the fading gold rule, same as the Gaming section headings */
+/* the fading gold rule */
 .form-legend::after {
     content: "";
     flex: 1;
@@ -127,11 +124,6 @@ h1, h2 { font-family: var(--display); color: var(--ink); }
     border-color: var(--gold-deep);
     box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.22);
     color: var(--ink);
-}
-
-/* Bootstrap's select arrow is an SVG background — recolour it gold */
-.form-select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23f4c430' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
 
 .form-select option { background-color: var(--navy); color: var(--ink); }
@@ -202,6 +194,7 @@ h1, h2 { font-family: var(--display); color: var(--ink); }
 
 /* radio groups need their message shown by JS, since Bootstrap only
    reveals .invalid-feedback beside a control it can mark invalid */
+   
 .group-feedback { display: none !important; }
 .was-validated .group-invalid .group-feedback { display: block !important; }
 

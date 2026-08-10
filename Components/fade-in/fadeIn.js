@@ -2,8 +2,8 @@
    fadeIn.js
    1. Homepage: .box-image img + .box-text slide in
    2. Hobby pages: generic .reveal elements
-   Each function exits early when its elements aren't on the
-   page, so both pages load the same file safely.
+   Each function exit early when its elements not on the
+   page, so both pages load same file safely.
    ========================================================= */
 
 /* ---------- 1. Homepage images ---------- */
@@ -74,7 +74,7 @@ function initReveal() {
 document.addEventListener("DOMContentLoaded", function () {
     initImageFade();
     initTextReveal();
-    initReveal();          // ← this line is what was missing
+    initReveal();
 });
 
 /* Safety net: if anything above throws before the observers are
