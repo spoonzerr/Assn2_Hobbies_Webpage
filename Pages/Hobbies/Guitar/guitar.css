@@ -1,6 +1,6 @@
 /* =========================================================
    guitar.css
-   Same theme as the Gaming page. Bootstrap does the layout;
+   Bootstrap does the layout
    this file re-themes it through Bootstrap's own variables.
    ========================================================= */
 
@@ -50,7 +50,7 @@ h1, h2, h3 { font-family: var(--display); margin: 0; color: var(--ink); }
 
 .gold-border { border-color: var(--rule) !important; }
 
-/* glow on the welcome card, to match the Travelling page */
+/* glow on the welcome card */
 .welcome-card {
     box-shadow: 0 0 40px rgba(244, 196, 48, 0.18), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
@@ -140,7 +140,7 @@ h1, h2, h3 { font-family: var(--display); margin: 0; color: var(--ink); }
     white-space: nowrap;
 }
 
-/* Bootstrap's progress component, re-themed */
+/* Bootstrap's progress re-themed */
 .progress {
     --bs-progress-height: 4px;
     --bs-progress-bg: rgba(255, 255, 255, 0.1);
@@ -148,7 +148,7 @@ h1, h2, h3 { font-family: var(--display); margin: 0; color: var(--ink); }
     --bs-progress-bar-bg: var(--gold);
 }
 
-/* starts empty; guitar.js sets the real width when it scrolls into view */
+/* starts empty. guitar.js sets the real width when it scrolls into view */
 .progress-bar {
     width: 0;
     transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
