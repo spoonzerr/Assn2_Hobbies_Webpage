@@ -1,12 +1,8 @@
-/* ============================================================
-   BAKING FORM — VALIDATION, COUNTRY COMBOBOX & SUBMISSION
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("signupForm");
     if (!form) return;
 
-    /* ---------- Country data (name, ISO2 for flag, dial code) ---------- */
+    /* Country code data  */
     const COUNTRIES = [
         { name: "Afghanistan", iso2: "af", code: "93" },
         { name: "Albania", iso2: "al", code: "355" },
@@ -189,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const flag = (iso2) =>
         String.fromCodePoint(...[...iso2.toUpperCase()].map(c => 127397 + c.charCodeAt(0)));
 
-    /* ---------- Country combobox ---------- */
+    /*  Country combobox  */
     const countryInput = document.getElementById("countryInput");
     const countryCode = document.getElementById("countryCode");
     const countryList = document.getElementById("countryList");
@@ -278,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ---------- Category chips: clear the invalid state as soon as one is checked ---------- */
+    /* Category chips: clear the invalid state as soon as one is checked  */
     const categoryChips = document.getElementById("categoryChips");
     const categoryFeedback = document.getElementById("categoryFeedback");
     const categoryInputs = categoryChips.querySelectorAll("input[name='categories']");
@@ -293,12 +289,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ---------- Form validation ---------- */
-    /* Fields carry real name attributes and the form submits via GET,
-       so a valid submit is left alone — the browser navigates to
-       response.html with everything in the query string. We only ever
-       preventDefault to block an invalid submission and show the
-       validation state. */
+    /*  Form validation  */
+
     form.addEventListener("submit", (event) => {
         const phoneValid = countryCode.value !== "" && document.getElementById("phone").checkValidity();
         phoneGroup.classList.toggle("is-invalid", !phoneValid);

@@ -1,8 +1,4 @@
-/* ============================================================
-   TRAVELLING FORM STYLES
-   ============================================================ */
-
-/* Form Wrapper Box */
+/* Form Box */
 .form-wrapper {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -44,7 +40,7 @@
     background-color: rgba(230, 184, 49, 0.08);
 }
 
-/* Required-field marker */
+/* Required field marker */
 .required-mark {
     color: #e6b831;
     font-weight: 700;
@@ -63,7 +59,7 @@
     font-size: 0.8rem;
 }
 
-/* Input, Select, and Textarea Dark Theme Styling */
+/* Input, Select, and Textarea Styling */
 .form-control,
 .form-select {
     background-color: rgba(255, 255, 255, 0.07);
@@ -95,7 +91,7 @@ textarea.form-control {
     resize: vertical;
 }
 
-/* ---------- Phone number + country combobox ---------- */
+/* phone no. country code */
 .phone-group {
     display: flex;
     align-items: stretch;
@@ -211,7 +207,7 @@ textarea.form-control {
     background-color: rgba(230, 184, 49, 0.18);
 }
 
-/* Bootstrap Validation Overrides for Dark Theme */
+/* Bootstrap  */
 .was-validated .form-control:invalid,
 .was-validated .form-select:invalid {
     border-color: #dc3545;
