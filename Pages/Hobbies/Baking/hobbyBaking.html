@@ -9,7 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="/Components/navbar/navbar.css">
     <link rel="stylesheet" href="/Components/fade-in/fadeIn.css">
@@ -38,70 +40,28 @@
         <div class="welcome-card">
             <h1>Welcome to<br><span class="hobby-name">Baking</span></h1>
             <p class="hero-subtext">
-                Four basic ingredients, one oven, and a hundred ways it can go right — or wonderfully wrong.
+                Four ingredients, one oven, and a hundred small decisions that decide whether it rises or sinks.
             </p>
         </div>
     </section>
 
     <section class="intro">
         <div class="intro-media">
-            <video id="bakingVid" controls preload="metadata" poster="/Assets/images/baking.jpg">
-                <source src="/Assets/videos/baking.mp4" type="video/mp4">
-                Your browser doesn't support video.
-            </video>
+            <img src="/Assets/images/baking.jpg" alt="Fresh bake out of the oven">
         </div>
         <div class="intro-text-box">
-            <h2 class="intro-heading">About The Hobby</h2>
+            <h2 class="intro-heading">Why I Enjoy It</h2>
             <p class="intro-text">
-                Baking rewards patience in a way few hobbies do — you can't rush a proof or open the oven early
-                without paying for it later. What starts as flour, butter, and sugar on a counter turns into
-                something you can actually share, which is half the reason it's worth doing at all.
+                [Write 2–3 sentences here about why you personally got into baking, or what keeps you coming
+                back to it.]
             </p>
         </div>
     </section>
 
     <section class="content-section">
-        <div class="section-kicker mb-2">The Craft</div>
-        <h2 class="section-heading mb-2">From Flour to Finished Bake</h2>
-        <p class="section-subheading mb-4">
-            Every bake follows roughly the same rhythm. Here's how a batch comes together, start to finish.
-        </p>
-
-        <div class="bake-timeline" id="bakeTimeline">
-            <div class="timeline-step">
-                <div class="step-marker"><i class="bi bi-basket2"></i></div>
-                <h3>Mise en Place</h3>
-                <p>Weigh every ingredient before anything touches a bowl. Baking is chemistry, not guesswork.</p>
-            </div>
-            <div class="timeline-step">
-                <div class="step-marker"><i class="bi bi-egg"></i></div>
-                <h3>Mix & Knead</h3>
-                <p>Bring the dough or batter together until the structure is exactly where it needs to be.</p>
-            </div>
-            <div class="timeline-step">
-                <div class="step-marker"><i class="bi bi-clock-history"></i></div>
-                <h3>Proof & Rest</h3>
-                <p>Time does half the work here — flavour and texture develop while you wait it out.</p>
-            </div>
-            <div class="timeline-step">
-                <div class="step-marker"><i class="bi bi-fire"></i></div>
-                <h3>Bake</h3>
-                <p>Heat transforms everything. This is where the smell takes over the whole kitchen.</p>
-            </div>
-            <div class="timeline-step">
-                <div class="step-marker"><i class="bi bi-cake2"></i></div>
-                <h3>Cool & Finish</h3>
-                <p>Glazing, frosting, or just resisting the urge to cut in before it's set.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section">
-        <div class="section-kicker mb-2">Personal Growth</div>
+        <div class="section-kicker mb-2">The Pitch</div>
         <h2 class="section-heading mb-2">Benefits of Baking</h2>
-        <p class="section-subheading mb-4">
-            What kneading dough at 9pm is actually doing for you, beyond the smell.
-        </p>
+        <p class="section-subheading mb-4">What kneading dough at 9pm is actually doing for you.</p>
 
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
@@ -120,8 +80,8 @@
                     <div class="benefit-card-body text-center py-4">
                         <i class="bi bi-rulers fs-1 mb-2 d-block"></i>
                         <h3>Precision Under Pressure</h3>
-                        <p>Off ratios and mistimed bakes teach measurement discipline fast — there's no
-                            eyeballing your way out of a collapsed cake.</p>
+                        <p>Off ratios and mistimed bakes teach measurement discipline fast — no eyeballing your
+                            way out of a collapsed cake.</p>
                     </div>
                 </div>
             </div>
@@ -140,167 +100,384 @@
     </section>
 
     <section class="content-section">
-        <div class="section-kicker mb-2">Baker's Bucket List</div>
-        <h2 class="section-heading mb-2">5 Bakes Every Baker Should Master</h2>
-        <p class="section-subheading mb-4">The recipes that teach you the most, in roughly the order to attempt them.</p>
+        <div class="section-kicker mb-2">Baker's Gallery</div>
+        <h2 class="section-heading mb-2">What I've Baked</h2>
+        <p class="section-subheading mb-4">Click a dish for the full recipe and baking cues — a couple of them have a
+            video too.</p>
 
-        <div id="top-bakes" class="bakes-carousel">
-            <div class="bake-card">
-                <div class="bake-photo-slider">
-                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/bakingpics/cookies/cookies1.jpg" class="active" alt="Chocolate chip cookies">
-                    <img src="/Assets/images/bakingpics/cookies/cookies2.jpg" alt="Cookie dough">
-                    <div class="dots-indicator">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+        <div class="row g-4" id="showcaseGrid">
+            <div class="col-sm-6 col-lg-4">
+                <div class="showcase-card" data-recipe="cookies" data-bs-toggle="modal" data-bs-target="#recipeModal"
+                    role="button" tabindex="0">
+                    <img src="/Assets/images/bakingpics/cookies.jpg" alt="Chocolate chip cookies">
+                    <div class="showcase-card-body">
+                        <h3>Chocolate Chip Cookies</h3>
+                        <p>Tap for the recipe <i class="bi bi-arrow-right"></i></p>
                     </div>
-                </div>
-                <div class="bake-card-body">
-                    <h3>1. Chocolate Chip Cookies</h3>
-                    <p>The forgiving starting point — teaches you how butter temperature changes spread and
-                        chew.</p>
                 </div>
             </div>
 
-            <div class="bake-card">
-                <div class="bake-photo-slider">
-                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/bakingpics/cake/cake1.jpg" class="active" alt="Vanilla layer cake">
-                    <img src="/Assets/images/bakingpics/cake/cake2.jpg" alt="Cake slice">
-                    <div class="dots-indicator">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+            <div class="col-sm-6 col-lg-4">
+                <div class="showcase-card" data-recipe="bakedRice" data-bs-toggle="modal" data-bs-target="#recipeModal"
+                    role="button" tabindex="0">
+                    <img src="/Assets/images/bakingpics/bakedrice.jpeg" alt="Baked rice">
+                    <div class="showcase-card-body">
+                        <h3>Baked Rice</h3>
+                        <p>Tap for the recipe <i class="bi bi-arrow-right"></i></p>
                     </div>
-                </div>
-                <div class="bake-card-body">
-                    <h3>2. Vanilla Layer Cake</h3>
-                    <p>Where levelling, stacking, and crumb coats stop being optional and start being technique.</p>
                 </div>
             </div>
 
-            <div class="bake-card">
-                <div class="bake-photo-slider">
-                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/bakingpics/sourdough/sourdough1.jpg" class="active" alt="Sourdough loaf">
-                    <img src="/Assets/images/bakingpics/sourdough/sourdough2.jpg" alt="Sourdough crumb">
-                    <div class="dots-indicator">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+            <div class="col-sm-6 col-lg-4">
+                <div class="showcase-card" data-recipe="macCheese" data-bs-toggle="modal" data-bs-target="#recipeModal"
+                    role="button" tabindex="0">
+                    <img src="/Assets/images/bakingpics/mac&cheese.jpg" alt="Mac and cheese">
+                    <div class="showcase-card-body">
+                        <h3>Mac and Cheese</h3>
+                        <p>Tap for the recipe <i class="bi bi-arrow-right"></i></p>
                     </div>
-                </div>
-                <div class="bake-card-body">
-                    <h3>3. Sourdough Loaf</h3>
-                    <p>No shortcuts here — you're managing a living culture over days, not hours.</p>
                 </div>
             </div>
 
-            <div class="bake-card">
-                <div class="bake-photo-slider">
-                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/bakingpics/croissant/croissant1.jpg" class="active" alt="Butter croissants">
-                    <img src="/Assets/images/bakingpics/croissant/croissant2.jpg" alt="Croissant layers">
-                    <div class="dots-indicator">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+            <div class="col-sm-6 col-lg-4">
+                <div class="showcase-card" data-recipe="pizza" data-bs-toggle="modal" data-bs-target="#recipeModal"
+                    role="button" tabindex="0">
+                    <img src="/Assets/images/bakingpics/pizza.jpeg" alt="Homemade pizza">
+                    <div class="showcase-card-body">
+                        <h3>Pizza</h3>
+                        <p>Tap for the recipe <i class="bi bi-arrow-right"></i></p>
                     </div>
-                </div>
-                <div class="bake-card-body">
-                    <h3>4. Butter Croissants</h3>
-                    <p>Lamination is unforgiving — this is the one that separates hobbyists from the patient.</p>
                 </div>
             </div>
 
-            <div class="bake-card">
-                <div class="bake-photo-slider">
-                    <button class="slider-btn prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="slider-btn next"><i class="bi bi-chevron-right"></i></button>
-                    <img src="/Assets/images/bakingpics/macarons/macarons1.jpg" class="active" alt="French macarons">
-                    <img src="/Assets/images/bakingpics/macarons/macarons2.jpg" alt="Macaron shells">
-                    <div class="dots-indicator">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+            <div class="col-sm-6 col-lg-4">
+                <div class="showcase-card" data-recipe="bread" data-bs-toggle="modal" data-bs-target="#recipeModal"
+                    role="button" tabindex="0">
+                    <img src="/Assets/images/bakingpics/bananabread.jpg" alt="Homemade bread loaf">
+                    <div class="showcase-card-body">
+                        <h3>Banana Bread</h3>
+                        <p>Tap for the recipe <i class="bi bi-arrow-right"></i></p>
                     </div>
                 </div>
-                <div class="bake-card-body">
-                    <h3>5. French Macarons</h3>
-                    <p>The final boss. Humidity, folding, and oven temperature all have to agree at once.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="recipeModalTitle">Recipe</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="recipeModalImage" class="d-none" src="" alt="">
+
+                    <div id="recipeModalBakeInfo" class="p-3 mb-3 rounded border border-warning-subtle"
+                        style="background-color: rgba(10, 33, 54, 0.85);">
+                        <div class="row text-center" style="font-size: 0.875rem;">
+                            <div class="col-4 border-end border-secondary">
+                                <span class="text-warning d-block font-monospace">OVEN TEMP</span>
+                                <strong id="bakeInfoTemp" class="text-white"></strong>
+                            </div>
+                            <div class="col-4 border-end border-secondary">
+                                <span class="text-warning d-block font-monospace">TIME</span>
+                                <strong id="bakeInfoTime" class="text-white"></strong>
+                            </div>
+                            <div class="col-4">
+                                <span class="text-warning d-block font-monospace">DONENESS CUE</span>
+                                <strong id="bakeInfoCue" class="text-white"></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="recipeModalVideoWrap" class="ratio ratio-16x9 mb-3 d-none">
+                        <iframe id="recipeModalVideo" src="" title="Recipe video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <h3 class="recipe-subheading">Ingredients</h3>
+                            <ul id="recipeModalIngredients" class="recipe-list"></ul>
+                        </div>
+                        <div class="col-md-7">
+                            <h3 class="recipe-subheading">Steps</h3>
+                            <ol id="recipeModalSteps" class="recipe-list"></ol>
+                        </div>
+                    </div>
+
+                    <p id="recipeModalCredit" class="recipe-credit mt-3"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="section-kicker mb-2">Terms</div>
+        <h2 class="section-heading mb-2">Baking Dictionary</h2>
+        <p class="section-subheading mb-4">The words recipes use without ever explaining.</p>
+
+        <dl class="glossary">
+            <div class="glossary-item">
+                <dt>Cream</dt>
+                <dd>Beating butter and sugar together until pale, fluffy, and increased in volume.</dd>
+            </div>
+            <div class="glossary-item">
+                <dt>Fold</dt>
+                <dd>Gently combining a light mixture into a heavier one without knocking the air out.</dd>
+            </div>
+            <div class="glossary-item">
+                <dt>Knead</dt>
+                <dd>Working dough by hand or machine to develop the gluten strength that gives bread its structure.</dd>
+            </div>
+            <div class="glossary-item">
+                <dt>Proof</dt>
+                <dd>Letting yeasted dough rest so it has time to rise before baking.</dd>
+            </div>
+            <div class="glossary-item">
+                <dt>Roux</dt>
+                <dd>A cooked paste of butter and flour, used as the base for a thickened sauce.</dd>
+            </div>
+            <div class="glossary-item">
+                <dt>Score</dt>
+                <dd>Cutting shallow slashes into dough before baking to control where and how it expands.</dd>
+            </div>
+            <div class="glossary-item">
+                <dt>Dock</dt>
+                <dd>Pricking small holes into dough so it doesn't puff up unevenly in the oven.</dd>
+            </div>
+            <div class="glossary-item">
+                <dt>Rest</dt>
+                <dd>Letting dough or batter sit undisturbed so gluten relaxes or flavour has time to develop.</dd>
+            </div>
+        </dl>
+    </section>
+
+    <section class="content-section">
+        <div class="section-kicker mb-2">Worth the Money</div>
+        <h2 class="section-heading mb-2">The Kit That Actually Matters</h2>
+        <p class="section-subheading mb-4">
+            Not a full shopping list — just what's genuinely made the biggest difference.
+        </p>
+
+        <div class="row g-4">
+            <div class="col-sm-6 col-lg-4">
+                <div class="kit-item">
+                    <i class="bi bi-speedometer2"></i>
+                    <div>
+                        <h3>A digital scale</h3>
+                        <p>Cups lie, grams don't. This single swap fixes more failed bakes than anything else on this
+                            list.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="kit-item">
+                    <i class="bi bi-thermometer-half"></i>
+                    <div>
+                        <h3>An oven thermometer</h3>
+                        <p>Most home ovens run 15-25°C off from what the dial claims. Yours is probably lying to you
+                            right now.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="kit-item">
+                    <i class="bi bi-hourglass-split"></i>
+                    <div>
+                        <h3>A cheap bench scraper</h3>
+                        <p>Portions dough, cleans the counter, and lifts sticky things without tearing them. Used more
+                            than any knife.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="kit-item">
+                    <i class="bi bi-grid-3x3"></i>
+                    <div>
+                        <h3>A wire cooling rack</h3>
+                        <p>Air needs to move under a bake or the bottom steams itself soggy. One rack, endless use.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="kit-item">
+                    <i class="bi bi-egg-fried"></i>
+                    <div>
+                        <h3>A stand or hand mixer</h3>
+                        <p>Not essential on day one, but the moment you try whipping egg whites by hand you'll
+                            understand why it's on this list.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="kit-item">
+                    <i class="bi bi-droplet"></i>
+                    <div>
+                        <h3>Baking dishes, a few sizes</h3>
+                        <p>For everything savoury on this page — mac and cheese, baked rice, pizza — a couple of
+                            reliable dishes cover most of it.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="content-section">
-        <div class="section-kicker mb-2">Baker Profiles</div>
-        <h2 class="section-heading mb-2">Different Ways People Bake</h2>
-        <p class="section-subheading mb-4">Find out which corner of the kitchen matches your patience level.</p>
+        <div class="section-kicker mb-2">Baking Guide</div>
+        <h2 class="section-heading mb-2">What You Can Bake</h2>
+        <p class="section-subheading mb-3">Popular bakes ordered from easiest to hardest. Select a category to explore!
+        </p>
 
-        <div class="table-responsive">
-            <table class="baker-table">
+        <div class="mb-4">
+            <div class="filter-bar">
+                <button class="filter-btn active" id="btnSweetTab" type="button">
+                    <i class="bi bi-cookie me-1"></i> Sweet
+                </button>
+                <button class="filter-btn" id="btnSavouryTab" type="button">
+                    <i class="bi bi-pie-chart me-1"></i> Savoury
+                </button>
+            </div>
+        </div>
+
+        <div id="tableSweet" class="table-responsive">
+            <table class="cheat-table align-middle">
                 <thead>
                     <tr>
-                        <th scope="col" class="col-photo">Preview</th>
-                        <th scope="col" class="col-info">Type & Description</th>
+                        <th scope="col" style="width: 110px;">Preview</th>
+                        <th scope="col">Dish & Description</th>
+                        <th scope="col" style="width: 130px;">Difficulty</th>
+                        <th scope="col" style="width: 110px;">Est. Time</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="cell-photo">
-                            <img src="/Assets/images/bakingpics/sourdough/sourdough1.jpg" alt="Bread Baker">
+                        <td>
+                            <img src="/Assets/images/bakingpics/brownie.jpg"
+                                alt="Brownies" class="table-img">
                         </td>
-                        <td class="cell-info">
-                            <h3 class="baker-title">The Bread Baker</h3>
-                            <span class="baker-subtext">Rustic & Traditional</span>
-                            <p class="baker-text">
-                                Bread bakers work on a slower clock than everyone else — measuring hydration
-                                percentages, tracking fermentation time, and treating a loaf's crumb structure
-                                as the real scorecard.
+                        <td>
+                            <strong class="d-block text-white fs-6 mb-1">Fudgy Brownies</strong>
+                            <p class="table-desc mb-0">
+                                A dense, decadent chocolate dessert with a signature shiny, crinkly top. Unlike cakey
+                                brownies, these remain rich, chewy, and slightly molten in the middle, packed with cocoa
+                                and melted chocolate.
                             </p>
                         </td>
+                        <td><span class="badge bg-success">1. Easy</span></td>
+                        <td>35 mins</td>
                     </tr>
-
                     <tr>
-                        <td class="cell-photo">
-                            <img src="/Assets/images/bakingpics/croissant/croissant1.jpg" alt="Pastry Artist">
+                        <td>
+                            <img src="/Assets/images/bakingpics/cupcake.jpg"
+                                alt="cupcake" class="table-img">
                         </td>
-                        <td class="cell-info">
-                            <h3 class="baker-title">The Pastry Artist</h3>
-                            <span class="baker-subtext">Lamination & Precision</span>
-                            <p class="baker-text">
-                                Pastry artists chase flaky, buttery layers — croissants, puff pastry, danishes.
-                                Kitchen temperature isn't a detail to them, it's the whole game.
+                        <td>
+                            <strong class="d-block text-white fs-6 mb-1">Cupcake</strong>
+                            <p class="table-desc mb-0">
+                                Fluffy, tender vanilla sponge cakes topped with a swirl of rich, creamy buttercream.
                             </p>
                         </td>
+                        <td><span class="badge bg-warning text-dark">2. Medium</span></td>
+                        <td>45 mins</td>
                     </tr>
-
                     <tr>
-                        <td class="cell-photo">
-                            <img src="/Assets/images/bakingpics/cake/cake1.jpg" alt="Cake Decorator">
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=200&auto=format&fit=crop&q=80"
+                                alt="Baked Cheesecake" class="table-img">
                         </td>
-                        <td class="cell-info">
-                            <h3 class="baker-title">The Cake Decorator</h3>
-                            <span class="baker-subtext">Design & Detail</span>
-                            <p class="baker-text">
-                                For cake decorators the bake is step one — piping, fondant work, and colour
-                                theory are where the real hours go.
+                        <td>
+                            <strong class="d-block text-white fs-6 mb-1">Baked New York Cheesecake</strong>
+                            <p class="table-desc mb-0">
+                                A luxurious dessert featuring a silky, ultra-creamy cream cheese batter slowly baked
+                                inside a buttery graham cracker or digestive biscuit crust. Tangy, rich, and lightly
+                                scented with vanilla.
                             </p>
                         </td>
+                        <td><span class="badge bg-danger">3. Hard</span></td>
+                        <td>1 hr 30 mins</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="tableSavoury" class="table-responsive d-none">
+            <table class="cheat-table align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 110px;">Preview</th>
+                        <th scope="col">Dish & Description</th>
+                        <th scope="col" style="width: 130px;">Difficulty</th>
+                        <th scope="col" style="width: 110px;">Est. Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&auto=format&fit=crop&q=80"
+                                alt="Homemade Pizza" class="table-img">
+                        </td>
+                        <td>
+                            <strong class="d-block text-white fs-6 mb-1">Homemade Pizza</strong>
+                            <p class="table-desc mb-0">
+                                An Italian classic built on an oven-baked yeast dough crust. Generously layered with
+                                seasoned tomato sauce, melted mozzarella, and fresh basil or your choice of toppings,
+                                baked until blistered and crispy.
+                            </p>
+                        </td>
+                        <td><span class="badge bg-success">1. Easy</span></td>
+                        <td>45 mins</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=200&auto=format&fit=crop&q=80"
+                                alt="Classic Lasagna" class="table-img">
+                        </td>
+                        <td>
+                            <strong class="d-block text-white fs-6 mb-1">Classic Beef Lasagna</strong>
+                            <p class="table-desc mb-0">
+                                A comforting baked pasta dish layered with wide flat noodles, slow-simmered bolognese
+                                meat sauce, silky white béchamel sauce, and plenty of gooey cheese baked until bubbling
+                                and golden-brown.
+                            </p>
+                        </td>
+                        <td><span class="badge bg-warning text-dark">2. Medium</span></td>
+                        <td>1 hr 15 mins</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=200&auto=format&fit=crop&q=80"
+                                alt="Chicken Pot Pie" class="table-img">
+                        </td>
+                        <td>
+                            <strong class="d-block text-white fs-6 mb-1">Chicken Pot Pie</strong>
+                            <p class="table-desc mb-0">
+                                A classic hearty pie filled with tender tender chicken chunks and vegetables enveloped
+                                in a thick, buttery cream sauce, all sealed beneath a flaky, golden-brown puff pastry
+                                crust.
+                            </p>
+                        </td>
+                        <td><span class="badge bg-danger">3. Hard</span></td>
+                        <td>1 hr 30 mins</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
-
     <section class="content-section">
         <div class="cta-quest">
             <div class="eyebrow mb-2">The Next Batch</div>
             <h2>Bake Something With Us</h2>
             <p class="text-dim mx-auto mt-2 mb-4" style="max-width: 500px;">
-                Swap recipes, troubleshoot a stubborn sourdough starter, and get added to our weekend baking
-                meet-ups.
+                Swap recipes, troubleshoot a stubborn starter, and get added to our weekend baking meet-ups.
             </p>
             <a href="/Pages/Forms/BakingForm/BakingForm.html" class="btn-quest">
                 Join Our Baking Circle <i class="bi bi-arrow-right ms-1"></i>

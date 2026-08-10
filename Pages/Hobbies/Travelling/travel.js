@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ============================================================
-       Photo arrows and dots switcher for "10 Places Travellers Love"
+       Photo arrows and dots switcher for "top 5 places"
     ============================================================ */
     const placeSliders = document.querySelectorAll(".place-photo-slider");
 

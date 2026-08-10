@@ -8,7 +8,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Baking-specific accent, used sparingly against the site's gold */
 :root {
     --crust: #c97b4c;
     --crust-soft: rgba(201, 123, 76, 0.18);
@@ -108,7 +107,7 @@ body {
 }
 
 /* ============================================================
-   INTRO SECTION (VIDEO & TEXT)
+   WHY I ENJOY IT (photo + text)
 ============================================================ */
 .intro {
     display: flex;
@@ -129,7 +128,7 @@ body {
     aspect-ratio: 16 / 10;
 }
 
-.intro-media video {
+.intro-media img {
     width: 100%;
     height: 100%;
     display: block;
@@ -156,109 +155,6 @@ body {
     font-size: 1rem;
     line-height: 1.75;
     color: rgba(248, 250, 252, 0.82);
-}
-
-/* ============================================================
-   BAKE TIMELINE (signature section)
-============================================================ */
-.bake-timeline {
-    position: relative;
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
-
-.bake-timeline::before {
-    content: "";
-    position: absolute;
-    top: 1.75rem;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg,
-        rgba(201, 123, 76, 0) 0%,
-        var(--crust) 12%,
-        var(--crust) 88%,
-        rgba(201, 123, 76, 0) 100%);
-    opacity: 0.55;
-    z-index: 0;
-}
-
-.timeline-step {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.timeline-step.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.step-marker {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin: 0 auto 1rem;
-    border-radius: 50%;
-    background: rgba(19, 36, 60, 0.85);
-    border: 1px solid rgba(201, 123, 76, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.35rem;
-    color: var(--crust);
-}
-
-.timeline-step h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 0.4rem;
-}
-
-.timeline-step p {
-    font-size: 0.85rem;
-    color: rgba(248, 250, 252, 0.75);
-    line-height: 1.55;
-    margin: 0;
-}
-
-@media (max-width: 900px) {
-    .bake-timeline {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .bake-timeline::before {
-        top: 0;
-        bottom: 0;
-        left: 1.75rem;
-        right: auto;
-        width: 2px;
-        height: auto;
-        background: linear-gradient(180deg,
-            rgba(201, 123, 76, 0) 0%,
-            var(--crust) 10%,
-            var(--crust) 90%,
-            rgba(201, 123, 76, 0) 100%);
-    }
-
-    .timeline-step {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        text-align: left;
-    }
-
-    .step-marker {
-        margin: 0;
-        flex-shrink: 0;
-    }
 }
 
 /* ============================================================
@@ -300,141 +196,188 @@ body {
 }
 
 /* ============================================================
-   TOP BAKES CAROUSEL
+   SHOWCASE GALLERY
 ============================================================ */
-.bakes-carousel {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 1.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--crust) #071524;
-}
-
-.bakes-carousel::-webkit-scrollbar {
-    height: 6px;
-}
-
-.bakes-carousel::-webkit-scrollbar-track {
-    background: #071524;
-}
-
-.bakes-carousel::-webkit-scrollbar-thumb {
-    background: var(--crust);
-    border-radius: 10px;
-}
-
-.bake-card {
-    flex: 0 0 320px;
-    scroll-snap-align: start;
+.showcase-card {
+    position: relative;
     background: rgba(19, 36, 60, 0.65);
     border: 1px solid rgba(230, 184, 49, 0.2);
     border-radius: 14px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    cursor: pointer;
     backdrop-filter: blur(8px);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bake-card:hover {
-    border-color: rgba(201, 123, 76, 0.5);
+.showcase-card:hover,
+.showcase-card:focus-visible {
+    transform: translateY(-5px);
+    border-color: rgba(201, 123, 76, 0.55);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    outline: none;
 }
 
-.bake-photo-slider {
-    position: relative;
+.showcase-card img {
     width: 100%;
     aspect-ratio: 16 / 10;
-    overflow: hidden;
-}
-
-.bake-photo-slider img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: none;
-}
-
-.bake-photo-slider img.active {
     display: block;
 }
 
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(7, 21, 36, 0.75);
-    border: 1px solid rgba(201, 123, 76, 0.35);
-    color: var(--crust);
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2;
-    backdrop-filter: blur(4px);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.showcase-card-body {
+    padding: 1.1rem 1.25rem;
 }
 
-.slider-btn:hover {
-    background: var(--crust);
-    color: #071524;
-    border-color: var(--crust);
-}
-
-.slider-btn.prev { left: 0.6rem; }
-.slider-btn.next { right: 0.6rem; }
-
-.dots-indicator {
-    position: absolute;
-    bottom: 0.6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.35rem;
-    z-index: 2;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.35);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.dot.active {
-    background: var(--crust);
-    transform: scale(1.3);
-}
-
-.bake-card-body {
-    padding: 1.25rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.bake-card-body h3 {
+.showcase-card-body h3 {
     font-family: 'Cormorant Garamond', serif;
     color: #e6b831;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
 }
 
-.bake-card-body p {
+.showcase-card-body p {
+    font-size: 0.85rem;
+    color: rgba(248, 250, 252, 0.6);
+    margin: 0;
+}
+
+/* ============================================================
+   RECIPE MODAL (dark theme override for Bootstrap's modal)
+============================================================ */
+.modal-content {
+    background-color: #0f2942;
+    border: 1px solid rgba(230, 184, 49, 0.25);
+    border-radius: 16px;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(230, 184, 49, 0.2);
+}
+
+.modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: #e6b831;
+    font-weight: 700;
+}
+
+.recipe-modal-img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Oven Bake Cue Banner inside Modal */
+#recipeModalBakeInfo {
+    background-color: rgba(10, 23, 40, 0.7);
+    border: 1px solid rgba(230, 184, 49, 0.3) !important;
+}
+
+.recipe-subheading {
+    font-family: 'Cormorant Garamond', serif;
+    color: #f8fafc;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.recipe-list {
+    padding-left: 1.1rem;
+    color: rgba(248, 250, 252, 0.85);
     font-size: 0.9rem;
-    color: rgba(248, 250, 252, 0.82);
+    line-height: 1.7;
+}
+
+.recipe-credit {
+    font-size: 0.8rem;
+    color: rgba(248, 250, 252, 0.5);
+}
+
+.recipe-credit a {
+    color: var(--crust);
+}
+
+/* ============================================================
+   TERMS / GLOSSARY
+============================================================ */
+.glossary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 3rem;
+    margin: 0;
+}
+
+.glossary-item {
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glossary-item dt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e6b831;
+    margin-bottom: 0.3rem;
+}
+
+.glossary-item dd {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(248, 250, 252, 0.8);
+}
+
+@media (max-width: 700px) {
+    .glossary {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   KIT LIST
+============================================================ */
+.kit-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(19, 36, 60, 0.65);
+    border: 1px solid rgba(230, 184, 49, 0.2);
+    border-radius: 14px;
+    padding: 1.25rem;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kit-item:hover {
+    border-color: rgba(201, 123, 76, 0.5);
+}
+
+.kit-item i {
+    font-size: 1.4rem;
+    color: var(--crust);
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
+.kit-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 0.3rem;
+}
+
+.kit-item p {
+    font-size: 0.875rem;
+    color: rgba(248, 250, 252, 0.75);
     line-height: 1.55;
     margin: 0;
 }
 
 /* ============================================================
-   BAKER PROFILES TABLE
+   BAKING IDEAS TABLE
 ============================================================ */
 .table-responsive {
     overflow-x: auto;
@@ -443,7 +386,7 @@ body {
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.baker-table {
+.cheat-table {
     width: 100%;
     border-collapse: collapse;
     background: rgba(19, 36, 60, 0.65);
@@ -451,78 +394,80 @@ body {
     backdrop-filter: blur(8px);
 }
 
-.baker-table th {
+.cheat-table th {
     background: rgba(10, 23, 40, 0.95);
     color: #e6b831;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
     text-align: left;
-    padding: 1.1rem 1.5rem;
+    padding: 1rem 1.25rem;
     border-bottom: 1px solid rgba(230, 184, 49, 0.2);
 }
 
-.baker-table td {
-    padding: 1.5rem;
+.cheat-table td {
+    padding: 1rem 1.25rem;
     border-bottom: 1px solid rgba(230, 184, 49, 0.2);
+    font-size: 0.9rem;
     vertical-align: middle;
 }
 
-.baker-table tr:last-child td {
+.cheat-table tr:last-child td {
     border-bottom: none;
 }
 
-.baker-table tr {
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.baker-table tr:hover {
+.cheat-table tr:hover {
     background: rgba(201, 123, 76, 0.06);
 }
 
-.col-photo {
-    width: 28%;
-    min-width: 170px;
-}
-
-.cell-photo img {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border-radius: 8px;
+/* Filter button bar styling */
+.filter-bar {
+    display: inline-flex;
+    gap: 0.5rem;
+    padding: 0.35rem;
+    background: rgba(19, 36, 60, 0.65);
     border: 1px solid rgba(230, 184, 49, 0.2);
+    border-radius: 50rem;
 }
 
-.col-info {
-    width: 72%;
-}
-
-.baker-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.65rem;
-    font-weight: 700;
-    color: #e6b831;
-    margin: 0 0 0.2rem 0;
-}
-
-.baker-subtext {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+.filter-btn {
+    border: none;
+    background: transparent;
+    color: rgba(248, 250, 252, 0.7);
+    font-size: 0.85rem;
     font-weight: 600;
-    color: rgba(248, 250, 252, 0.55);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    color: #f8fafc;
+}
+
+.filter-btn.active {
+    background: #e6b831;
+    color: #071524;
+}
+
+/* Larger Table Image Previews */
+.table-img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(230, 184, 49, 0.35);
     display: block;
-    margin-bottom: 0.75rem;
 }
 
-.baker-text {
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: rgba(248, 250, 252, 0.82);
-    margin: 0;
+/* Description styling */
+.table-desc {
+    font-size: 0.85rem;
+    color: rgba(248, 250, 252, 0.75);
+    line-height: 1.5;
+    max-width: 520px;
 }
-
 /* ============================================================
    CALL TO ACTION & FOOTER BUTTONS
 ============================================================ */
@@ -598,14 +543,5 @@ body {
 
     .welcome-card {
         padding: 3rem 1.5rem;
-    }
-}
-
-/* Respect reduced-motion preferences for the timeline reveal */
-@media (prefers-reduced-motion: reduce) {
-    .timeline-step {
-        transition: none;
-        opacity: 1;
-        transform: none;
     }
 }
