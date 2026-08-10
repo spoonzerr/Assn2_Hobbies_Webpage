@@ -97,9 +97,7 @@ body {
     max-width: 620px;
 }
 
-/* ============================================================
-   INTRO SECTION (VIDEO & STATS)
-============================================================ */
+/*intro pic and about hobby  */
 .intro {
     display: flex;
     align-items: center;
@@ -152,9 +150,7 @@ body {
 
 
 
-/* ============================================================
-   WHY PEOPLE ENJOY CARDS
-============================================================ */
+/* why I enjoy auto slideshow*/
 .enjoy-card {
     background: rgba(19, 36, 60, 0.65);
     border: 1px solid rgba(230, 184, 49, 0.2);
@@ -213,9 +209,7 @@ body {
     margin: 0;
 }
 
-/* ============================================================
-   TOP 10 PLACES CAROUSEL
-============================================================ */
+/* top 5 places manual slideshow*/
 .places-carousel {
     display: flex;
     gap: 1.5rem;
@@ -347,9 +341,7 @@ body {
     margin: 0;
 }
 
-/* ============================================================
-   TRAVELLER PROFILES TABLE
-============================================================ */
+/* types of travellers table*/
 .table-responsive {
     overflow-x: auto;
     border-radius: 14px;
@@ -437,9 +429,7 @@ body {
     margin: 0;
 }
 
-/* ============================================================
-   CALL TO ACTION & FOOTER BUTTONS
-============================================================ */
+/* footer */
 .cta-quest {
     text-align: center;
     background: linear-gradient(180deg, rgba(19, 36, 60, 0.8) 0%, rgba(10, 23, 40, 0.9) 100%);
@@ -491,9 +481,7 @@ body {
     z-index: 1000;
 }
 
-/* ============================================================
-   RESPONSIVE LAYOUT ADJUSTMENTS
-============================================================ */
+/* responsive layout e.g. for mobile */
 @media (max-width: 991px) {
     .intro {
         flex-direction: column;

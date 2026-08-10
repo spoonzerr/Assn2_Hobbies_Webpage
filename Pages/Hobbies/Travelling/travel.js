@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ============================================================
-       Auto image switcher for "Why People Enjoy Travelling" cards
-    ============================================================ */
+    /* auto slideshow for why i enjoy part */
     const enjoyCards = document.querySelectorAll(".enjoy-card");
 
     enjoyCards.forEach((card) => {
@@ -21,9 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ============================================================
-       Photo arrows and dots switcher for "top 5 places"
-    ============================================================ */
+    /* Photo arrows and dots switcher for "top 5 places"*/
     const placeSliders = document.querySelectorAll(".place-photo-slider");
 
     placeSliders.forEach((slider) => {
@@ -63,9 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ============================================================
-       Back to top scroll button logic
-    ============================================================ */
+    /* back to top button*/
     const topBtn = document.getElementById("backToTopBtn");
 
     if (topBtn) {

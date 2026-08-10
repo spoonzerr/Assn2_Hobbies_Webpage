@@ -28,49 +28,46 @@
 
 <body>
     <div id="navbar"></div>
-
+    <!-- breadcrumbs -->
     <div class="crumbs" aria-label="Breadcrumb">
         <ol>
             <li><a href="/Pages/homePage/home.html">Home</a></li>
             <li aria-current="page">Baking</li>
         </ol>
     </div>
-
+    <!-- welcome textbox -->
     <section class="welcome">
         <div class="welcome-card">
-            <h1>Welcome to<br><span class="hobby-name">Baking</span></h1>
+            <h1>Welcome to<br><span class="hobby-name"><i class="bi bi-cake" style="color: #e6b831;"></i> Baking</span></h1>
             <p class="hero-subtext">
                 Four ingredients, one oven, and a hundred small decisions that decide whether it rises or sinks.
             </p>
         </div>
     </section>
-
+    <!-- intro why i enjoy baking -->
     <section class="intro">
         <div class="intro-media">
-            <img src="/Assets/images/baking.jpg" alt="Fresh bake out of the oven">
+            <img src="/Assets/images/bakingpics/b.jpg" alt="Fresh bake out of the oven">
         </div>
         <div class="intro-text-box">
             <h2 class="intro-heading">Why I Enjoy It</h2>
             <p class="intro-text">
-                [Write 2–3 sentences here about why you personally got into baking, or what keeps you coming
-                back to it.]
+                I first picked up baking simply out of boredom and a feeling that it looked like a fun project to try out. It quickly became something I really enjoy because the process itself is super satisfying, and the absolute best part is getting to eat something delicious at the end!
             </p>
         </div>
     </section>
-
+    <!-- benefits part -->
     <section class="content-section">
         <div class="section-kicker mb-2">The Pitch</div>
         <h2 class="section-heading mb-2">Benefits of Baking</h2>
-        <p class="section-subheading mb-4">What kneading dough at 9pm is actually doing for you.</p>
 
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="benefit-card">
                     <div class="benefit-card-body text-center py-4">
                         <i class="bi bi-cup-hot fs-1 mb-2 d-block"></i>
-                        <h3>A Reason to Slow Down</h3>
-                        <p>Kneading, proofing, and waiting for a timer force a pace that's hard to find anywhere
-                            else in the day.</p>
+                        <h3>Stress Relief & Mindfulness</h3>
+                        <p>The repetitive, hands-on process of baking is surprisingly meditative. It keeps you focused on a tangible task, offering a refreshing screen-free break from daily stress.</p>
                     </div>
                 </div>
             </div>
@@ -79,9 +76,8 @@
                 <div class="benefit-card">
                     <div class="benefit-card-body text-center py-4">
                         <i class="bi bi-rulers fs-1 mb-2 d-block"></i>
-                        <h3>Precision Under Pressure</h3>
-                        <p>Off ratios and mistimed bakes teach measurement discipline fast — no eyeballing your
-                            way out of a collapsed cake.</p>
+                        <h3>Practical Life & Problem-Solving Skills</h3>
+                        <p>Baking builds confidence and kitchen independence. Its reliance on precise measurements and chemistry sharpens patience, detail, and focus.</p>
                     </div>
                 </div>
             </div>
@@ -90,21 +86,20 @@
                 <div class="benefit-card">
                     <div class="benefit-card-body text-center py-4">
                         <i class="bi bi-palette fs-1 mb-2 d-block"></i>
-                        <h3>Edible Creativity</h3>
-                        <p>Flavour pairings, piping, and plating give you a genuine creative outlet — one you
-                            get to eat afterwards.</p>
+                        <h3>Creative & Personal Expression</h3>
+                        <p>Baking is a fun creative outlet that lets you experiment with flavors, textures, and decoration to make each recipe your own.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- things i have baked -->
     <section class="content-section">
         <div class="section-kicker mb-2">Baker's Gallery</div>
         <h2 class="section-heading mb-2">What I've Baked</h2>
         <p class="section-subheading mb-4">Click a dish for the full recipe and baking cues — a couple of them have a
             video too.</p>
-
+        <!-- choclate chip cookie -->
         <div class="row g-4" id="showcaseGrid">
             <div class="col-sm-6 col-lg-4">
                 <div class="showcase-card" data-recipe="cookies" data-bs-toggle="modal" data-bs-target="#recipeModal"
@@ -116,18 +111,18 @@
                     </div>
                 </div>
             </div>
-
+            <!-- baked rice -->
             <div class="col-sm-6 col-lg-4">
                 <div class="showcase-card" data-recipe="bakedRice" data-bs-toggle="modal" data-bs-target="#recipeModal"
                     role="button" tabindex="0">
                     <img src="/Assets/images/bakingpics/bakedrice.jpeg" alt="Baked rice">
                     <div class="showcase-card-body">
-                        <h3>Baked Rice</h3>
+                        <h3>Cheese Baked Rice</h3>
                         <p>Tap for the recipe <i class="bi bi-arrow-right"></i></p>
                     </div>
                 </div>
             </div>
-
+            <!-- mac&cheese -->
             <div class="col-sm-6 col-lg-4">
                 <div class="showcase-card" data-recipe="macCheese" data-bs-toggle="modal" data-bs-target="#recipeModal"
                     role="button" tabindex="0">
@@ -138,7 +133,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- pizza -->
             <div class="col-sm-6 col-lg-4">
                 <div class="showcase-card" data-recipe="pizza" data-bs-toggle="modal" data-bs-target="#recipeModal"
                     role="button" tabindex="0">
@@ -149,7 +144,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- banana bread -->
             <div class="col-sm-6 col-lg-4">
                 <div class="showcase-card" data-recipe="bread" data-bs-toggle="modal" data-bs-target="#recipeModal"
                     role="button" tabindex="0">
@@ -162,7 +157,7 @@
             </div>
         </div>
     </section>
-
+    <!-- recipe part after clicking the top part with style/css -->
     <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -191,7 +186,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- recipe yt vid with styling -->
                     <div id="recipeModalVideoWrap" class="ratio ratio-16x9 mb-3 d-none">
                         <iframe id="recipeModalVideo" src="" title="Recipe video"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -217,7 +212,7 @@
 
     <section class="content-section">
         <div class="section-kicker mb-2">Terms</div>
-        <h2 class="section-heading mb-2">Baking Dictionary</h2>
+        <h2 class="section-heading mb-2"><i class="bi bi-book" style="color: gold;"></i> Baking Dictionary </h2>
         <p class="section-subheading mb-4">The words recipes use without ever explaining.</p>
 
         <dl class="glossary">
@@ -372,7 +367,7 @@
                                 and melted chocolate.
                             </p>
                         </td>
-                        <td><span class="badge bg-success">1. Easy</span></td>
+                        <td><span class="badge bg-success">Easy</span></td>
                         <td>35 mins</td>
                     </tr>
                     <tr>
@@ -386,12 +381,12 @@
                                 Fluffy, tender vanilla sponge cakes topped with a swirl of rich, creamy buttercream.
                             </p>
                         </td>
-                        <td><span class="badge bg-warning text-dark">2. Medium</span></td>
+                        <td><span class="badge bg-warning text-dark">Medium</span></td>
                         <td>45 mins</td>
                     </tr>
                     <tr>
                         <td>
-                            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=200&auto=format&fit=crop&q=80"
+                            <img src="/Assets/images/bakingpics/cheesecake.jpg"
                                 alt="Baked Cheesecake" class="table-img">
                         </td>
                         <td>
@@ -402,7 +397,7 @@
                                 scented with vanilla.
                             </p>
                         </td>
-                        <td><span class="badge bg-danger">3. Hard</span></td>
+                        <td><span class="badge bg-danger">Hard</span></td>
                         <td>1 hr 30 mins</td>
                     </tr>
                 </tbody>
@@ -433,7 +428,7 @@
                                 baked until blistered and crispy.
                             </p>
                         </td>
-                        <td><span class="badge bg-success">1. Easy</span></td>
+                        <td><span class="badge bg-success">Easy</span></td>
                         <td>45 mins</td>
                     </tr>
                     <tr>
@@ -449,12 +444,12 @@
                                 and golden-brown.
                             </p>
                         </td>
-                        <td><span class="badge bg-warning text-dark">2. Medium</span></td>
+                        <td><span class="badge bg-warning text-dark">Medium</span></td>
                         <td>1 hr 15 mins</td>
                     </tr>
                     <tr>
                         <td>
-                            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=200&auto=format&fit=crop&q=80"
+                            <img src="/Assets/images/bakingpics/chickpie.jpg"
                                 alt="Chicken Pot Pie" class="table-img">
                         </td>
                         <td>
@@ -465,7 +460,7 @@
                                 crust.
                             </p>
                         </td>
-                        <td><span class="badge bg-danger">3. Hard</span></td>
+                        <td><span class="badge bg-danger">Hard</span></td>
                         <td>1 hr 30 mins</td>
                     </tr>
                 </tbody>

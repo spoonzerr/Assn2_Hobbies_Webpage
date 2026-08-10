@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ============================================================
-       Recipe data for the shared modal.
-       Includes temperature, time, and doneness cue from old table.
-    ============================================================ */
+    /* recipe data */
     const RECIPES = {
         cookies: {
             title: "Chocolate Chip Cookies",
@@ -191,9 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-/* ============================================================
-   Recipe modal — populated from RECIPES on open
-============================================================ */
+/* recipe modal pop up*/
 const recipeModal = document.getElementById("recipeModal");
 
 if (recipeModal) {
@@ -252,9 +247,7 @@ if (recipeModal) {
 
 
 
-/* ============================================================
-   Back to top scroll button
-============================================================ */
+/* Back to top scroll button */
 const topBtn = document.getElementById("backToTopBtn");
 
 if (topBtn) {
