@@ -9,38 +9,44 @@
 /* Readable labels. Anything not listed still shows — it just
    falls back to a tidied version of its own field name. */
 const LABELS = {
-    firstName:    "First name",
-    lastName:     "Last name",
-    countryCode:  "Country code",
-    phone:        "Phone number",
-    email:        "Email address",
-    gender:       "Gender",
-    ageGroup:     "Age group",
-    mainGame:     "Main game",
-    discord:      "Discord username",
+    firstName: "First name",
+    lastName: "Last name",
+    countryCode: "Country code",
+    phone: "Phone number",
+    email: "Email address",
+    gender: "Gender",
+    ageGroup: "Age group",
+    mainGame: "Main game",
+    discord: "Discord username",
+    guitarType: "Guitar type",
+    guitarSkill: "Skill level",
     availability: "Usually free",
-    notes:        "Notes",
-    experience:   "Experience",
-    guitarType:   "Plays on",
-    goals:        "Wants to improve",
-    song:         "Song to learn",
-    ease:         "Ease of navigation",
-    favourite:    "Most interesting hobby",
-    liked:        "What worked well",
-    comments:     "Feedback",
-    suggestHobby: "Hobby suggested",
-    followUp:     "Happy to be contacted"
+    notes: "Notes"
 };
 
-/* Where "Edit my answers" should send them back to */
-const RETURN_TO = {
-    "Gaming sign-up": "/Pages/Forms/GamingForm/GameForm.html",
-    "Guitar sign-up": "/Pages/Forms/GuitarForm/GuitarForm.html",
-    "Site feedback":  "/Pages/Forms/FeedbackForm/FeedbackForm.html"
+/* post-form steps, keyed by the hidden formType field each
+   form submits. Anything not listed here just means no
+   "next steps" card is shown — see the check further down. */
+const NEXT_STEPS = {
+    "Gaming sign-up": [
+        "We'll add you to the group so you can see when sessions are on.",
+        "Someone will get in touch on Discord within a few days.",
+        "Turn up to whichever session suits you. No commitment either way."
+    ],
+    "Guitar sign-up": [
+        "We'll match you with others around your skill level.",
+        "Someone will reach out to sort out a time that works.",
+        "Bring your own guitar if you have one — spares are available if not."
+    ]
 };
 
 function prettify(name) {
     if (LABELS[name]) return LABELS[name];
+
+    // String.prototype.replace() with a regex — a built-in JS method,
+    // not Bootstrap. Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+    // This turns "someFieldName" into "some Field Name" by inserting
+    // a space before every capital letter.
     const spaced = name.replace(/([A-Z])/g, " $1").toLowerCase().trim();
     return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
@@ -49,35 +55,48 @@ function renderResponse() {
     const summary = document.getElementById("summary");
     if (!summary) return;
 
+    // URLSearchParams — a built-in browser API for reading/parsing the
+    // query string (the ?key=value&key2=value2 part of a URL). This is
+    // what makes it possible to read form answers back with no server.
+    // Docs: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
     const params = new URLSearchParams(window.location.search);
+
     const heading = document.getElementById("heading");
     const lede = document.getElementById("lede");
     const kicker = document.getElementById("kicker");
 
     /* ---------- nothing submitted ---------- */
+    // params.keys() returns an iterator; spreading it into an array
+    // with [...] lets us check .length. Iterators/spread syntax are
+    // both plain JavaScript language features, not a library.
     if ([...params.keys()].length === 0) {
-        document.getElementById("noData").hidden = false;
         heading.textContent = "Nothing to show";
         kicker.textContent = "Confirmation";
         lede.hidden = true;
         document.getElementById("backToForm").href = "/Pages/homePage/home.html";
-        return;
+        return;   // stop here — nothing below applies if there's no data
     }
 
     const formType = params.get("formType") || "";
     const first = params.get("firstName");
 
     /* ---------- build the summary rows ---------- */
-    const seen = new Set();
+    const seen = new Set();   // built-in JS Set — tracks field names already shown
 
+    // URLSearchParams.forEach() — iterates every key/value pair in the
+    // query string. Docs: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/forEach
     params.forEach(function (value, key) {
         if (key === "formType" || seen.has(key)) return;
         seen.add(key);
 
-        // getAll groups repeated names — that's how checkboxes arrive
+        // getAll() groups repeated names — that's how checkboxes arrive
+        // (e.g. availability=Weekday&availability=Weekend)
         const all = params.getAll(key).filter(v => v.trim() !== "");
         if (!all.length) return;
 
+        // document.createElement() — builds new HTML elements directly
+        // in JS, rather than writing raw HTML strings.
+        // Docs: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
         const row = document.createElement("div");
         row.className = "summary-row";
 
@@ -85,10 +104,12 @@ function renderResponse() {
         dt.textContent = prettify(key);
 
         const dd = document.createElement("dd");
-        // textContent, not innerHTML — anything typed in is treated as text
+        // textContent, not innerHTML — anything typed in is treated as
+        // plain text, never as HTML. This is what stops someone typing
+        // a <script> tag into a form field and having it actually run.
         dd.textContent = all.join(", ");
 
-        row.append(dt, dd);
+        row.append(dt, dd);   // Element.append() — adds child nodes
         summary.append(row);
     });
 
@@ -106,12 +127,22 @@ function renderResponse() {
         lede.textContent = hobby
             ? "Your " + hobby + " sign-up is in. Here's what we received."
             : "Your sign-up is in. Here's what we received.";
-        document.getElementById("nextCard").hidden = false;
-    }
 
-    /* ---------- point the edit button at the right form ---------- */
-    document.getElementById("backToForm").href =
-        RETURN_TO[formType] || "/Pages/homePage/home.html";
+        /* ---------- next steps, only for sign-up forms ---------- */
+        const steps = NEXT_STEPS[formType];
+        if (steps) {
+            const list = document.getElementById("nextSteps");
+            steps.forEach(function (text) {
+                const li = document.createElement("li");
+                li.textContent = text;
+                list.append(li);
+            });
+            document.getElementById("nextCard").hidden = false;
+        }
+    }
 }
 
+// DOMContentLoaded — fires once the HTML is fully parsed, so this
+// script doesn't try to grab elements before they exist.
+// Docs: https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
 document.addEventListener("DOMContentLoaded", renderResponse);

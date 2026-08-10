@@ -24,15 +24,12 @@
 </head>
 
 <body>
-
-    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
-
     <div id="navbar"></div>
 
     <nav class="container below-nav" aria-label="Breadcrumb">
         <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="/Pages/homePage/home.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="/Pages/Hobbies/Gaming/hobbyGuitar.html">Guitar</a></li>
+            <li class="breadcrumb-item"><a href="/Pages/Hobbies/Guitar/hobbyGuitar.html">Guitar</a></li>
             <li class="breadcrumb-item active" aria-current="page">Sign Up</li>
         </ol>
     </nav>
@@ -67,7 +64,7 @@
                             <form class="needs-validation" action="/Pages/Response/response.html" method="GET"
                                 novalidate>
 
-                                <input type="hidden" name="formType" value="Gaming sign-up">
+                                <input type="hidden" name="formType" value="Guitar sign-up">
 
                                 <!-- ===== your details ===== -->
                                 <fieldset class="mb-5">
@@ -95,9 +92,8 @@
                                                 <!-- Select All countries -->
                                                 <!-- countries grouped by by name -->
                                                 <!-- Calling Code and Name -->
-                                                <select class="form-select" autocomplete="country" id="country"
-                                                    name="country">
-                                                    <option>select country</option>
+                                                <select class="form-select" autocomplete="country" id="country" name="countryCode" required>
+                                                    <option value="" selected disabled>Choose one&hellip;</option>
                                                     <optgroup label="A">
                                                         <option value="93">Afghanistan (+93)</option>
                                                         <option value="355">Albania (+355)</option>
@@ -403,8 +399,6 @@
                                                         <option value="263">Zimbabwe (+263)</option>
                                                     </optgroup>
                                                 </select>
-                                                <!-- total group - 26 -->
-                                                </select>
 
                                                 <input type="tel" class="form-control" id="phone" name="phone"
                                                     pattern="[0-9\s\-]{6,12}" autocomplete="tel" required>
@@ -490,32 +484,32 @@
 
                                 <!-- ===== what you play ===== -->
                                 <fieldset class="mb-5">
-                                    <legend class="form-legend">What you play</legend>
+                                    <legend class="form-legend">Your style</legend>
 
                                     <div class="row g-3 mb-4">
                                         <div class="col-md-6">
-                                            <label for="mainGame" class="form-label">Main game</label>
-                                            <select class="form-select" id="mainGame" name="mainGame" required>
+                                            <label for="guitarType" class="form-label">Guitar type</label>
+                                            <select class="form-select" id="guitarType" name="guitarType" required>
                                                 <option value="" selected disabled>Choose one&hellip;</option>
-                                                <option>Valorant</option>
-                                                <option>Counter-Strike</option>
-                                                <option>Mobile Legends</option>
-                                                <option>League of Legends</option>
-                                                <option>Rocket League</option>
-                                                <option>Minecraft</option>
-                                                <option>Roblox</option>
-                                                <option>Something else</option>
+                                                <option>Classical</option>
+                                                <option>Acoustic</option>
+                                                <option>Electric</option>
+                                                <option>Bass</option>
                                             </select>
-                                            <div class="invalid-feedback">Pick the game you play most.</div>
+                                            <div class="invalid-feedback">Pick the type of guitar you play.</div>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label for="discord" class="form-label">Discord username</label>
-                                            <input type="text" class="form-control" id="discord" name="discord"
-                                                required>
-                                            <div class="invalid-feedback">
-                                                We run sessions on Discord, so we'll need this.
-                                            </div>
+                                            <label for="guitarSkill" class="form-label">Skill level</label>
+                                            <select class="form-select" id="guitarSkill" name="guitarSkill" required>
+                                                <option value="" selected disabled>Choose one&hellip;</option>
+                                                <option>Novice</option>
+                                                <option>Beginner</option>
+                                                <option>Intermediate</option>
+                                                <option>Advanced</option>
+                                                <option>Expert</option>
+                                            </select>
+                                            <div class="invalid-feedback">Select your competence level</div>
                                         </div>
                                     </div>
 
@@ -558,9 +552,7 @@
                                         Sign me up
                                         <span class="arrow ms-2" aria-hidden="true">&rarr;</span>
                                     </button>
-                                    <button type="reset" class="btn btn-gold btn-lg">Clear form</button>
                                 </div>
-
                             </form>
                         </div>
                     </div>
