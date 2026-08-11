@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     enjoyCards.forEach((card) => {
         const images = card.querySelectorAll(".slideshow-box img");
-
+        // set up a slideshow if there's only more than one image
         if (images.length > 1) {
             let photoIndex = 0;
 
